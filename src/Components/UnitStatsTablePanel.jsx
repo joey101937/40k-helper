@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@mui/styles';
 import InteractiveTable from './Table/InteractiveTable';
 import { units } from '../codex';
@@ -8,11 +8,8 @@ import eliteIcon from '../Icons/eliteIcon.png'
 import heavySupportIcon from '../Icons/heavySupportIcon.png'
 import fastAttackIcon from '../Icons/fastAttackIcon.png'
 import hqIcon from '../Icons/hqIcon.png'
-
-const settings = {
-    backgroundColors: true,
-    showBrackets: true,
-};
+import SettingsModal from './SettingsModal';
+import { SettingsRounded } from '@material-ui/icons';
 
 
 const useStyles = makeStyles((theme) => {
@@ -27,14 +24,34 @@ const useStyles = makeStyles((theme) => {
             borderRadius: '5px',
             boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
         }),
+        settingButton: () => ({
+            color: 'black',
+            position: 'absolute',
+            cursor: 'pointer'
+        }),
     }
 });
 
 const UnitStatsTablePanel = (props) => {
     const classes = useStyles(props);
+
+    const [showBrackets, setShowBrackets] = useState(true);
+    const [unitRoleBackgrounds, setUnitRoleBackgrounds] = useState(true);
+
+    const [settingsModalOpen, setSettingsModalOpen] = useState(false);
+
+
     const headers = [
         {
-            label: '',
+            label: (
+            <div style={{color: 'rgba(0,0,0,0)'}}>
+                <SettingsRounded
+                    className={classes.settingButton}
+                    onClick={() => setSettingsModalOpen(true)}
+                />
+                &nbws;
+            </div>
+            ),
             value: 'icon',
             width: '5%',
         },
@@ -119,6 +136,7 @@ const UnitStatsTablePanel = (props) => {
     }
 
     const getCellStylesForUnit = (unit) => {
+        if(!unitRoleBackgrounds) return {};
         switch(unit.role) {
             case 'troops':
                 return { background: 'rgb(250,150,150)' };
@@ -140,7 +158,7 @@ const UnitStatsTablePanel = (props) => {
         for(let i = 0; i < units.length; i++) {
             const unit = units[i];
             unit.stats?.forEach((statline, statlineIndex) => {
-                if(!settings.showBrackets && statlineIndex > 0) return;
+                if(!showBrackets && statlineIndex > 0) return;
                 out.push({
                     name: statlineIndex === 0 ? unit.name : '- - -',
                     m: statline.m,
@@ -159,12 +177,22 @@ const UnitStatsTablePanel = (props) => {
         }
         return out;
     };
-
+    
     return (
+        <>
         <InteractiveTable
             headers={headers}
             values={getFormattedValues()}
-        /> 
+        />
+        <SettingsModal 
+            open={settingsModalOpen}
+            onClose={() => setSettingsModalOpen(false)}
+            showBrackets={showBrackets}
+            unitRoleBackgrounds={unitRoleBackgrounds}
+            toggleShowBrackets={() => setShowBrackets(!showBrackets)}
+            toggleShowBackgrounds={() => setUnitRoleBackgrounds(!unitRoleBackgrounds)}
+        />
+        </>
     );
 };
 

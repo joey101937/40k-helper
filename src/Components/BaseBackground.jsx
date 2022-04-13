@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@mui/styles';
 import { Route, Routes } from 'react-router-dom';
 import ContentPanel from './ContentPanel';
@@ -17,6 +17,8 @@ const useStyles = makeStyles((theme) => {
 
 const BaseBackground = (props) => {
     const classes = useStyles(props);
+
+
     return (
         <div className={classes.root}>
             <Routes>

@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => {
         }),
         header: (props) => ({
             width: "100%",
-            whiteSpace: 'nowrap'
+            whiteSpace: 'nowrap',
         }),
         row: (props) => ({
             width: '100%',
