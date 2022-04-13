@@ -1,12 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+import TopBanner from './Components/TopBanner';
+import BaseBackground from './Components/BaseBackground';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <TopBanner />
+      <BaseBackground />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
