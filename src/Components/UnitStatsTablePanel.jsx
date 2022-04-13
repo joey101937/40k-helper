@@ -9,7 +9,7 @@ import heavySupportIcon from '../Icons/heavySupportIcon.png'
 import fastAttackIcon from '../Icons/fastAttackIcon.png'
 import hqIcon from '../Icons/hqIcon.png'
 import SettingsModal from './SettingsModal';
-import { SettingsRounded } from '@material-ui/icons';
+import SettingsRounded from '@material-ui/icons/SettingsRounded';
 
 
 const useStyles = makeStyles((theme) => {
