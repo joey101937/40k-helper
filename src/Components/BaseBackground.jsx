@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { makeStyles } from '@mui/styles';
 import { Route, Routes } from 'react-router-dom';
 import ContentPanel from './ContentPanel';
