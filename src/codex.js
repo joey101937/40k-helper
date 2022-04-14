@@ -1,3 +1,4 @@
+import * as abilities from "./abilities";
 import * as weapons from "./weapons";
 
 
@@ -42,6 +43,12 @@ export const units = [
             weapons.tyrantStranglethron,
             weapons.tyrantBonesword,
             weapons.tyrantScythingTalons
+        ],
+        abilities: [
+            abilities.psychicBarrier,
+            abilities.willOfTheHiveMind,
+            abilities.deathThroes,
+            abilities.psyker2,
         ]
     },
     {
@@ -84,6 +91,13 @@ export const units = [
             weapons.tervigonCrushingClaws,
             weapons.tervigonTalonsStrike,
             weapons.tervigonTalonsSweep,
+        ],
+        abilities: [
+            abilities.spawnTermagants,
+            abilities.broodProgenitor,
+            abilities.wallOfflesh,
+            abilities.deathThroes,
+            abilities.psyker1,
         ]
     },
     {

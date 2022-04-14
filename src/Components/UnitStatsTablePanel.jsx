@@ -11,6 +11,7 @@ import hqIcon from '../Icons/hqIcon.png'
 import SettingsModal from './SettingsModal';
 import SettingsRounded from '@material-ui/icons/SettingsRounded';
 import UnitWeaponsModal from './UnitWeaponsModal';
+import UnitAbilitiesModal from './UnitAbilitiesModal';
 
 
 const useStyles = makeStyles((theme) => {
@@ -46,6 +47,8 @@ const UnitStatsTablePanel = (props) => {
 
     const [settingsModalOpen, setSettingsModalOpen] = useState(false);
     const [selectedUnitWeapons, setSelectedUnitWeapon] = useState(null);
+    const [selectedUnitAbilities, setSelectedUnitAbility] = useState(null);
+    
 
 
 
@@ -184,7 +187,12 @@ const UnitStatsTablePanel = (props) => {
                         <div className={classes.weaponLink} onClick={() => setSelectedUnitWeapon(unit)}>
                             View
                         </div>
-                    ) : ''
+                    ) : '',
+                    abilities: statlineIndex === 0 ? (
+                        <div className={classes.weaponLink} onClick={() => setSelectedUnitAbility(unit)}>
+                            View
+                        </div>
+                    ) : '',
                 });
             })
         }
@@ -209,6 +217,11 @@ const UnitStatsTablePanel = (props) => {
             open={!!selectedUnitWeapons}
             onClose={() => setSelectedUnitWeapon(null)}
             unit={selectedUnitWeapons}
+        />
+        <UnitAbilitiesModal
+            open={!!selectedUnitAbilities}
+            onClose={() => setSelectedUnitAbility(null)}
+            unit={selectedUnitAbilities}
         />
         </>
     );

@@ -42,51 +42,27 @@ const useStyles = makeStyles((theme) => {
 
 const headers = [
     {
-        label: '',
+        label: 'Ability',
         value: 'name',
-        width: '25%',
+        width: '20%',
         textAlign: 'left',
     },
     {
-        label: 'Range',
-        value: 'range',
-        width: '7%',
-    },
-    {
-        label: 'Type',
-        value: 'type',
-        width: '20%',
-    },
-    {
-        label: 'S',
-        value: 's',
-        width: '7%',
-    },
-    {
-        label: 'AP',
-        value: 'ap',
-        width: '7%',
-    },
-    {
-        label: 'D',
-        value: 'd',
-        width: '7%',
-    },
-    {
-        label: 'Notes',
-        value: 'notes',
-        width: '27%',
+        label: 'Description',
+        value: 'desc',
+        width: '80%',
+        textAlign: 'left',
     },
 ]
 
-const UnitWeaponsModal = (props) => {
+const UnitAbilitiesModal = (props) => {
     const {open, onClose, unit} = props;
     const classes = useStyles(props);
 
     const getFormattedValues = () => {
-        return unit?.weapons?.map(x => ({
+        return unit?.abilities?.map(x => ({
             ...x,
-            cellStyles: { background: 'rgb(200,200,200)', },
+            cellStyles: { background: 'rgb(200,200,200)' },
             name: <b>{x.name}</b>
         })) || [];
     }
@@ -95,7 +71,7 @@ const UnitWeaponsModal = (props) => {
         <Dialog classes={classes} open={open} onClose={onClose} maxWidth={'lg'}>
             <DialogContent className={classes.modalContents}>
                 <div className={classes.titleBar}>
-                    Weapons
+                    Abilities
                 </div>
                 <div className={classes.body}>
                   <InteractiveTable
@@ -118,4 +94,4 @@ const UnitWeaponsModal = (props) => {
     );
 };
 
-export default UnitWeaponsModal; 
+export default UnitAbilitiesModal; 
