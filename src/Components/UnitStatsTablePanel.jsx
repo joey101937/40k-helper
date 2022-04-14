@@ -10,6 +10,7 @@ import fastAttackIcon from '../Icons/fastAttackIcon.png'
 import hqIcon from '../Icons/hqIcon.png'
 import SettingsModal from './SettingsModal';
 import SettingsRounded from '@material-ui/icons/SettingsRounded';
+import UnitWeaponsModal from './UnitWeaponsModal';
 
 
 const useStyles = makeStyles((theme) => {
@@ -29,6 +30,11 @@ const useStyles = makeStyles((theme) => {
             position: 'absolute',
             cursor: 'pointer'
         }),
+        weaponLink: () => ({
+            color: 'blue',
+            cursor: 'pointer',
+            display: 'inline-block',
+        }),
     }
 });
 
@@ -39,6 +45,8 @@ const UnitStatsTablePanel = (props) => {
     const [unitRoleBackgrounds, setUnitRoleBackgrounds] = useState(true);
 
     const [settingsModalOpen, setSettingsModalOpen] = useState(false);
+    const [selectedUnitWeapons, setSelectedUnitWeapon] = useState(null);
+
 
 
     const headers = [
@@ -172,6 +180,11 @@ const UnitStatsTablePanel = (props) => {
                     sv: statline.sv,
                     icon: statlineIndex === 0 ? getIconFromRole(unit.role) : '',
                     cellStyles: getCellStylesForUnit(unit),
+                    weapons: statlineIndex === 0 ? (
+                        <div className={classes.weaponLink} onClick={() => setSelectedUnitWeapon(unit)}>
+                            View
+                        </div>
+                    ) : ''
                 });
             })
         }
@@ -191,6 +204,11 @@ const UnitStatsTablePanel = (props) => {
             unitRoleBackgrounds={unitRoleBackgrounds}
             toggleShowBrackets={() => setShowBrackets(!showBrackets)}
             toggleShowBackgrounds={() => setUnitRoleBackgrounds(!unitRoleBackgrounds)}
+        />
+        <UnitWeaponsModal
+            open={!!selectedUnitWeapons}
+            onClose={() => setSelectedUnitWeapon(null)}
+            unit={selectedUnitWeapons}
         />
         </>
     );

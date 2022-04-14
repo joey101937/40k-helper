@@ -76,7 +76,7 @@ const SettingsModal = (props) => {
                         classes={{ root: classes.buttonRoot}}
                         onClick={onSave}
                     >
-                        Save
+                        Done
                     </Button>
                 </div>
             </DialogContent>

@@ -1,3 +1,6 @@
+import * as weapons from "./weapons";
+
+
 export const units = [
     {
         name: 'Hive Tyrant',
@@ -33,7 +36,13 @@ export const units = [
             a: '5',
             ld: '10',
             sv: '2+',
-        }]
+        }],
+        weapons: [
+            weapons.tyrantVenomCannon,
+            weapons.tyrantStranglethron,
+            weapons.tyrantBonesword,
+            weapons.tyrantScythingTalons
+        ]
     },
     {
         name: 'Tervigon',
@@ -69,7 +78,13 @@ export const units = [
             a: '5',
             ld: '10',
             sv: '2+',
-        }]
+        }],
+        weapons: [
+            weapons.tervigonStingerSalvoes,
+            weapons.tervigonCrushingClaws,
+            weapons.tervigonTalonsStrike,
+            weapons.tervigonTalonsSweep,
+        ]
     },
     {
         name: 'Genestealers',
@@ -85,7 +100,10 @@ export const units = [
             a: '4',
             ld: '8',
             sv: '5+',
-        }]
+        }],
+        weapons: [
+            weapons.genestealerClaws
+        ]
     },
     {
         name: 'Venomthrope',
@@ -101,7 +119,10 @@ export const units = [
             a: '5',
             ld: '5',
             sv: '4+',
-        }]
+        }],
+        weapons: [
+            weapons.venomthropeLashes,
+        ]
     },
     {
         name: 'Termigant',
@@ -117,7 +138,12 @@ export const units = [
             a: '1',
             ld: '5',
             sv: '5+',
-        }]
+        }],
+        weapons: [
+            weapons.termigantFleshborer,
+            weapons.termigantDevourer,
+            weapons.termigantSpineFist,
+        ]
     },
     {
         name: 'Hormagaunt',
@@ -133,7 +159,10 @@ export const units = [
             a: '3',
             ld: '5',
             sv: '5+',
-        }]
+        }],
+        weapons: [
+            weapons.hormagauntClaws
+        ]
     },
     {
         name: 'Gargoyle',
@@ -149,7 +178,10 @@ export const units = [
             a: '1',
             ld: '5',
             sv: '6+',
-        }]
+        }],
+        weapons: [
+            weapons.termigantFleshborer
+        ],
     },
     {
         name: 'Warriors',
@@ -165,7 +197,18 @@ export const units = [
             a: '3',
             ld: '9',
             sv: '4+',
-        }]
+        }],
+        weapons:[
+            weapons.warriorDeathspitter,
+            weapons.warriorDevourer,
+            weapons.warriorSpinefists,
+            weapons.warriorBarbedStrangler,
+            weapons.warriorVenomCannon,
+            weapons.warriorBonesword,
+            weapons.warriorDualBonesword,
+            weapons.warriorRendingClaw,
+            weapons.warriorScythingtalon,
+        ],
     },
     {
         name: 'Trygon',
@@ -201,7 +244,12 @@ export const units = [
             a: '12',
             ld: '7',
             sv: '3+',
-        }]
+        }],
+        weapons: [
+            weapons.trygonBioPulse,
+            weapons.trygonTalons,
+            weapons.trygonToxinSpike,
+        ]
     },
     {
         name: 'Ripper Swarm',
@@ -217,7 +265,11 @@ export const units = [
             a: '4',
             ld: '4',
             sv: '6+',
-        }]
+        }],
+        weapons: [
+            weapons.ripperClaws,
+            weapons.ripperSpineMaw,
+        ]
     },
     {
         name: 'Carnifex',
@@ -233,6 +285,18 @@ export const units = [
             a: '4',
             ld: '6',
             sv: '2+',
-        }]
+        }],
+        weapons: [
+            weapons.carnifexBioPlasma,
+            weapons.carnifexDeathspitter,
+            weapons.carnifexDevourer,
+            weapons.carnifexSpineBanks,
+            weapons.carnifexStranglethornCannon,
+            weapons.carnifexVenomCannon,
+            weapons.carnifexBoneMace,
+            weapons.carnifexCrushingClaw,
+            weapons.carnifexScythingTalon,
+            weapons.carnifexThresherScythe
+        ]
     },
 ];

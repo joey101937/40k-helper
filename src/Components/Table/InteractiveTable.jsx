@@ -6,12 +6,10 @@ const useStyles = makeStyles((theme) => {
         root: (props) => ({
             background: 'rgba(255,255,50, .9)',
             textAlign: 'left',
-            minHeight: '80px',
-            width: '1000px',
+            width: props.width || '1000px',
             display: 'inline-block',
             borderRadius: '5px',
             boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
-
         }),
         header: (props) => ({
             width: "100%",
@@ -19,7 +17,7 @@ const useStyles = makeStyles((theme) => {
         }),
         row: (props) => ({
             width: '100%',
-            whiteSpace: 'nowrap'
+            whiteSpace: 'nowrap',
         }),
     }
 });
@@ -43,10 +41,12 @@ const InteractiveTable = (props) => {
                 textAlign: header.textAlign || 'center',
                 paddingLeft: header.textAlign === 'left' ? '10px' : 'auto',
                 width: header.textAlign === 'left' ? `calc(${header.width} - 10px)` : header.width,
-                fontSize: '16pt',
+                fontSize: props.small ? '14pt' : '16pt',
                 fontWeight: 'bold',
                 background: 'rgb(90,90,90)',
                 overflow: 'visible',
+                height: '100%',
+                paddingBottom: '4px',
             }}>
                 {header.label || <>&nbsp;</>} 
             </div>);
@@ -63,11 +63,14 @@ const InteractiveTable = (props) => {
                 textAlign: header.textAlign || 'center',
                 paddingLeft: header.textAlign === 'left' ? '10px' : 'auto',
                 width: header.textAlign === 'left' ? `calc(${header.width} - 10px)` : header.width,
-                fontSize: '14pt',
+                fontSize: props.small ? '12pt' : '14pt',
                 fontWeight: 'normal',
                 paddingTop: '4px',
                 paddingBottom: '4px',
                 background: 'rgb(200,200,200)',
+                whiteSpace: 'normal',
+                clear: 'both',
+                verticalAlign: 'top',
                 ...rowItem.cellStyles,
             }}>
                 {rowItem[header.value] || <>&nbsp;</>}
@@ -87,7 +90,7 @@ const InteractiveTable = (props) => {
     const renderRows = () => {
         return values.map(item => {
             return (
-                <div className={classes.row}>
+                <div className={classes.row} style={{ ...item.cellStyles }} >
                     {renderCellsForRow(item)}
                 </div>
             );
