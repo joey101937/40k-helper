@@ -12,6 +12,8 @@ import SettingsModal from './SettingsModal';
 import SettingsRounded from '@material-ui/icons/SettingsRounded';
 import UnitWeaponsModal from './UnitWeaponsModal';
 import UnitAbilitiesModal from './UnitAbilitiesModal';
+import InfoBanner from './InfoBanner';
+import SynapticImperativesModal from './SynapticImperativesModal';
 
 
 const useStyles = makeStyles((theme) => {
@@ -46,6 +48,7 @@ const UnitStatsTablePanel = (props) => {
     const [unitRoleBackgrounds, setUnitRoleBackgrounds] = useState(true);
 
     const [settingsModalOpen, setSettingsModalOpen] = useState(false);
+    const [siModalOpen, setSiModalOpen] = useState(false);
     const [selectedUnitWeapons, setSelectedUnitWeapon] = useState(null);
     const [selectedUnitAbilities, setSelectedUnitAbility] = useState(null);
     
@@ -201,6 +204,9 @@ const UnitStatsTablePanel = (props) => {
     
     return (
         <>
+        <InfoBanner
+            onSiClick={() => setSiModalOpen(true)}
+        />
         <InteractiveTable
             headers={headers}
             values={getFormattedValues()}
@@ -222,6 +228,10 @@ const UnitStatsTablePanel = (props) => {
             open={!!selectedUnitAbilities}
             onClose={() => setSelectedUnitAbility(null)}
             unit={selectedUnitAbilities}
+        />
+        <SynapticImperativesModal 
+            open={siModalOpen}
+            onClose={() => setSiModalOpen(false)}
         />
         </>
     );

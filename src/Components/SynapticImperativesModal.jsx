@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@mui/styles';
 import { Button, Dialog, DialogContent } from '@material-ui/core';
 import InteractiveTable from './Table/InteractiveTable';
+import { goadedToSlaughter, relentlessFurocity, surgingVitality } from '../abilities';
 
 const useStyles = makeStyles((theme) => {
     return {
@@ -35,86 +36,86 @@ const useStyles = makeStyles((theme) => {
         body: () => ({
             marginLeft: '0%'
         }),
+        scrollbox: () => ({
+            maxHeight: '600px',
+            overflowy: 'auto',
+        })
     }
 });
 
 
 const headers = [
     {
-        label: '',
-        value: 'name',
-        width: '25%',
+        label: 'Unit',
+        value: 'unit',
+        width: '20%',
         textAlign: 'left',
     },
     {
-        label: 'Range',
-        value: 'range',
-        width: '7%',
-    },
-    {
-        label: 'Type',
-        value: 'type',
-        width: '20%',
-    },
-    {
-        label: 'S',
-        value: 's',
-        width: '7%',
-    },
-    {
-        label: 'AP',
-        value: 'ap',
-        width: '7%',
-    },
-    {
-        label: 'D',
-        value: 'd',
-        width: '7%',
-    },
-    {
-        label: 'Notes',
-        value: 'notes',
-        width: '27%',
+        label: 'Description',
+        value: 'desc',
+        width: '80%',
+        textAlign: 'left',
     },
 ]
 
-const UnitWeaponsModal = (props) => {
-    const {open, onClose, unit} = props;
+
+const values = [
+    {
+        unit: 'Hive Tyrant',
+        ability: relentlessFurocity
+    },
+    {
+        unit: 'Tervigon',
+        ability: surgingVitality
+    },
+    {
+        unit: 'Warriors',
+        ability: goadedToSlaughter
+    },
+    
+]
+
+const SynapticImperativesModal = (props) => {
+    const {open, onClose} = props;
     const classes = useStyles(props);
 
     const getFormattedValues = () => {
-        return unit?.weapons?.map(x => ({
-            ...x,
-            cellStyles: { background: 'rgb(200,200,200)', },
-            name: <b>{x.name}</b>
-        })) || [];
+      return values.map(x => ({
+        ...x,
+        unit: <b>{x.unit}</b>,
+        desc: x.ability.desc,
+        cellStyles: { background: 'rgb(200,200,200)' },
+      }));
     }
 
     return (
         <Dialog classes={classes} open={open} onClose={onClose} maxWidth={'lg'}>
             <DialogContent className={classes.modalContents}>
                 <div className={classes.titleBar}>
-                    Weapons
+                    Abilities
                 </div>
-                <div className={classes.body}>
-                  <InteractiveTable
-                    width={'100%'}
-                    headers={headers}
-                    values={getFormattedValues()}
-                    small
-                  />
-                </div>
-                <div className={classes.footer}>
-                    <Button
-                        classes={{ root: classes.buttonRoot}}
-                        onClick={onClose}
-                    >
-                        Close
-                    </Button>
+                <div className={classes.scrollbox}>
+                    <div className={classes.body}>
+                    <InteractiveTable
+                        width={'100%'}
+                        headers={headers}
+                        values={getFormattedValues()}
+                        small
+                    />
+                    </div>
+                    <div className={classes.footer}>
+                        <Button
+                            classes={{ root: classes.buttonRoot}}
+                            onClick={onClose}
+                        >
+                            Close
+                        </Button>
+                    </div>
                 </div>
             </DialogContent>
         </Dialog>
     );
 };
 
-export default UnitWeaponsModal; 
+export default SynapticImperativesModal; 

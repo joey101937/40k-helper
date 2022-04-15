@@ -49,6 +49,7 @@ export const units = [
             abilities.willOfTheHiveMind,
             abilities.deathThroes,
             abilities.psyker2,
+            abilities.relentlessFurocity
         ]
     },
     {
@@ -98,6 +99,7 @@ export const units = [
             abilities.wallOfflesh,
             abilities.deathThroes,
             abilities.psyker1,
+            abilities.surgingVitality
         ]
     },
     {
@@ -117,7 +119,14 @@ export const units = [
         }],
         weapons: [
             weapons.genestealerClaws
-        ]
+        ],
+        abilities: [
+            abilities.lightningReflexes,
+            abilities.vanguardPredator,
+            abilities.infiltrationSpawning,
+            abilities.insidiousInfestation,
+            abilities.insidiousinfestationAction,
+        ],
     },
     {
         name: 'Venomthrope',
@@ -136,6 +145,11 @@ export const units = [
         }],
         weapons: [
             weapons.venomthropeLashes,
+        ],
+        abilities: [
+            abilities.graspingTendrils,
+            abilities.toxicMiasma,
+            abilities.foulSpores
         ]
     },
     {
@@ -157,6 +171,9 @@ export const units = [
             weapons.termigantFleshborer,
             weapons.termigantDevourer,
             weapons.termigantSpineFist,
+        ],
+        abilities:[
+            abilities.swarmingMasses,
         ]
     },
     {
@@ -176,6 +193,10 @@ export const units = [
         }],
         weapons: [
             weapons.hormagauntClaws
+        ],
+        abilities:[
+            abilities.swarmingMasses,
+            abilities.boundingLeap
         ]
     },
     {
@@ -196,6 +217,9 @@ export const units = [
         weapons: [
             weapons.termigantFleshborer
         ],
+        abilities:[
+            abilities.swarmingMasses,
+        ]
     },
     {
         name: 'Warriors',
@@ -223,6 +247,10 @@ export const units = [
             weapons.warriorRendingClaw,
             weapons.warriorScythingtalon,
         ],
+        abilities: [
+            abilities.warriorSpawning,
+            abilities.goadedToSlaughter
+        ]
     },
     {
         name: 'Trygon',
@@ -263,6 +291,11 @@ export const units = [
             weapons.trygonBioPulse,
             weapons.trygonTalons,
             weapons.trygonToxinSpike,
+        ],
+        abilities:[
+            abilities.deathFromBelow,
+            abilities.serpentineCoils,
+            abilities.deathThroes
         ]
     },
     {
@@ -283,6 +316,11 @@ export const units = [
         weapons: [
             weapons.ripperClaws,
             weapons.ripperSpineMaw,
+        ],
+        abilities: [
+            abilities.lesserOrganism,
+            abilities.deathFromBelow,
+            abilities.burrowAndSqurim,
         ]
     },
     {
@@ -311,6 +349,12 @@ export const units = [
             weapons.carnifexCrushingClaw,
             weapons.carnifexScythingTalon,
             weapons.carnifexThresherScythe
+        ],
+        abilities: [
+            abilities.ArmouredExoskeleton,
+            abilities.blisteringAssault,
+            abilities.monsterousBrood,
+            abilities.deathThroes
         ]
     },
 ];

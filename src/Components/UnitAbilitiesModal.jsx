@@ -36,6 +36,10 @@ const useStyles = makeStyles((theme) => {
         body: () => ({
             marginLeft: '0%'
         }),
+        scrollbox: () => ({
+            maxHeight: '600px',
+            overflowy: 'auto',
+        })
     }
 });
 
@@ -73,21 +77,23 @@ const UnitAbilitiesModal = (props) => {
                 <div className={classes.titleBar}>
                     Abilities
                 </div>
-                <div className={classes.body}>
-                  <InteractiveTable
-                    width={'100%'}
-                    headers={headers}
-                    values={getFormattedValues()}
-                    small
-                  />
-                </div>
-                <div className={classes.footer}>
-                    <Button
-                        classes={{ root: classes.buttonRoot}}
-                        onClick={onClose}
-                    >
-                        Close
-                    </Button>
+                <div className={classes.scrollbox}>
+                    <div className={classes.body}>
+                    <InteractiveTable
+                        width={'100%'}
+                        headers={headers}
+                        values={getFormattedValues()}
+                        small
+                    />
+                    </div>
+                    <div className={classes.footer}>
+                        <Button
+                            classes={{ root: classes.buttonRoot}}
+                            onClick={onClose}
+                        >
+                            Close
+                        </Button>
+                    </div>
                 </div>
             </DialogContent>
         </Dialog>
