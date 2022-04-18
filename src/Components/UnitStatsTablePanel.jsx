@@ -14,6 +14,9 @@ import UnitWeaponsModal from './UnitWeaponsModal';
 import UnitAbilitiesModal from './UnitAbilitiesModal';
 import InfoBanner from './InfoBanner';
 import SynapticImperativesModal from './SynapticImperativesModal';
+import WarlordTraitsModal from './WarlordTraitsModal';
+import PsychicPowerModal from './PsychicPowersModal';
+import AdaptivePhysoilogyModal from './AdaptivePhysiologyModel';
 
 
 const useStyles = makeStyles((theme) => {
@@ -31,7 +34,9 @@ const useStyles = makeStyles((theme) => {
         settingButton: () => ({
             color: 'black',
             position: 'absolute',
-            cursor: 'pointer'
+            cursor: 'pointer',
+            paddingTop: '3px',
+            paddingLeft: '3px',
         }),
         weaponLink: () => ({
             color: 'blue',
@@ -49,6 +54,9 @@ const UnitStatsTablePanel = (props) => {
 
     const [settingsModalOpen, setSettingsModalOpen] = useState(false);
     const [siModalOpen, setSiModalOpen] = useState(false);
+    const [wtModalOpen, setWtModalOpen] = useState(false);
+    const [ppModalOpen, setPpModalOpen] = useState(false);
+    const [apModalOpen, setApModalOpen] = useState(false);
     const [selectedUnitWeapons, setSelectedUnitWeapon] = useState(null);
     const [selectedUnitAbilities, setSelectedUnitAbility] = useState(null);
     
@@ -206,6 +214,9 @@ const UnitStatsTablePanel = (props) => {
         <>
         <InfoBanner
             onSiClick={() => setSiModalOpen(true)}
+            onWiClick={() => setWtModalOpen(true)}
+            onPpClick={() => setPpModalOpen(true)}
+            onApClick={() => setApModalOpen(true)}
         />
         <InteractiveTable
             headers={headers}
@@ -232,6 +243,18 @@ const UnitStatsTablePanel = (props) => {
         <SynapticImperativesModal 
             open={siModalOpen}
             onClose={() => setSiModalOpen(false)}
+        />
+        <WarlordTraitsModal
+            open={wtModalOpen}
+            onClose={() => setWtModalOpen(false)}
+        />
+        <PsychicPowerModal
+            open={ppModalOpen}
+            onClose={() => setPpModalOpen(false)}
+        />
+        <AdaptivePhysoilogyModal
+            open={apModalOpen}
+            onClose={() => setApModalOpen(false)}
         />
         </>
     );

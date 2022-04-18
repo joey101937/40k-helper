@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => {
 const InfoBanner = (props) => {
     const classes = useStyles(props);
     const {
-        onSiClick
+        onSiClick, onWiClick, onPpClick, onApClick
     } = props;
     return (
         <div className={classes.root}>
@@ -46,11 +46,14 @@ const InfoBanner = (props) => {
             <div className={classes.item} onClick={onSiClick}>
              Synaptic Imperatives
             </div>
-            <div className={classes.item}>
+            <div className={classes.item} onClick={onPpClick}>
              Psychic Powers
             </div>
-            <div className={classes.item}>
+            <div className={classes.item} onClick={onApClick}>
              Adaptive Physiologies
+            </div>
+            <div className={classes.item} onClick={onWiClick}>
+             Warlord Traits
             </div>
         </div>
     );

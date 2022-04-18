@@ -2,7 +2,6 @@ import React from 'react';
 import { makeStyles } from '@mui/styles';
 import { Button, Dialog, DialogContent } from '@material-ui/core';
 import InteractiveTable from './Table/InteractiveTable';
-import { termigantFleshborer } from '../weapons';
 
 const useStyles = makeStyles((theme) => {
     return {
@@ -28,6 +27,7 @@ const useStyles = makeStyles((theme) => {
         footer: () => ({
             textAlign: 'center',
             marginTop: '20px',
+            paddingBottom: '5px'
         }),
         buttonRoot: () => ({
             backgroundColor: 'rgb(150, 0, 0) !important',
