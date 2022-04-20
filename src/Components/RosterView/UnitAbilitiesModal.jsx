@@ -38,22 +38,22 @@ const useStyles = makeStyles((theme) => {
         addPsychicButton: () => ({
             backgroundColor: 'rgb(120, 0, 120) !important',
             color: 'white !important',
-            marginRight: '10px',
+            marginRight: '10px !important',
         }),
         addWargearButton: () => ({
-            backgroundColor: 'rgb(50, 100, 0) !important',
+            backgroundColor: 'rgb(140, 100, 0) !important',
             color: 'white !important',
-            marginRight: '10px',
+            marginRight: '10px !important',
         }),
         addWarlordTraitButton: () => ({
             backgroundColor: 'rgb(102, 102, 84) !important',
             color: 'white !important',
-            marginRight: '10px',
+            marginRight: '10px !important',
         }),
         addAdaptivePhysiologyButton: () => ({
             backgroundColor: 'rgb(0, 90, 0) !important',
             color: 'white !important',
-            marginRight: '10px',
+            marginRight: '10px !important',
         }),
         body: () => ({
             marginLeft: '0%'
@@ -67,23 +67,23 @@ const useStyles = makeStyles((theme) => {
         }),
         chipRoot: () => ({
             background: mediumGray + " !important",
-            fontWeight: 'bold',
-            marginLeft: '10px',
-            color: 'white',
+            fontWeight: 'bold !important',
+            marginLeft: '10px !important',
+            color: 'white !important',
         }),
         interactiveChipRoot: () => ({
-            background: red1 + "!important",
-            cursor: 'pointer',
-            fontWeight: 'bold',
-            marginLeft: '10px',
-            color: 'white',
+            background: red1 + " !important",
+            cursor: 'pointer !important',
+            fontWeight: 'bold !imporant',
+            marginLeft: '10px !important',
+            color: 'white !important',
         }),
         interactiveChipRootPurple: () => ({
             background: "rgb(120, 0, 120) !important",
-            cursor: 'pointer',
-            fontWeight: 'bold',
-            marginLeft: '10px',
-            color: 'white',
+            cursor: 'pointer !important',
+            fontWeight: 'bold !imporant',
+            marginLeft: '10px !important',
+            color: 'white !important',
         }),
         checkboxColor: () => ({
             color: 'rgb(150, 0, 0)  !important',

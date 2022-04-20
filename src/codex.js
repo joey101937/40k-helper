@@ -1,5 +1,6 @@
 import * as abilities from "./abilities";
 import { burrower, character, core, endlessMultitude, feederTendrils, fly, hiveTentril, hiveTyrantKeyword, hornedChitin, infantry, monster, psycher1Keyword, psycher2Keyword, sporeCaster, swarm, synapse, toxicLashes, tyranids } from "./Keywords";
+import { acidMawWargear, adrenalGlands, biostaticRattle, chitinThrons, enhancedSenses, extendedCarapace, fleshHooks, infestationNode, lashWhip, prehensilePincerTail, sporeCysts, toxinSacs, tusks } from "./Wargear";
 import * as weapons from "./weapons";
 
 
@@ -59,9 +60,14 @@ export const units = [
             abilities.psychicBarrier,
             abilities.willOfTheHiveMind,
             abilities.deathThroes,
-            abilities.relentlessFurocity,
             abilities.shadowInTheWarp,
-        ]
+            abilities.relentlessFurocity,
+        ],
+        wargear: [
+            adrenalGlands,
+            toxinSacs,
+            lashWhip,
+        ],
     },
     {
         name: 'Tervigon',
@@ -117,9 +123,13 @@ export const units = [
             abilities.broodProgenitor,
             abilities.wallOfflesh,
             abilities.deathThroes,
-            abilities.surgingVitality,
             abilities.shadowInTheWarp,
-        ]
+            abilities.surgingVitality,
+        ],
+        wargear: [
+            adrenalGlands,
+            toxinSacs,
+        ],
     },
     {
         name: 'Genestealers',
@@ -152,6 +162,13 @@ export const units = [
             abilities.infiltrationSpawning,
             abilities.insidiousInfestation,
             abilities.insidiousinfestationAction,
+        ],
+        wargear: [
+            toxinSacs,
+            fleshHooks,
+            infestationNode,
+            acidMawWargear,
+            extendedCarapace
         ],
     },
     {
@@ -217,7 +234,11 @@ export const units = [
         ],
         abilities:[
             abilities.swarmingMasses,
-        ]
+        ],
+        wargear: [
+            adrenalGlands,
+            toxinSacs,
+        ],
     },
     {
         name: 'Hormagaunt',
@@ -247,7 +268,11 @@ export const units = [
         abilities:[
             abilities.swarmingMasses,
             abilities.boundingLeap
-        ]
+        ],
+        wargear: [
+            adrenalGlands,
+            toxinSacs,
+        ],
     },
     {
         name: 'Gargoyle',
@@ -277,7 +302,11 @@ export const units = [
         ],
         abilities:[
             abilities.swarmingMasses,
-        ]
+        ],
+        wargear: [
+            adrenalGlands,
+            toxinSacs,
+        ],
     },
     {
         name: 'Warriors',
@@ -316,7 +345,13 @@ export const units = [
             abilities.warriorSpawning,
             abilities.shadowInTheWarp,
             abilities.goadedToSlaughter,
-        ]
+        ],
+        wargear: [
+            adrenalGlands,
+            toxinSacs,
+            fleshHooks,
+            lashWhip,
+        ],
     },
     {
         name: 'Trygon',
@@ -368,7 +403,13 @@ export const units = [
             abilities.deathFromBelow,
             abilities.serpentineCoils,
             abilities.deathThroes
-        ]
+        ],
+        wargear: [
+            adrenalGlands,
+            toxinSacs,
+            prehensilePincerTail,
+            biostaticRattle,
+        ],
     },
     {
         name: 'Ripper Swarm',
@@ -438,6 +479,15 @@ export const units = [
             abilities.blisteringAssault,
             abilities.monsterousBrood,
             abilities.deathThroes
-        ]
+        ],
+        wargear: [
+            adrenalGlands,
+            toxinSacs,
+            acidMawWargear,
+            chitinThrons,
+            enhancedSenses,
+            sporeCysts,
+            tusks,
+        ],
     },
 ];
