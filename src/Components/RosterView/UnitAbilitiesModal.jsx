@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@mui/styles';
 import { Button, Dialog, DialogContent } from '@material-ui/core';
 import InteractiveTable from '../Table/InteractiveTable';
+import { lightGray } from '../../GLOBALS';
 
 const useStyles = makeStyles((theme) => {
     return {
@@ -66,7 +67,7 @@ const UnitAbilitiesModal = (props) => {
     const getFormattedValues = () => {
         return unit?.abilities?.map(x => ({
             ...x,
-            cellStyles: { background: 'rgb(200,200,200)' },
+            cellStyles: { background: lightGray },
             name: <b>{x.name}</b>
         })) || [];
     }

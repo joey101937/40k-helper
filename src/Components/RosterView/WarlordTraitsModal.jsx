@@ -3,6 +3,7 @@ import { makeStyles } from '@mui/styles';
 import { Button, Dialog, DialogContent } from '@material-ui/core';
 import InteractiveTable from '../Table/InteractiveTable';
 import * as traits from '../../warlordTraits';
+import { lightGray } from '../../GLOBALS';
 
 const useStyles = makeStyles((theme) => {
     return {
@@ -77,7 +78,7 @@ const WarlordTraitsModal = (props) => {
       return values.map(x => ({
         ...x,
         name: <b>{x.name}</b>,
-        cellStyles: { background: 'rgb(200,200,200)' },
+        cellStyles: { background: lightGray },
       }));
     }
 

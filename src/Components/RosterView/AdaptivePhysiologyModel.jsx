@@ -4,6 +4,7 @@ import { Button, Dialog, DialogContent } from '@material-ui/core';
 import InteractiveTable from '../Table/InteractiveTable';
 import { dermicSymbiosis, enragedReserves, hardenedBiology, precognitiveSensoria,
         predatoryInstincts, synapticEnhancement, voraciousAmmunition, whipcoilReflexes } from '../../adaptivePhysiologies';
+import { lightGray } from '../../GLOBALS';
 
 const useStyles = makeStyles((theme) => {
     return {
@@ -80,7 +81,7 @@ const AdaptivePhysoilogyModal = (props) => {
       return values.map(x => ({
         ...x,
         name: <b>{x.name}</b>,
-        cellStyles: { background: 'rgb(200,200,200)', verticalAlign: 'middle', paddingBottom: '5px' },
+        cellStyles: { background: lightGray, verticalAlign: 'middle', paddingBottom: '5px' },
       }));
     }
 

@@ -3,6 +3,7 @@ import { makeStyles } from '@mui/styles';
 import { Button, Dialog, DialogContent } from '@material-ui/core';
 import InteractiveTable from '../Table/InteractiveTable';
 import { goadedToSlaughter, guideMind, predatoryGuile, psychicAugmentation, psychicOversight, relentlessFurocity, surgingVitality, swiftOnslaught, thrashingDemise, warpShielding } from '../../abilities';
+import { lightGray } from '../../GLOBALS';
 
 const useStyles = makeStyles((theme) => {
     return {
@@ -117,7 +118,7 @@ const SynapticImperativesModal = (props) => {
         ...x,
         unit: <b>{x.unit}</b>,
         desc: x.ability.desc,
-        cellStyles: { background: 'rgb(200,200,200)' },
+        cellStyles: { background: lightGray },
       }));
     }
 
