@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@mui/styles';
 import { Button, Dialog, DialogContent } from '@material-ui/core';
-import InteractiveTable from './Table/InteractiveTable';
+import InteractiveTable from '../Table/InteractiveTable';
 
 const useStyles = makeStyles((theme) => {
     return {
@@ -27,6 +27,7 @@ const useStyles = makeStyles((theme) => {
         footer: () => ({
             textAlign: 'center',
             marginTop: '20px',
+            paddingBottom: '5px'
         }),
         buttonRoot: () => ({
             backgroundColor: 'rgb(150, 0, 0) !important',
@@ -35,57 +36,37 @@ const useStyles = makeStyles((theme) => {
         body: () => ({
             marginLeft: '0%'
         }),
+        scrollbox: () => ({
+            maxHeight: '600px',
+            overflowy: 'auto',
+        })
     }
 });
 
 
 const headers = [
     {
-        label: '',
+        label: 'Ability',
         value: 'name',
-        width: '25%',
+        width: '20%',
         textAlign: 'left',
     },
     {
-        label: 'Range',
-        value: 'range',
-        width: '7%',
-    },
-    {
-        label: 'Type',
-        value: 'type',
-        width: '20%',
-    },
-    {
-        label: 'S',
-        value: 's',
-        width: '7%',
-    },
-    {
-        label: 'AP',
-        value: 'ap',
-        width: '7%',
-    },
-    {
-        label: 'D',
-        value: 'd',
-        width: '7%',
-    },
-    {
-        label: 'Notes',
-        value: 'notes',
-        width: '27%',
+        label: 'Description',
+        value: 'desc',
+        width: '80%',
+        textAlign: 'left',
     },
 ]
 
-const UnitWeaponsModal = (props) => {
+const UnitAbilitiesModal = (props) => {
     const {open, onClose, unit} = props;
     const classes = useStyles(props);
 
     const getFormattedValues = () => {
-        return unit?.weapons?.map(x => ({
+        return unit?.abilities?.map(x => ({
             ...x,
-            cellStyles: { background: 'rgb(200,200,200)', },
+            cellStyles: { background: 'rgb(200,200,200)' },
             name: <b>{x.name}</b>
         })) || [];
     }
@@ -94,27 +75,29 @@ const UnitWeaponsModal = (props) => {
         <Dialog classes={classes} open={open} onClose={onClose} maxWidth={'lg'}>
             <DialogContent className={classes.modalContents}>
                 <div className={classes.titleBar}>
-                    Weapons
+                    Abilities
                 </div>
-                <div className={classes.body}>
-                  <InteractiveTable
-                    width={'100%'}
-                    headers={headers}
-                    values={getFormattedValues()}
-                    small
-                  />
-                </div>
-                <div className={classes.footer}>
-                    <Button
-                        classes={{ root: classes.buttonRoot}}
-                        onClick={onClose}
-                    >
-                        Close
-                    </Button>
+                <div className={classes.scrollbox}>
+                    <div className={classes.body}>
+                    <InteractiveTable
+                        width={'100%'}
+                        headers={headers}
+                        values={getFormattedValues()}
+                        small
+                    />
+                    </div>
+                    <div className={classes.footer}>
+                        <Button
+                            classes={{ root: classes.buttonRoot}}
+                            onClick={onClose}
+                        >
+                            Close
+                        </Button>
+                    </div>
                 </div>
             </DialogContent>
         </Dialog>
     );
 };
 
-export default UnitWeaponsModal; 
+export default UnitAbilitiesModal; 

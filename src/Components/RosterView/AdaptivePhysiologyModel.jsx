@@ -1,9 +1,9 @@
 import React from 'react';
 import { makeStyles } from '@mui/styles';
 import { Button, Dialog, DialogContent } from '@material-ui/core';
-import InteractiveTable from './Table/InteractiveTable';
+import InteractiveTable from '../Table/InteractiveTable';
 import { dermicSymbiosis, enragedReserves, hardenedBiology, precognitiveSensoria,
-        predatoryInstincts, synapticEnhancement, voraciousAmmunition, whipcoilReflexes } from '../adaptivePhysiologies';
+        predatoryInstincts, synapticEnhancement, voraciousAmmunition, whipcoilReflexes } from '../../adaptivePhysiologies';
 
 const useStyles = makeStyles((theme) => {
     return {

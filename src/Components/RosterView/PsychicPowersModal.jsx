@@ -1,8 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@mui/styles';
 import { Button, Dialog, DialogContent } from '@material-ui/core';
-import InteractiveTable from './Table/InteractiveTable';
-import * as powers from '../psychicPowers';
+import InteractiveTable from '../Table/InteractiveTable';
+import * as powers from '../../psychicPowers';
 
 const useStyles = makeStyles((theme) => {
     return {

@@ -3,6 +3,7 @@ import { makeStyles } from '@mui/styles';
 import { Route, Routes } from 'react-router-dom';
 import ContentPanel from './ContentPanel';
 import UnitStatsTablePanel from './UnitStatsTablePanel';
+import LandingMenu from './LandingMenu';
 const useStyles = makeStyles((theme) => {
     return {
         root: (props) => ({
@@ -22,8 +23,8 @@ const BaseBackground = (props) => {
     return (
         <div className={classes.root}>
             <Routes>
-                <Route path="/" element={<UnitStatsTablePanel />} />
-                <Route path="testPage" element={<div>expenses</div>} />
+                <Route path="/" element={<LandingMenu />} />
+                <Route path="fullRoster" element={<UnitStatsTablePanel />} />
                 <Route path="invoices" element={<div><ContentPanel /></div>} />
             </Routes>
         </div>

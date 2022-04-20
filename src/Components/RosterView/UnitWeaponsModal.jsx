@@ -1,8 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@mui/styles';
 import { Button, Dialog, DialogContent } from '@material-ui/core';
-import InteractiveTable from './Table/InteractiveTable';
-import * as traits from '../warlordTraits';
+import InteractiveTable from '../Table/InteractiveTable';
 
 const useStyles = makeStyles((theme) => {
     return {
@@ -36,78 +35,86 @@ const useStyles = makeStyles((theme) => {
         body: () => ({
             marginLeft: '0%'
         }),
-        scrollbox: () => ({
-            maxHeight: '600px',
-            overflowy: 'auto',
-        })
     }
 });
 
 
 const headers = [
     {
-        label: 'Trait',
+        label: '',
         value: 'name',
-        width: '20%',
+        width: '25%',
         textAlign: 'left',
     },
     {
-        label: 'Description',
-        value: 'desc',
-        width: '80%',
-        textAlign: 'left',
+        label: 'Range',
+        value: 'range',
+        width: '7%',
+    },
+    {
+        label: 'Type',
+        value: 'type',
+        width: '20%',
+    },
+    {
+        label: 'S',
+        value: 's',
+        width: '7%',
+    },
+    {
+        label: 'AP',
+        value: 'ap',
+        width: '7%',
+    },
+    {
+        label: 'D',
+        value: 'd',
+        width: '7%',
+    },
+    {
+        label: 'Notes',
+        value: 'notes',
+        width: '27%',
     },
 ]
 
-
-const values = [
-    traits.alienCunning,
-    traits.heightenedSenses,
-    traits.synapticLynchpin,
-    traits.directGuidence,
-    traits.synapticTendrils,
-    traits.adaptiveBiology,
-]
-
-const WarlordTraitsModal = (props) => {
-    const {open, onClose} = props;
+const UnitWeaponsModal = (props) => {
+    const {open, onClose, unit} = props;
     const classes = useStyles(props);
 
     const getFormattedValues = () => {
-      return values.map(x => ({
-        ...x,
-        name: <b>{x.name}</b>,
-        cellStyles: { background: 'rgb(200,200,200)' },
-      }));
+        return unit?.weapons?.map(x => ({
+            ...x,
+            cellStyles: { background: 'rgb(200,200,200)', },
+            name: <b>{x.name}</b>
+        })) || [];
     }
 
     return (
         <Dialog classes={classes} open={open} onClose={onClose} maxWidth={'lg'}>
             <DialogContent className={classes.modalContents}>
                 <div className={classes.titleBar}>
-                    Warlord Traits
+                    Weapons
                 </div>
-                <div className={classes.scrollbox}>
-                    <div className={classes.body}>
-                    <InteractiveTable
-                        width={'100%'}
-                        headers={headers}
-                        values={getFormattedValues()}
-                        small
-                    />
-                    </div>
-                    <div className={classes.footer}>
-                        <Button
-                            classes={{ root: classes.buttonRoot}}
-                            onClick={onClose}
-                        >
-                            Close
-                        </Button>
-                    </div>
+                <div className={classes.body}>
+                  <InteractiveTable
+                    width={'100%'}
+                    headers={headers}
+                    values={getFormattedValues()}
+                    small
+                  />
+                </div>
+                <div className={classes.footer}>
+                    <Button
+                        classes={{ root: classes.buttonRoot}}
+                        onClick={onClose}
+                    >
+                        Close
+                    </Button>
                 </div>
             </DialogContent>
         </Dialog>
     );
 };
 
-export default WarlordTraitsModal; 
+export default UnitWeaponsModal; 

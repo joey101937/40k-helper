@@ -8,15 +8,15 @@ import eliteIcon from '../Icons/eliteIcon.png'
 import heavySupportIcon from '../Icons/heavySupportIcon.png'
 import fastAttackIcon from '../Icons/fastAttackIcon.png'
 import hqIcon from '../Icons/hqIcon.png'
-import SettingsModal from './SettingsModal';
+import SettingsModal from './RosterView/SettingsModal';
 import SettingsRounded from '@material-ui/icons/SettingsRounded';
-import UnitWeaponsModal from './UnitWeaponsModal';
-import UnitAbilitiesModal from './UnitAbilitiesModal';
-import InfoBanner from './InfoBanner';
-import SynapticImperativesModal from './SynapticImperativesModal';
-import WarlordTraitsModal from './WarlordTraitsModal';
-import PsychicPowerModal from './PsychicPowersModal';
-import AdaptivePhysoilogyModal from './AdaptivePhysiologyModel';
+import UnitWeaponsModal from './RosterView/UnitWeaponsModal';
+import UnitAbilitiesModal from './RosterView/UnitAbilitiesModal';
+import InfoBanner from './RosterView/InfoBanner';
+import SynapticImperativesModal from './RosterView/SynapticImperativesModal';
+import WarlordTraitsModal from './RosterView/WarlordTraitsModal';
+import PsychicPowerModal from './RosterView/PsychicPowersModal';
+import AdaptivePhysoilogyModal from './RosterView/AdaptivePhysiologyModel';
 
 
 const useStyles = makeStyles((theme) => {
@@ -48,6 +48,8 @@ const useStyles = makeStyles((theme) => {
 
 const UnitStatsTablePanel = (props) => {
     const classes = useStyles(props);
+
+    const { rosterUnits = units } = props;
 
     const [showBrackets, setShowBrackets] = useState(true);
     const [unitRoleBackgrounds, setUnitRoleBackgrounds] = useState(true);
@@ -177,8 +179,8 @@ const UnitStatsTablePanel = (props) => {
 
     const getFormattedValues = () => {
         const out = [];
-        for(let i = 0; i < units.length; i++) {
-            const unit = units[i];
+        for(let i = 0; i < rosterUnits.length; i++) {
+            const unit = rosterUnits[i];
             unit.stats?.forEach((statline, statlineIndex) => {
                 if(!showBrackets && statlineIndex > 0) return;
                 out.push({
