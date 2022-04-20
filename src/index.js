@@ -9,7 +9,6 @@ import BaseBackground from './Components/BaseBackground';
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <TopBanner />
       <BaseBackground />
     </BrowserRouter>
   </React.StrictMode>,

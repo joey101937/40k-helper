@@ -17,6 +17,7 @@ import SynapticImperativesModal from './RosterView/SynapticImperativesModal';
 import WarlordTraitsModal from './RosterView/WarlordTraitsModal';
 import PsychicPowerModal from './RosterView/PsychicPowersModal';
 import AdaptivePhysoilogyModal from './RosterView/AdaptivePhysiologyModel';
+import { eliteColor, fastAttackColor, heavySupportColor, hqColor, troopColor } from '../GLOBALS';
 
 
 const useStyles = makeStyles((theme) => {
@@ -163,15 +164,15 @@ const UnitStatsTablePanel = (props) => {
         if(!unitRoleBackgrounds) return {};
         switch(unit.role) {
             case 'troops':
-                return { background: 'rgb(250,150,150)' };
+                return { background: troopColor };
             case 'fastAttack':
-                return { background: '#FFFF99' };
+                return { background: fastAttackColor };
             case 'elite':
-                    return { background: '#bbbbbb' };
+                    return { background: eliteColor };
             case 'heavySupport':
-                return { background: '#a05B20' };
+                return { background: heavySupportColor };
             case 'hq':
-                return { background: '#d4af37' };
+                return { background: hqColor };
             default: 
                 return {};
         }
