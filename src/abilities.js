@@ -1,3 +1,8 @@
+export const shadowInTheWarp = {
+    name: 'Shadow In The Warp',
+    desc: 'Aura: For each enemy psyker within 18" of this unit: Subtract 1 from that unit\'s psychic tests, and each time that enemy unit suffers Perils of the Warp, it suffers 1 additional mortal wound.'
+}
+
 export const psychicBarrier = {
     name: 'Psychic Barrier',
     desc: 'This model has a 4+ invulnerable save'

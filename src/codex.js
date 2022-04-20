@@ -1,4 +1,5 @@
 import * as abilities from "./abilities";
+import { burrower, character, core, endlessMultitude, feederTendrils, fly, hiveTentril, hiveTyrantKeyword, hornedChitin, infantry, monster, psycher1Keyword, psycher2Keyword, sporeCaster, swarm, synapse, toxicLashes, tyranids } from "./Keywords";
 import * as weapons from "./weapons";
 
 
@@ -38,6 +39,16 @@ export const units = [
             ld: '10',
             sv: '2+',
         }],
+        keywords: [
+            monster,
+            character,
+            synapse,
+            psycher2Keyword,
+            hornedChitin,
+            hiveTyrantKeyword,
+            hiveTentril,
+            tyranids,
+        ],
         weapons: [
             weapons.tyrantVenomCannon,
             weapons.tyrantStranglethron,
@@ -48,8 +59,8 @@ export const units = [
             abilities.psychicBarrier,
             abilities.willOfTheHiveMind,
             abilities.deathThroes,
-            abilities.psyker2,
-            abilities.relentlessFurocity
+            abilities.relentlessFurocity,
+            abilities.shadowInTheWarp,
         ]
     },
     {
@@ -87,6 +98,14 @@ export const units = [
             ld: '10',
             sv: '2+',
         }],
+        keywords: [
+            monster,
+            character,
+            synapse,
+            psycher1Keyword,
+            hiveTentril,
+            tyranids,
+        ],
         weapons: [
             weapons.tervigonStingerSalvoes,
             weapons.tervigonCrushingClaws,
@@ -98,8 +117,8 @@ export const units = [
             abilities.broodProgenitor,
             abilities.wallOfflesh,
             abilities.deathThroes,
-            abilities.psyker1,
-            abilities.surgingVitality
+            abilities.surgingVitality,
+            abilities.shadowInTheWarp,
         ]
     },
     {
@@ -117,6 +136,13 @@ export const units = [
             ld: '8',
             sv: '5+',
         }],
+        keywords: [
+            infantry,
+            core,
+            feederTendrils,
+            hiveTentril,
+            tyranids,
+        ],
         weapons: [
             weapons.genestealerClaws
         ],
@@ -143,6 +169,16 @@ export const units = [
             ld: '5',
             sv: '4+',
         }],
+        keywords: [
+            infantry,
+            core,
+            fly,
+            sporeCaster,
+            toxicLashes,
+            feederTendrils,
+            hiveTentril,
+            tyranids,
+        ],
         weapons: [
             weapons.venomthropeLashes,
         ],
@@ -167,6 +203,13 @@ export const units = [
             ld: '5',
             sv: '5+',
         }],
+        keywords: [
+            infantry,
+            endlessMultitude,
+            core,
+            hiveTentril,
+            tyranids,
+        ],
         weapons: [
             weapons.termigantFleshborer,
             weapons.termigantDevourer,
@@ -191,6 +234,13 @@ export const units = [
             ld: '5',
             sv: '5+',
         }],
+        keywords: [
+            infantry,
+            endlessMultitude,
+            core,
+            hiveTentril,
+            tyranids,
+        ],
         weapons: [
             weapons.hormagauntClaws
         ],
@@ -214,6 +264,14 @@ export const units = [
             ld: '5',
             sv: '6+',
         }],
+        keywords: [
+            infantry,
+            fly,
+            endlessMultitude,
+            core,
+            hiveTentril,
+            tyranids,
+        ],
         weapons: [
             weapons.termigantFleshborer
         ],
@@ -236,6 +294,13 @@ export const units = [
             ld: '9',
             sv: '4+',
         }],
+        keywords: [
+            synapse,
+            infantry,
+            core,
+            hiveTentril,
+            tyranids,
+        ],
         weapons:[
             weapons.warriorDeathspitter,
             weapons.warriorDevourer,
@@ -249,7 +314,8 @@ export const units = [
         ],
         abilities: [
             abilities.warriorSpawning,
-            abilities.goadedToSlaughter
+            abilities.shadowInTheWarp,
+            abilities.goadedToSlaughter,
         ]
     },
     {
@@ -287,6 +353,12 @@ export const units = [
             ld: '7',
             sv: '3+',
         }],
+        keywords: [
+            monster,
+            burrower,
+            hiveTentril,
+            tyranids,
+        ],
         weapons: [
             weapons.trygonBioPulse,
             weapons.trygonTalons,
@@ -313,6 +385,11 @@ export const units = [
             ld: '4',
             sv: '6+',
         }],
+        keywords: [
+            swarm,
+            hiveTentril,
+            tyranids,
+        ],
         weapons: [
             weapons.ripperClaws,
             weapons.ripperSpineMaw,
@@ -338,6 +415,12 @@ export const units = [
             ld: '6',
             sv: '2+',
         }],
+        keywords: [
+            monster,
+            core,
+            hiveTentril,
+            tyranids,
+        ],
         weapons: [
             weapons.carnifexBioPlasma,
             weapons.carnifexDeathspitter,

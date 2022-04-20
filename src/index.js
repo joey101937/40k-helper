@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-import TopBanner from './Components/TopBanner';
 import BaseBackground from './Components/BaseBackground';
 
 ReactDOM.render(

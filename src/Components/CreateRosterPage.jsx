@@ -11,7 +11,7 @@ import UnitAbilitiesModal from './RosterView/UnitAbilitiesModal';
 const useStyles = makeStyles((theme) => {
     return {
         root: (props) => ({
-            background: 'rgba(220,220,220, .9)',
+            background: lightGray,
             textAlign: 'center',
             minHeight: '80px',
             width: '1000px',
@@ -103,10 +103,12 @@ const CreateRosterPage = (props) => {
         const foundUnit = newRoster.find(x => x.name === updatedUnit.name);
         foundUnit.weapons = updatedUnit.weapons;
         foundUnit.abilities = updatedUnit.abilities;
-        console.log(updatedUnit, weaponUnit);
         setCurrentRoster(newRoster);
         if (weaponUnit?.name === updatedUnit.name) {
             setWeaponUnit(updatedUnit);
+        }
+        if (abilityUnit?.name === updatedUnit.name) {
+            setAbilityUnit(updatedUnit);
         }
     }
 
@@ -151,7 +153,7 @@ const CreateRosterPage = (props) => {
                 Create Roster
             </div>
             <div className={classes.subTitle}>
-                Select the units you want to be included using the table below. Weapons and abilities may be added or remved with the corresponding buttons. <b> Psychic Powers and Warlord Traits are included in the abilities section.</b>
+                Select the units you want to be included using the table below. Weapons and abilities may be added or removed with the corresponding buttons. <b> Psychic Powers and Warlord Traits are included in the abilities section.</b>
             </div>
             <InteractiveTable
                 values={getFormattedValues()}
@@ -171,6 +173,7 @@ const CreateRosterPage = (props) => {
             unit={abilityUnit}
             onClose={() => setAbilityUnit(null)}
             editMode
+            onUnitUpdate={updateUnit}
         />
         </>
     );
