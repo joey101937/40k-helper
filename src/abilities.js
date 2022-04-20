@@ -85,7 +85,7 @@ export const swarmingMasses = {
 
 export const boundingLeap = {
     name: 'Bounding Leap',
-    desc: 'Each time a model in this unit makes a pile-in move, it can move up to an additional 3" (to a maximum of 9")'
+    desc: 'Each time a model in this unit makes a pile-in move, it can move up to an additional 3" to a maximum of 9"'
 }
 
 export const deathFromBelow = {

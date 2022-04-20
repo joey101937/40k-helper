@@ -161,7 +161,6 @@ const UnitStatsTablePanel = (props) => {
     }
 
     const getCellStylesForUnit = (unit) => {
-        if(!unitRoleBackgrounds) return {};
         switch(unit.role) {
             case 'troops':
                 return { background: troopColor };
@@ -196,7 +195,7 @@ const UnitStatsTablePanel = (props) => {
                     ld: statline.ld,
                     sv: statline.sv,
                     icon: statlineIndex === 0 ? getIconFromRole(unit.role) : '',
-                    cellStyles: getCellStylesForUnit(unit),
+                    cellStyles: unitRoleBackgrounds ? getCellStylesForUnit(unit) : '',
                     weapons: statlineIndex === 0 ? (
                         <div className={classes.weaponLink} onClick={() => setSelectedUnitWeapon(unit)}>
                             View

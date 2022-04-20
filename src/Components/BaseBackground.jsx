@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import ContentPanel from './ContentPanel';
 import UnitStatsTablePanel from './UnitStatsTablePanel';
 import TopBanner from './TopBanner';
+import CreateRosterPage from './CreateRosterPage';
 
 const useStyles = makeStyles((theme) => {
     return {
@@ -28,7 +29,7 @@ const BaseBackground = (props) => {
             <Routes>
                 <Route path="/" element={<UnitStatsTablePanel />} />
                 <Route path="fullRoster" element={<UnitStatsTablePanel />} />
-                <Route path="invoices" element={<div><ContentPanel /></div>} />
+                <Route path="createRoster" element={<div><CreateRosterPage /></div>} />
             </Routes>
         </div>
         </>

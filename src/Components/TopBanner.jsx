@@ -25,9 +25,9 @@ const useStyles = makeStyles((theme) => {
             marginLeft: '20px',
             marginTop: '10px',
             fontSize: '14pt',
-           // background: 'rgb(40,80,40)',
             borderRadius: '5px',
             padding: '10px',
+            color: 'white',
             cursor: 'pointer',
             "&:hover": {
                 background: mediumGray
@@ -43,9 +43,11 @@ const TopBanner = (props) => {
            <Link className={classes.titleText} to="/">
                 <img alt={'logo'} src={image} />
             </Link>
-            <div className={classes.item}>
-                Create Roster
-            </div>
+            <Link to={'/createRoster'}>
+                <div className={classes.item}>
+                    Create Roster
+                </div>
+            </Link>
             <div className={classes.item}>
                 Load Roster
             </div>
