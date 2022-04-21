@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme) => {
             display: 'inline-block',
             borderRadius: '5px',
             boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
+            paddingTop: '15px',
         }),
         title: () => ({
             fontSize: '16pt',
@@ -103,6 +104,11 @@ const CreateRosterPage = (props) => {
         const foundUnit = newRoster.find(x => x.name === updatedUnit.name);
         foundUnit.weapons = updatedUnit.weapons;
         foundUnit.abilities = updatedUnit.abilities;
+        foundUnit.psychicPowers = updatedUnit.psychicPowers;
+        foundUnit.wargear = updatedUnit.wargear;
+        foundUnit.warlordTraits = updatedUnit.warlordTraits;
+        foundUnit.adaptivePhysiologies = updatedUnit.adaptivePhysiologies;
+
         setCurrentRoster(newRoster);
         if (weaponUnit?.name === updatedUnit.name) {
             setWeaponUnit(updatedUnit);
@@ -144,7 +150,6 @@ const CreateRosterPage = (props) => {
             }
         });
     }
-
 
     return (
         <>

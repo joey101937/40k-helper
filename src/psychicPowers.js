@@ -33,3 +33,12 @@ export const psychicScream = {
     warpChargeValue: '5',
     desc: 'Witchfire: Select the closest enemy unit within 18". that unit suffers D3 mortal wounds. If that unit has the psyker keyword, and the result of the Psychic Test is higher than the leadership of that unit, randomly select one psychic power that unit knows. It no longer knows that power for the rest of the battle.'
 }
+
+export const allPsychicPowers = [
+    catalyst,
+    theHorror,
+    neuroparasite,
+    onslaught,
+    paroxysm,
+    psychicScream
+]
