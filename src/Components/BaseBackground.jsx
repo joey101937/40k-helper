@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@mui/styles';
 import { Route, Routes } from 'react-router-dom';
-import ContentPanel from './ContentPanel';
 import UnitStatsTablePanel from './UnitStatsTablePanel';
 import TopBanner from './TopBanner';
 import CreateRosterPage from './CreateRosterPage';
@@ -29,6 +28,7 @@ const BaseBackground = (props) => {
             <Routes>
                 <Route path="/" element={<UnitStatsTablePanel />} />
                 <Route path="fullRoster" element={<UnitStatsTablePanel />} />
+                <Route path="cached" element={<UnitStatsTablePanel rosterUnits={JSON.parse(localStorage.getItem('whHelperCachedRoster')).filter(x => x.selected)} />} />
                 <Route path="createRoster" element={<div><CreateRosterPage /></div>} />
             </Routes>
         </div>

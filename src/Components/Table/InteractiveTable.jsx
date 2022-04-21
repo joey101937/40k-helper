@@ -29,7 +29,7 @@ const InteractiveTable = (props) => {
     } = props;
     const classes = useStyles(props);
 
-
+    console.log('headaers ', headers)
     const renderHeaderCells = () => {
         const output = [];
         for(let i = 0; i < headers.length; i++) {

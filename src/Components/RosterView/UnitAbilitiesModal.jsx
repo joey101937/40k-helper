@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import _ from 'lodash';
 import { Close } from '@material-ui/icons';
 import { makeStyles } from '@mui/styles';
@@ -153,6 +153,11 @@ const UnitAbilitiesModal = (props) => {
     const [addItemOptions, setAddItemOptions] = useState([]);
     const [addItemCatagory, setAddItemCatagory] = useState(null);
 
+    useEffect(() => {
+        setAddItemCatagory(null);
+        setAddItemOptions(null);
+    }, [unit?.name])
+
     const onCheckboxClick = (ability) => {
         const newAbilities = _.cloneDeep(unit.abilities);
         const abilityItem = newAbilities.find(a => a.name === ability.name);
@@ -168,6 +173,7 @@ const UnitAbilitiesModal = (props) => {
             ...x,
             cellStyles: { background: lightGray },
             formattedName: <b>{x.name}</b>,
+            desc: x.subName ? <span><b>{x.subName}:</b> {x.desc}</span> : x.desc,
             checkbox: (
                 <Checkbox
                     color={'primary'}
@@ -269,7 +275,7 @@ const UnitAbilitiesModal = (props) => {
                         )}
                     </div>
                     <div className={classes.itemDesc}>
-                        {p.desc}
+                        {typeof p.desc === 'string' ? p.desc : React.createClass(p.desc)}
                     </div>
                 </div>
             )
@@ -277,7 +283,7 @@ const UnitAbilitiesModal = (props) => {
     }
 
     const renderWargear = () => {
-        return unit?.wargear.filter(g => g.active)?.map(wg => {
+        return unit?.wargear?.filter(g => g.active)?.map(wg => {
             return (
                 <div className={classes.itemContainer}>
                     <div className={classes.itemTitleBar} style={{ background: 'rgb(140, 100, 0)'}}>

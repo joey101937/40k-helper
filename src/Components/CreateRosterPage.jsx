@@ -3,8 +3,8 @@ import _ from 'lodash';
 import { makeStyles } from '@mui/styles';
 import { units } from '../codex';
 import InteractiveTable from './Table/InteractiveTable';
-import { Checkbox } from '@material-ui/core';
-import { eliteColor, fastAttackColor, heavySupportColor, hqColor, lightGray, troopColor } from '../GLOBALS';
+import { Button, Checkbox } from '@material-ui/core';
+import { eliteColor, fastAttackColor, heavySupportColor, hqColor, lightGray, mediumGray, red1, red2, troopColor } from '../GLOBALS';
 import UnitWeaponsModal from './RosterView/UnitWeaponsModal';
 import UnitAbilitiesModal from './RosterView/UnitAbilitiesModal';
 
@@ -40,6 +40,22 @@ const useStyles = makeStyles((theme) => {
             textDecoration: 'underline',
             color: 'blue'
         }),
+        finishAndSaveButton: () => ({
+            color: 'white',
+            background: 'rgb(20, 110, 20)',
+            margin: '8px',
+            "&:hover": {
+                background: 'rgb(20, 90, 20)',
+              },
+        }),
+        resetButton: () => ({
+            color: 'white',
+            background: red1,
+            margin: '8px',
+            "&:hover": {
+                background: red2,
+              },
+        }),
     }
 });
 
@@ -58,6 +74,13 @@ const getColorForRole = (unit) => {
         default: 
             return lightGray;
     }
+}
+
+const saveToCache = (rosterToSave) => {
+    if(localStorage.getItem('whHelperCachedRoster')) {
+        alert('overriding');
+    }
+    localStorage.setItem('whHelperCachedRoster', JSON.stringify(rosterToSave));
 }
 
 const CreateRosterPage = (props) => {
@@ -164,7 +187,18 @@ const CreateRosterPage = (props) => {
                 values={getFormattedValues()}
                 headers={headers}
             />
-            {currentRoster.filter(u => u.weapons.filter(w => !!w.removed).length > 0).length}
+            <Button
+                classes={{ root: classes.resetButton}}
+                onClick={() => {setCurrentRoster(units)}}
+            >
+            Reset
+            </Button>
+            <Button
+                classes={{ root: classes.finishAndSaveButton}}
+                onClick={() => saveToCache(currentRoster)}
+            >
+            {'Finish & Save'}
+            </Button>
         </div>
         <UnitWeaponsModal
             open={!!weaponUnit}

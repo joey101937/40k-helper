@@ -135,52 +135,62 @@ export const monsterousBrood = {
 
 export const relentlessFurocity = {
     name: 'Synaptic Imperative',
-    desc: <span><b>RELENTLESS FEROCITY:</b> While this Synaptic Imperative ability is active, units within 6" of this SYNAPSE model are eligible to declare a charge in a turn in which it Fell Back.</span>
+    subName: 'RELENTLESS FEROCITY',
+    desc: 'While this Synaptic Imperative ability is active, units within 6" of this SYNAPSE model are eligible to declare a charge in a turn in which it Fell Back.'
 }
 
 export const surgingVitality = {
     name: 'Synaptic Imperative',
-    desc: <span><b>SURGING VITALITY:</b> While this Synaptic Imperative ability is active, units within 6" of this SYNAPSE model can add 2" to its movement characteristic when moving or advancing</span>
+    subName: 'SURGING VITALITY',
+    desc: 'While this Synaptic Imperative ability is active, units within 6" of this SYNAPSE model can add 2" to its movement characteristic when moving or advancing'
 }
 
 export const goadedToSlaughter = {
     name: 'Synaptic Imperative',
-    desc: <span><b>GOADED TO SLAUGHTER:</b> While this Synaptic Imperative ability is active, units within 6" of this SYNAPSE model score 1 additional hit in melee whenever they roll an unmodified 6 to hit</span>
+    subName: 'GOADED TO SLAUGHTER',
+    desc: 'While this Synaptic Imperative ability is active, units within 6" of this SYNAPSE model score 1 additional hit in melee whenever they roll an unmodified 6 to hit'
 }
 
 export const predatoryGuile = {
     name: 'Synaptic Imperative',
-    desc: <span><b>PREDATORY GUILE:</b> Friendly infantry within 6" of this SYNAPSE model gain the following trait: each time an attack targets this unit, this unit is treated as having the benefits of Light Cover against that attack. If this unit was already receiving the benefits of Light Cover against that attack, it is treated as also having the benefits of Heavy Cover against that attack</span>
+    subName: 'PREDATORY GUILE',
+    desc: 'Friendly infantry within 6" of this SYNAPSE model gain the following trait: each time an attack targets this unit, this unit is treated as having the benefits of Light Cover against that attack. If this unit was already receiving the benefits of Light Cover against that attack, it is treated as also having the benefits of Heavy Cover against that attack'
 }
 
 export const guideMind = {
     name: 'Synaptic Imperative',
-    desc: <span><b>GUIDEMIND:</b> Friendly units within 6" of this SYNAPSE model gain the following trait: each time a model in this unit makes a ranged attack that targets a unit within 24", an unmodified hit roll of 6 scores 1 additional hit.</span>
+    subName: 'GUIDEMIND',
+    desc: 'Friendly units within 6" of this SYNAPSE model gain the following trait: each time a model in this unit makes a ranged attack that targets a unit within 24", an unmodified hit roll of 6 scores 1 additional hit.'
 }
 
 export const psychicAugmentation = {
     name: 'Synaptic Imperative',
-    desc: <span><b>PSYCHIC AUGMENTATION:</b> Friendly units within 6" of this SYNAPSE model gain the following traits: Add 1 to Psychic tests and Deny-The-Witch tests taken for this unit. Each time a model in this unit would lose a wound as the result of a mortal wound, roll one D6: on a 5+, that wound is not lost.</span>
+    subName: 'PSYCHIC AUGMENTATION',
+    desc: 'Friendly units within 6" of this SYNAPSE model gain the following traits: Add 1 to Psychic tests and Deny-The-Witch tests taken for this unit. Each time a model in this unit would lose a wound as the result of a mortal wound, roll one D6: on a 5+, that wound is not lost.'
 }
 
 export const thrashingDemise = {
     name: 'Synaptic Imperative',
-    desc: <span><b>THRASHING DEMISE:</b> Friendly units within 6" of this SYNAPSE model gain the following traits: This unit has +3 to its <i>Death Throes</i> ability if it has the ability. If it doesn't, then each time a model in this unit would die from a melee attack, roll a D6. On a 6, the attacking model's unit suffers 1 mortal wound after making all of its attacks.</span>
+    subName: 'THRASHING DEMISE',
+    desc: 'Friendly units within 6" of this SYNAPSE model gain the following traits: This unit has +3 to its <i>Death Throes</i> ability if it has the ability. If it doesn\'t, then each time a model in this unit would die from a melee attack, roll a D6. On a 6, the attacking model\'s unit suffers 1 mortal wound after making all of its attacks.'
 }
 
 export const psychicOversight = {
     name: 'Synaptic Imperative',
-    desc: <span><b>PSYCHIC OVERSIGHT:</b> Friendly units within 6" of this SYNAPSE model gain the following trait: This unit can make ranged attacks while performing an action without the action failing. This unit can start to perofrm an action, even if it advanced or fell back this turn. If this unit is a psyker, performing a pstchic action does not prevent it from manifesting psychic powers</span>
+    subName: 'PSYCHIC OVERSIGHT',
+    desc: 'Friendly units within 6" of this SYNAPSE model gain the following trait: This unit can make ranged attacks while performing an action without the action failing. This unit can start to perofrm an action, even if it advanced or fell back this turn. If this unit is a psyker, performing a pstchic action does not prevent it from manifesting psychic powers'
 }
 
 export const warpShielding = {
     name: 'Synaptic Imperative',
-    desc: <span><b>WARP SHIELDING:</b> Friendly units within 6" of this SYNAPSE model gain the following trait: Monster models in this unit have a 4+ invulnerable save. Non-moster models have a 5+ invulnerable save</span>
+    subName: 'WARP SHIELDING',
+    desc: 'Friendly units within 6" of this SYNAPSE model gain the following trait: Monster models in this unit have a 4+ invulnerable save. Non-moster models have a 5+ invulnerable save'
 }
 
 export const swiftOnslaught = {
     name: 'Synaptic Imperative',
-    desc: <span><b>SWIFT ONSLAUGHT:</b> Friendly units within 6" of this SYNAPSE model gain the following trait: Each time a model in this unit makes a pile-in or consolidation mode, it can mode up to an additional 3" (up to max of 9")</span>
+    subName: 'SWIFT ONSLAUGHT',
+    desc: 'Friendly units within 6" of this SYNAPSE model gain the following trait: Each time a model in this unit makes a pile-in or consolidation mode, it can mode up to an additional 3" (up to max of 9")'
 }
 
 // export const blank = {
