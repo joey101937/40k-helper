@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@mui/styles';
 import { Route, Routes } from 'react-router-dom';
 import UnitStatsTablePanel from './UnitStatsTablePanel';
@@ -20,6 +20,9 @@ const useStyles = makeStyles((theme) => {
 const BaseBackground = (props) => {
     const classes = useStyles(props);
 
+    const [rerender, setRerender] = useState(false);
+
+    const cachedRoster = JSON.parse(localStorage.getItem('whHelperCachedRoster'));
 
     return (
         <>
@@ -28,8 +31,8 @@ const BaseBackground = (props) => {
             <Routes>
                 <Route path="/" element={<UnitStatsTablePanel />} />
                 <Route path="fullRoster" element={<UnitStatsTablePanel />} />
-                <Route path="cached" element={<UnitStatsTablePanel rosterUnits={JSON.parse(localStorage.getItem('whHelperCachedRoster')).filter(x => x.selected)} />} />
-                <Route path="createRoster" element={<div><CreateRosterPage /></div>} />
+                <Route path="cached" element={<UnitStatsTablePanel rosterUnits={cachedRoster.filter(x => x.selected)} />} />
+                <Route path="createRoster" element={<div><CreateRosterPage onCreateRoster={() => {setRerender(!rerender)}}/></div>} />
             </Routes>
         </div>
         </>

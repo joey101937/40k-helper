@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@mui/styles';
 import { Link } from 'react-router-dom';
 import image from '../40khelperlogo.png'
@@ -48,9 +48,11 @@ const TopBanner = (props) => {
                     Create Roster
                 </div>
             </Link>
-            <div className={classes.item}>
-                Load Roster
-            </div>
+            <Link to={'/cached'}>
+                <div className={classes.item}>
+                    Load Roster
+                </div>
+            </Link>
         </div>
     );
 };

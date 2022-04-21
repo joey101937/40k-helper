@@ -4,7 +4,7 @@ import { makeStyles } from '@mui/styles';
 import { units } from '../codex';
 import InteractiveTable from './Table/InteractiveTable';
 import { Button, Checkbox } from '@material-ui/core';
-import { eliteColor, fastAttackColor, heavySupportColor, hqColor, lightGray, mediumGray, red1, red2, troopColor } from '../GLOBALS';
+import { eliteColor, fastAttackColor, heavySupportColor, hqColor, lightGray, red1, red2, troopColor } from '../GLOBALS';
 import UnitWeaponsModal from './RosterView/UnitWeaponsModal';
 import UnitAbilitiesModal from './RosterView/UnitAbilitiesModal';
 
@@ -78,13 +78,14 @@ const getColorForRole = (unit) => {
 
 const saveToCache = (rosterToSave) => {
     if(localStorage.getItem('whHelperCachedRoster')) {
-        alert('overriding');
+        // alert('overriding');
     }
     localStorage.setItem('whHelperCachedRoster', JSON.stringify(rosterToSave));
 }
 
 const CreateRosterPage = (props) => {
     const classes = useStyles(props);
+    const { onCreateRoster } = props;
 
     const [currentRoster, setCurrentRoster] = useState(units);
     const [weaponUnit, setWeaponUnit] = useState(null);
@@ -195,7 +196,10 @@ const CreateRosterPage = (props) => {
             </Button>
             <Button
                 classes={{ root: classes.finishAndSaveButton}}
-                onClick={() => saveToCache(currentRoster)}
+                onClick={() => {
+                    saveToCache(currentRoster);
+                    onCreateRoster();
+                }}
             >
             {'Finish & Save'}
             </Button>
