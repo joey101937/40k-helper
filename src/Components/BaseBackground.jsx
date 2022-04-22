@@ -22,7 +22,7 @@ const BaseBackground = (props) => {
 
     const [rerender, setRerender] = useState(false);
 
-    const cachedRoster = JSON.parse(localStorage.getItem('whHelperCachedRoster'));
+    const cachedRoster = JSON.parse(localStorage.getItem('whHelperCachedRoster')) || [];
 
     return (
         <>
