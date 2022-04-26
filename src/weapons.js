@@ -1,5 +1,5 @@
 export const tyrantScythingTalons = {
-    name: 'Scything Talon',
+    name: 'Monsterous Scything Talon',
     type: 'Melee',
     range: 'Melee',
     s: 'user',

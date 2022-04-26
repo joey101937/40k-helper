@@ -3,7 +3,7 @@ import _ from 'lodash';
 import { makeStyles } from '@mui/styles';
 import { Button, Dialog, DialogContent, Checkbox } from '@material-ui/core';
 import InteractiveTable from '../Table/InteractiveTable';
-import { lightGray } from '../../GLOBALS';
+import { lightGray, relicColor } from '../../GLOBALS';
 
 const useStyles = makeStyles((theme) => {
     return {
@@ -101,8 +101,9 @@ const UnitWeaponsModal = (props) => {
     };
 
     const getFormattedValues = () => {
+        let output = [];
         if (editMode) {
-            return unit?.weapons?.map(x => ({
+            output = unit?.weapons?.map(x => ({
                 ...x,
                 cellStyles: { background: lightGray, },
                 formattedName: <b>{x.name}</b>,
@@ -116,12 +117,22 @@ const UnitWeaponsModal = (props) => {
                 ),
             })) || [];
         } else {
-            return unit?.weapons?.filter(j => !j.removed).map(x => ({
+            output = unit?.weapons?.filter(j => !j.removed).map(x => ({
                 ...x,
                 cellStyles: { background: lightGray, },
                 formattedName: <b>{x.name}</b>,
             })) || [];
         }
+        if (unit?.relics?.filter(x => !!x.weapon)) {
+            unit.relics.filter(x => !!x.weapon).forEach(x => {
+                output.push({
+                    ...x.weapon,
+                    cellStyles: { background: relicColor, },
+                    formattedName: <b>(Relic) {x.weapon.name}</b>
+                });
+            });
+        }
+        return output;
     }
 
     const editModeHeaders = [
