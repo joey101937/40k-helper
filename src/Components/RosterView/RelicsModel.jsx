@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@mui/styles';
 import { Button, Dialog, DialogContent } from '@material-ui/core';
 import InteractiveTable from '../Table/InteractiveTable';
-import * as powers from '../../psychicPowers';
+import * as relics from '../../relics';
 import { lightGray } from '../../GLOBALS';
 
 const useStyles = makeStyles((theme) => {
@@ -47,15 +47,10 @@ const useStyles = makeStyles((theme) => {
 
 const headers = [
     {
-        label: 'Power',
+        label: 'Trait',
         value: 'name',
-        width: '15%',
+        width: '20%',
         textAlign: 'left',
-    },
-    {
-        label: 'WC',
-        value: 'warpChargeValue',
-        width: '5%',
     },
     {
         label: 'Description',
@@ -66,25 +61,15 @@ const headers = [
 ]
 
 
-const values = [
-    powers.catalyst,
-    powers.theHorror,
-    powers.neuroparasite,
-    powers.onslaught,
-    powers.paroxysm,
-    powers.psychicScream,
-    powers.smite,
-]
-
-const PsychicPowerModal = (props) => {
+const RelicsModel = (props) => {
     const {open, onClose} = props;
     const classes = useStyles(props);
 
     const getFormattedValues = () => {
-      return values.map(x => ({
+      return Object.values(relics).map(x => ({
         ...x,
         name: <b>{x.name}</b>,
-        cellStyles: { background: lightGray },
+        cellStyles: { background: lightGray, verticalAlign: 'middle' },
       }));
     }
 
@@ -92,7 +77,7 @@ const PsychicPowerModal = (props) => {
         <Dialog classes={classes} open={open} onClose={onClose} maxWidth={'lg'}>
             <DialogContent className={classes.modalContents}>
                 <div className={classes.titleBar}>
-                    Psychic Powers
+                    Relics
                 </div>
                 <div className={classes.scrollbox}>
                     <div className={classes.body}>
@@ -117,4 +102,4 @@ const PsychicPowerModal = (props) => {
     );
 };
 
-export default PsychicPowerModal; 
+export default RelicsModel; 

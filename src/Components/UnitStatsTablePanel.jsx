@@ -18,6 +18,7 @@ import WarlordTraitsModal from './RosterView/WarlordTraitsModal';
 import PsychicPowerModal from './RosterView/PsychicPowersModal';
 import AdaptivePhysoilogyModal from './RosterView/AdaptivePhysiologyModel';
 import { eliteColor, fastAttackColor, heavySupportColor, hqColor, troopColor } from '../GLOBALS';
+import RelicsModel from './RosterView/RelicsModel';
 
 
 const useStyles = makeStyles((theme) => {
@@ -52,7 +53,7 @@ const UnitStatsTablePanel = (props) => {
 
     const { rosterUnits = units } = props;
 
-    const [showBrackets, setShowBrackets] = useState(true);
+    const [showBrackets, setShowBrackets] = useState(false);
     const [unitRoleBackgrounds, setUnitRoleBackgrounds] = useState(true);
 
     const [settingsModalOpen, setSettingsModalOpen] = useState(false);
@@ -60,6 +61,7 @@ const UnitStatsTablePanel = (props) => {
     const [wtModalOpen, setWtModalOpen] = useState(false);
     const [ppModalOpen, setPpModalOpen] = useState(false);
     const [apModalOpen, setApModalOpen] = useState(false);
+    const [rModalOpen, setRModalOpen] = useState(false);
     const [selectedUnitWeapons, setSelectedUnitWeapon] = useState(null);
     const [selectedUnitAbilities, setSelectedUnitAbility] = useState(null);
     
@@ -219,6 +221,7 @@ const UnitStatsTablePanel = (props) => {
             onWiClick={() => setWtModalOpen(true)}
             onPpClick={() => setPpModalOpen(true)}
             onApClick={() => setApModalOpen(true)}
+            onRClick={() => setRModalOpen(true)}
         />
         <InteractiveTable
             headers={headers}
@@ -257,6 +260,10 @@ const UnitStatsTablePanel = (props) => {
         <AdaptivePhysoilogyModal
             open={apModalOpen}
             onClose={() => setApModalOpen(false)}
+        />
+        <RelicsModel
+            open={rModalOpen}
+            onClose={() => setRModalOpen(false)}
         />
         </>
     );

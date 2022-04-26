@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => {
 
 const AddItemPanel = (props) => {
     const classes = useStyles(props);
-    const {options, onAdd, onClose} = props;
+    const {options, onAdd, onClose, itemName} = props;
 
     const renderMenuItems = () => {
         return options?.map(x => {
@@ -34,7 +34,7 @@ const AddItemPanel = (props) => {
             <Close style={{color: mediumGray, cursor: 'pointer', verticalAlign: 'bottom', paddingBottom: '4px', marginRight: '5px'}} onClick={onClose} />
             <FormControl>
             <InputLabel variant="standard">
-                Add Item
+                {`Add ${itemName || 'Item'}`}
             </InputLabel>
                 <Select
                     onChange={onAdd}

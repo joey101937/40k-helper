@@ -260,6 +260,16 @@ const UnitAbilitiesModal = (props) => {
         onUnitUpdate(newUnit);
     }
 
+    const getAddItemTitleFromCatagory = () => {
+        switch(addItemCatagory){
+            case 'psychicPower': return 'Power';
+            case 'wargear': return 'Wargear';
+            case 'warlordTrait': return 'Trait';
+            case 'adaptivePhysiologies': return 'Physiology';
+            default: return 'Item'
+        }
+    };
+
 
     const renderPsychicPowers = () => {
         return unit?.psychicPowers?.map(p => {
@@ -440,6 +450,7 @@ const UnitAbilitiesModal = (props) => {
                                 setAddItemCatagory(null);
                                 setAddItemOptions([]);
                             }}
+                            itemName={getAddItemTitleFromCatagory()}
                         />
                     )}
                     <div className={classes.footer}>

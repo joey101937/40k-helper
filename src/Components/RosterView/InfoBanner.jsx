@@ -18,13 +18,14 @@ const useStyles = makeStyles((theme) => {
             marginBottom: '10px',
         }),
         item: () => ({
-            paddingLeft: '30px',
-            paddingRight: '30px',
+            paddingLeft: '25px',
+            paddingRight: '25px',
             paddingTop: '5px',
             paddingBottom: '5px',
             display: 'inline-block',
             cursor: 'pointer',
             role: 'button',
+            verticalAlign: 'middle',
             borderRadius: '5px',
             "&:hover": {
                 background: "rgb(60,60,60)"
@@ -36,7 +37,7 @@ const useStyles = makeStyles((theme) => {
 const InfoBanner = (props) => {
     const classes = useStyles(props);
     const {
-        onSiClick, onWiClick, onPpClick, onApClick
+        onSiClick, onWiClick, onPpClick, onApClick, onRClick
     } = props;
     return (
         <div className={classes.root}>
@@ -54,6 +55,9 @@ const InfoBanner = (props) => {
             </div>
             <div className={classes.item} onClick={onWiClick}>
              Warlord Traits
+            </div>
+            <div className={classes.item} onClick={onRClick}>
+             Relics
             </div>
         </div>
     );

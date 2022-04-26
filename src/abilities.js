@@ -8,6 +8,26 @@ export const psychicBarrier = {
     desc: 'This model has a 4+ invulnerable save'
 }
 
+export const warpField3 = {
+    name: 'Warp Field',
+    desc: 'This model has a 3+ invulnerable save'
+}
+
+export const warpField4 = {
+    name: 'Warp Field',
+    desc: 'This model has a 4+ invulnerable save'
+}
+
+export const warpBlast = {
+    name: 'Warp Blast',
+    desc: 'Each time this unit attempts to manifest Smite or a Witchfire psychic power, add 1 to the Psychic test for each model in this unit. Each time this unit manifests the Smite psychic power, add 1 to the number of mortal wounds suffered by the enemy unit for each model in this unit (to a maximum of +3 mortal wounds).'
+}
+
+export const psybroodCoterie = {
+    name: 'Psybrood Coterie',
+    desc: 'If your detachment contains a Neurothope, you may bring one unit of zoanthropes without taking up a battlefield role slot'
+}
+
 export const willOfTheHiveMind = {
     name: 'Will of the hivemind',
     desc: 'In your Command phase, select one friendly <HIVE FLEET> CORE unit within Synaptic Link range of this model. Until the start of your next Command phase, each time a model in that unit makes an attack, re-roll a hit roll of 1.'
@@ -26,6 +46,26 @@ export const psyker1 = {
 export const psyker2 = {
     name: 'Psyker (2)',
     desc: 'This model can attempt to manifest two psychic powers in your Psychic phase and attempt to deny one psychic power in your opponent’s Psychic phase. It knows Smite and two psychic powers from the Hive Mind discipline.'
+}
+
+export const psyker2_2 = {
+    name: 'Psyker (2,2)',
+    desc: 'This model can attempt to manifest two psychic powers in your Psychic phase and attempt to deny two psychic powers in your opponent’s Psychic phase. It knows Smite and two psychic powers from the Hive Mind discipline.'
+}
+
+export const psychicNode = {
+    name: 'Psychic Node',
+    desc: 'Add 1 to Psychic tests taken for this model.'
+}
+
+export const spiritLeech = {
+    name: 'Spirit Leech',
+    desc: 'In your Psychic phase, each time an enemy unit within 18" of this model suffers a mortal wound, select one friendly <HIVE FLEET> NEUROTHROPE or <HIVE FLEET> ZOANTHROPE model within 12" of this model. That model regains 1 lost wound (to a maximum of 3 regained wounds per phase).'
+}
+
+export const warpSiphon = {
+    name: 'Warp Siphon',
+    desc: 'In your Command phase, select one friendly <HIVE FLEET> PSYKER unit within Synaptic Link range of this model that has not already been selected for this ability this turn. Until the start of your next Command phase, each time a Psychic test is taken for that unit, roll one additional D6 and discard one of the dice.'
 }
 
 export const wallOfflesh = {

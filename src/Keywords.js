@@ -1,4 +1,3 @@
-import { red1 } from "./GLOBALS"
 
 export const synapse = {
     name: 'Synapse',
@@ -47,8 +46,16 @@ export const psycher2Keyword = {
     desc: 'This model can attempt to manifest two psychic powers in your Psychic phase and attempt to deny one psychic power in your opponent’s Psychic phase. It knows Smite and two psychic powers from the Hive Mind discipline.',
 }
 
+export const psycher2_2Keyword = {
+    name: 'Psyker (2-2)',
+    color: 'purple',
+    desc: 'This model can attempt to manifest two psychic powers in your Psychic phase and attempt to deny two psychic powers in your opponent’s Psychic phase. It knows Smite and two psychic powers from the Hive Mind discipline.',
+}
+
 export const hiveTyrantKeyword = {
     name: 'Hive Tyrant',
+    color: 'gray',
+    desc: 'Hive Tyrant units are limited to 1 per detachment'
 }
 
 export const character = {
@@ -69,6 +76,8 @@ export const feederTendrils = {
 
 export const fly = {
     name: 'Fly',
+    color: 'gray',
+    desc: 'This unit may move over other models and ignore virtical distance when it makes a Normal Move, an Advance or when they Fall Back. '
 }
 
 export const sporeCaster = {

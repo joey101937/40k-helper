@@ -1,5 +1,5 @@
 import * as abilities from "./abilities";
-import { burrower, character, core, endlessMultitude, feederTendrils, fly, hiveTentril, hiveTyrantKeyword, hornedChitin, infantry, monster, psycher1Keyword, psycher2Keyword, sporeCaster, swarm, synapse, toxicLashes, tyranids } from "./Keywords";
+import { burrower, character, core, endlessMultitude, feederTendrils, fly, hiveTentril, hiveTyrantKeyword, hornedChitin, infantry, monster, psycher1Keyword, psycher2Keyword, sporeCaster, swarm, synapse, toxicLashes, tyranids, psycher2_2Keyword } from "./Keywords";
 import { acidMawWargear, adrenalGlands, biostaticRattle, chitinThrons, enhancedSenses, extendedCarapace, fleshHooks, infestationNode, lashWhip, prehensilePincerTail, sporeCysts, toxinSacs, tusks } from "./Wargear";
 import * as weapons from "./weapons";
 
@@ -66,7 +66,74 @@ export const units = [
         wargear: [
             adrenalGlands,
             toxinSacs,
-            lashWhip,
+            {...lashWhip, active: true},
+        ],
+    },
+    {
+        name: 'Winged Hive Tyrant',
+        type: 'monster',
+        role: 'hq',
+        stats: [{
+            m: '16"',
+            ws: '2+',
+            bs: '2+',
+            s: '7',
+            t: '7',
+            w: '12',
+            a: '5',
+            ld: '10',
+            sv: '2+',
+        },{
+            m: '12"',
+            ws: '3+',
+            bs: '3+',
+            s: '7',
+            t: '7',
+            w: '<7',
+            a: '5',
+            ld: '10',
+            sv: '2+',
+        },{
+            m: '8"',
+            ws: '4+',
+            bs: '4+',
+            s: '7',
+            t: '7',
+            w: '<4',
+            a: '5',
+            ld: '10',
+            sv: '2+',
+        }],
+        keywords: [
+            monster,
+            fly,
+            character,
+            synapse,
+            psycher2Keyword,
+            hornedChitin,
+            hiveTyrantKeyword,
+            hiveTentril,
+            tyranids,
+        ],
+        weapons: [
+            weapons.tyrantVenomCannon,
+            weapons.tyrantStranglethron,
+            weapons.tyrantBonesword,
+            weapons.tyrantScythingTalons,
+            weapons.tyrantTalons,
+        ],
+        abilities: [
+            abilities.psychicBarrier,
+            abilities.willOfTheHiveMind,
+            abilities.deathThroes,
+            abilities.shadowInTheWarp,
+            abilities.relentlessFurocity,
+        ],
+        wargear: [
+            adrenalGlands,
+            toxinSacs,
+            {...lashWhip, active: true},
+            {...prehensilePincerTail, active: true}
         ],
     },
     {
@@ -132,6 +199,81 @@ export const units = [
         ],
     },
     {
+        name: 'Neurothrope',
+        type: 'infantry',
+        role: 'hq',
+        stats: [{
+            m: '6"',
+            ws: '5+',
+            bs: '3+',
+            s: '5',
+            t: '5',
+            w: '6',
+            a: '2',
+            ld: '10',
+            sv: '5+',
+        }],
+        keywords: [
+            infantry,
+            character,
+            fly,
+            synapse,
+            psycher2_2Keyword,
+            hornedChitin,
+            hiveTentril,
+            tyranids,
+        ],
+        weapons: [
+            weapons.defaultMeleeAttack
+        ],
+        abilities: [
+            abilities.warpField3,
+            abilities.psychicNode,
+            abilities.spiritLeech,
+            abilities.warpSiphon,
+            abilities.shadowInTheWarp,
+        ],
+        wargear: [
+        ],
+    },
+    {
+        name: 'Zoanthrope',
+        type: 'infantry',
+        role: 'elite',
+        stats: [{
+            m: '6"',
+            ws: '5+',
+            bs: '3+',
+            s: '5',
+            t: '5',
+            w: '4',
+            a: '2',
+            ld: '9',
+            sv: '5+',
+        }],
+        keywords: [
+            infantry,
+            core,
+            fly,
+            synapse,
+            psycher1Keyword,
+            hornedChitin,
+            hiveTentril,
+            tyranids,
+        ],
+        weapons: [
+            weapons.defaultMeleeAttack
+        ],
+        abilities: [
+            abilities.warpField4,
+            abilities.warpBlast,
+            abilities.psybroodCoterie,
+            abilities.shadowInTheWarp,
+        ],
+        wargear: [
+        ],
+    },
+    {
         name: 'Genestealers',
         type: 'infantry',
         role: 'elite',
@@ -165,10 +307,10 @@ export const units = [
         ],
         wargear: [
             toxinSacs,
-            fleshHooks,
+            {...fleshHooks, active: true},
             infestationNode,
-            acidMawWargear,
-            extendedCarapace
+            {...acidMawWargear, active: true},
+            extendedCarapace,
         ],
     },
     {
@@ -350,7 +492,7 @@ export const units = [
             adrenalGlands,
             toxinSacs,
             fleshHooks,
-            lashWhip,
+            {...lashWhip, active: true},
         ],
     },
     {

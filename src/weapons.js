@@ -8,6 +8,16 @@ export const tyrantScythingTalons = {
     notes: '+1 attack per talon',
 }
 
+export const tyrantTalons = {
+    name: 'Tyrant Talons',
+    type: 'Melee',
+    range: 'Melee',
+    s: 'user',
+    ap: '-3',
+    d: '1',
+    notes: 'Each time the bearer fights, make 2 additional attack with this weapon.',
+}
+
 export const tyrantBonesword = {
     name: 'Bonesword',
     type: 'Melee',
@@ -75,6 +85,16 @@ export const tervigonTalonsStrike = {
     s: '+3',
     ap: '-4',
     d: '2D3',
+    notes: '-',
+};
+
+export const defaultMeleeAttack = {
+    name: 'Melee Attack (default)',
+    type: 'Melee',
+    range: 'Melee',
+    s: 'user',
+    ap: '0',
+    d: '1',
     notes: '-',
 };
 

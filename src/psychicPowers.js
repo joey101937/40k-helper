@@ -34,11 +34,26 @@ export const psychicScream = {
     desc: 'Witchfire: Select the closest enemy unit within 18". that unit suffers D3 mortal wounds. If that unit has the psyker keyword, and the result of the Psychic Test is higher than the leadership of that unit, randomly select one psychic power that unit knows. It no longer knows that power for the rest of the battle.'
 }
 
+export const smite = {
+    name: 'Smite',
+    warpChargeValue: '5*',
+    desc: 'Increase the warp charge value of this power by 1 for each other attempt that has been made to use this power by another unit in your army this phase. The closest enemy unit within 18" of and visible to the psyker suffers D3 mortal wounds. If the result of the Psychic test was 11 or more, that unit suffers D6 mortal wounds instead.'
+}
+
+/*
+Add 1 to the warp charge value of this psychic power for each other attempt that has been made to manifest this power by a unit from your army in this phase,
+whether that attempt was successful or not.
+If manifested, the closest enemy unit within 18" of and visible to the psyker suffers D3 mortal wounds. If the result of the Psychic test was 11 or more, that unit suffers D6 mortal wounds instead.
+
+*/
+
+
 export const allPsychicPowers = [
     catalyst,
     theHorror,
     neuroparasite,
     onslaught,
     paroxysm,
-    psychicScream
+    psychicScream,
+    smite,
 ]
