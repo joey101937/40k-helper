@@ -1,6 +1,7 @@
 
 export const synapse = {
     name: 'Synapse',
+    color: 'red',
     desc: 'Units within 6" of this unit automatically pass morale tests',
 }
 
@@ -19,6 +20,7 @@ export const swarm = {
 
 export const monster = {
     name: 'Monster',
+    desc: 'Can use non-blast ranged weapons while in melee but with -1 to hit. See \"Big Guns Never Tire\" special rule.'
 }
 
 export const burrower = {
@@ -54,12 +56,13 @@ export const psycher2_2Keyword = {
 
 export const hiveTyrantKeyword = {
     name: 'Hive Tyrant',
-    color: 'gray',
+    color: 'red',
     desc: 'Hive Tyrant units are limited to 1 per detachment'
 }
 
 export const character = {
     name: 'Character',
+    desc: 'This model can perform a heroic intervention and are protected by the \"Lookout Sir\" special rule'
 }
 
 export const hornedChitin = {
@@ -76,7 +79,6 @@ export const feederTendrils = {
 
 export const fly = {
     name: 'Fly',
-    color: 'gray',
     desc: 'This unit may move over other models and ignore virtical distance when it makes a Normal Move, an Advance or when they Fall Back. '
 }
 

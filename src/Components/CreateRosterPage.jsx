@@ -132,6 +132,8 @@ const CreateRosterPage = (props) => {
         foundUnit.wargear = updatedUnit.wargear;
         foundUnit.warlordTraits = updatedUnit.warlordTraits;
         foundUnit.adaptivePhysiologies = updatedUnit.adaptivePhysiologies;
+        foundUnit.relics = updatedUnit.relics;
+
 
         setCurrentRoster(newRoster);
         if (weaponUnit?.name === updatedUnit.name) {

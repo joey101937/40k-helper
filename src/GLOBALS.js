@@ -13,3 +13,10 @@ export const heavySupportColor = '#805938'; // original #d4af37
 
 export const red1 = 'rgb(135,45,45)';
 export const red2 = 'rgb(92,56,56)';
+
+export const psykerColor = 'rgb(120, 0, 120)';
+export const wargearColor = 'rgb(100, 80, 50)';
+export const relicColor = 'rgb(220, 110, 0)';
+export const warlordTraitColor = 'rgb(110, 110, 250)';
+
+export const miscKewordColor = 'rgb(40, 110, 40)';

@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => {
             textAlign: 'left',
             minHeight: '80px',
             paddingTop: '15px',
-            minWidth: '1000px',
+            minWidth: '1100px',
         }),
         titleText: (props) => ({
             color: props.testValue === 'hi' ? 'blue' : 'rgb(240,240,240)',

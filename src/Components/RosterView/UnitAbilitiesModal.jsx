@@ -4,11 +4,12 @@ import { Close } from '@material-ui/icons';
 import { makeStyles } from '@mui/styles';
 import { Button, Checkbox, Chip, Dialog, DialogContent, Tooltip } from '@material-ui/core';
 import InteractiveTable from '../Table/InteractiveTable';
-import { lightGray, mediumGray,  red1, } from '../../GLOBALS';
+import { lightGray, mediumGray,  miscKewordColor,  psykerColor,  red1, relicColor, wargearColor, warlordTraitColor, } from '../../GLOBALS';
 import AddItemPanel from './AddItemPanel';
 import { allPsychicPowers } from '../../psychicPowers';
 import * as warlordTraits from '../../warlordTraits';
 import * as adaptivePhysiologies from '../../adaptivePhysiologies';
+import * as relics from '../../relics';
 
 const useStyles = makeStyles((theme) => {
     return {
@@ -19,9 +20,11 @@ const useStyles = makeStyles((theme) => {
         modalContents: (props) => ({
             background: 'rgba(220,220,220, .9)',
             minHeight: '80px',
+            maxHeight: '800px',
             width: '860px',
             display: 'block',
             paddingTop: '10px !important',
+            overflowX: 'auto'
         }),
         titleBar: () => ({
             textAlign: 'center',
@@ -41,22 +44,27 @@ const useStyles = makeStyles((theme) => {
             color: 'white !important',
         }),
         addPsychicButton: () => ({
-            backgroundColor: 'rgb(120, 0, 120) !important',
+            backgroundColor: `${psykerColor} !important`,
             color: 'white !important',
             marginRight: '10px !important',
         }),
         addWargearButton: () => ({
-            backgroundColor: 'rgb(140, 100, 0) !important',
+            backgroundColor: `${wargearColor} !important`,
             color: 'white !important',
             marginRight: '10px !important',
         }),
         addWarlordTraitButton: () => ({
-            backgroundColor: 'rgb(102, 102, 84) !important',
+            backgroundColor: `${warlordTraitColor} !important`,
             color: 'white !important',
             marginRight: '10px !important',
         }),
         addAdaptivePhysiologyButton: () => ({
             backgroundColor: 'rgb(0, 90, 0) !important',
+            color: 'white !important',
+            marginRight: '10px !important',
+        }),
+        addRelicButton: () => ({
+            backgroundColor: `${relicColor} !important`,
             color: 'white !important',
             marginRight: '10px !important',
         }),
@@ -77,6 +85,13 @@ const useStyles = makeStyles((theme) => {
             color: 'white !important',
         }),
         interactiveChipRoot: () => ({
+            background: mediumGray + " !important",
+            cursor: 'pointer !important',
+            fontWeight: 'bold !imporant',
+            marginLeft: '10px !important',
+            color: 'white !important',
+        }),
+        interactiveChipRootRed: () => ({
             background: red1 + " !important",
             cursor: 'pointer !important',
             fontWeight: 'bold !imporant',
@@ -84,7 +99,14 @@ const useStyles = makeStyles((theme) => {
             color: 'white !important',
         }),
         interactiveChipRootPurple: () => ({
-            background: "rgb(120, 0, 120) !important",
+            background: `${psykerColor} !important`,
+            cursor: 'pointer !important',
+            fontWeight: 'bold !imporant',
+            marginLeft: '10px !important',
+            color: 'white !important',
+        }),
+        interactiveChipRootGreen: () => ({
+            background: `${miscKewordColor} !important`,
             cursor: 'pointer !important',
             fontWeight: 'bold !imporant',
             marginLeft: '10px !important',
@@ -185,6 +207,15 @@ const UnitAbilitiesModal = (props) => {
         })) || [];
     }
 
+    const getPillClassForColor = (color) => {
+        switch(color) {
+            case 'red': return classes.interactiveChipRootRed;
+            case 'purple': return classes.interactiveChipRootPurple;
+            case 'green': return classes.interactiveChipRootGreen;
+            default: return classes.interactiveChipRoot;
+        }
+    }
+
     const renderKeywordPills = () => {
         return unit?.keywords?.map(k => {
             if (!k.desc) {
@@ -198,7 +229,7 @@ const UnitAbilitiesModal = (props) => {
                 return (
                     <Tooltip title={k.desc} placement="top">
                         <Chip
-                            classes={{ root: k.color === 'purple' ? classes.interactiveChipRootPurple : classes.interactiveChipRoot}}
+                            classes={{ root: getPillClassForColor(k.color)}}
                             label={k.name}
                         />
                     </Tooltip>
@@ -222,6 +253,11 @@ const UnitAbilitiesModal = (props) => {
                 break;
             case 'wargear':
                 newUnit.wargear.find(g => g.name === value.name).active = true;
+                onUnitUpdate(newUnit);
+                break;
+            case 'relic':
+                newUnit.relics = newUnit.relics || [];
+                if (!newUnit.relics.filter(x => x.name === value.name).length) newUnit.relics.push(value);
                 onUnitUpdate(newUnit);
                 break;
             case 'adaptivePhysiologies':
@@ -248,6 +284,12 @@ const UnitAbilitiesModal = (props) => {
         onUnitUpdate(newUnit);
     }
 
+    const onRemoveRelic = (trait) => {
+        const newUnit = _.cloneDeep(unit);
+        newUnit.relics = newUnit.relics.filter(x => x.name !== trait.name)
+        onUnitUpdate(newUnit);
+    }
+
     const onRemoveAdaptivePhysiology = (trait) => {
         const newUnit = _.cloneDeep(unit);
         newUnit.adaptivePhysiologies = newUnit.adaptivePhysiologies.filter(x => x.name !== trait.name)
@@ -266,6 +308,7 @@ const UnitAbilitiesModal = (props) => {
             case 'wargear': return 'Wargear';
             case 'warlordTrait': return 'Trait';
             case 'adaptivePhysiologies': return 'Physiology';
+            case 'relic': return 'Relic';
             default: return 'Item'
         }
     };
@@ -275,7 +318,7 @@ const UnitAbilitiesModal = (props) => {
         return unit?.psychicPowers?.map(p => {
             return (
                 <div className={classes.itemContainer}>
-                    <div className={classes.itemTitleBar} style={{ background: 'rgb(120,0,120)'}}>
+                    <div className={classes.itemTitleBar} style={{ background: psykerColor}}>
                         {p.name} - {p.warpChargeValue}
                         {editMode && (
                         <Close
@@ -296,7 +339,7 @@ const UnitAbilitiesModal = (props) => {
         return unit?.wargear?.filter(g => g.active)?.map(wg => {
             return (
                 <div className={classes.itemContainer}>
-                    <div className={classes.itemTitleBar} style={{ background: 'rgb(140, 100, 0)'}}>
+                    <div className={classes.itemTitleBar} style={{ background: wargearColor}}>
                         {wg.name}
                         {editMode && (
                         <Close
@@ -317,7 +360,7 @@ const UnitAbilitiesModal = (props) => {
         return unit?.warlordTraits?.map(wl => {
             return (
                 <div className={classes.itemContainer}>
-                    <div className={classes.itemTitleBar} style={{ background: 'rgb(102, 102, 84)'}}>
+                    <div className={classes.itemTitleBar} style={{ background: warlordTraitColor}}>
                         {wl.name}
                         {editMode && (
                         <Close
@@ -328,6 +371,27 @@ const UnitAbilitiesModal = (props) => {
                     </div>
                     <div className={classes.itemDesc}>
                         {wl.desc}
+                    </div>
+                </div>
+            )
+        }) || [];
+    }
+
+    const renderRelics = () => {
+        return unit?.relics?.map(relicItem => {
+            return (
+                <div className={classes.itemContainer}>
+                    <div className={classes.itemTitleBar} style={{ background: relicColor}}>
+                        {relicItem.name}
+                        {editMode && (
+                        <Close
+                            style={{ float: 'right', color: 'white', cursor: 'pointer'}}
+                            onClick={() => onRemoveRelic(relicItem)}
+                        />
+                        )}
+                    </div>
+                    <div className={classes.itemDesc}>
+                        {relicItem.desc}
                     </div>
                 </div>
             )
@@ -394,10 +458,11 @@ const UnitAbilitiesModal = (props) => {
                         small
                     />
                     <div className={classes.itemSection}>
+                        {renderRelics()}
                         {renderWarlordTraits()}
-                        {renderPsychicPowers()}
                         {renderWargear()}
                         {renderAtaptivePhysiologies()}
+                        {renderPsychicPowers()}
                     </div>
                     </div>
                     <div className={classes.editModeButtons}>
@@ -430,6 +495,16 @@ const UnitAbilitiesModal = (props) => {
                                 }}
                             >
                                 + Warlord Trait
+                            </Button>)}
+                            {editMode && unit?.role === 'hq' && 
+                            (<Button
+                                classes={{ root: classes.addRelicButton}}
+                                onClick={() => {
+                                    setAddItemCatagory('relic');
+                                    setAddItemOptions(Object.values(relics));
+                                }}
+                            >
+                                + Relic
                             </Button>)}
                             {editMode && unit?.keywords.filter(k => k.name === "Monster").length > 0 && unit?.keywords.filter(k => k.name === "Character").length === 0 &&
                             (<Button
