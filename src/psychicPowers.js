@@ -40,6 +40,13 @@ export const smite = {
     desc: 'Increase the warp charge value of this power by 1 for each other attempt that has been made to use this power by another unit in your army this phase. The closest enemy unit within 18" of and visible to the psyker suffers D3 mortal wounds. If the result of the Psychic test was 11 or more, that unit suffers D6 mortal wounds instead.'
 }
 
+export const unstoppableOnslaught = {
+    name: '(BEHEMOTH) Unstoppable Onslaught',
+    warpChargeValue: '7',
+    desc: 'Select one friendly BEHEMOTH unit within Synaptic Link range of this PSYKER. Until the start of your next turn, each time a model in that unit makes a melee attack, add 1 to that attack\'s wound roll.',
+    fleet: 'behemoth'
+}
+
 /*
 Add 1 to the warp charge value of this psychic power for each other attempt that has been made to manifest this power by a unit from your army in this phase,
 whether that attempt was successful or not.
@@ -49,6 +56,7 @@ If manifested, the closest enemy unit within 18" of and visible to the psyker su
 
 
 export const allPsychicPowers = [
+    unstoppableOnslaught,
     catalyst,
     theHorror,
     neuroparasite,

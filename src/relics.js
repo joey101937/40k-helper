@@ -1,3 +1,9 @@
+export const monsterousMusculature = {
+    name: '(BEHEMOTH) Monsterous Musculature',
+    desc: 'Add 1 to the Damage characteristic of melee weapons the bearer is equipped with.',
+    fleet: 'behemoth',
+}
+
 export const balethornCannon = {
     name: 'Balethorn Cannon',
     desc: 'Replaces the user\'s stranglethorn cannon with a balethron cannon',

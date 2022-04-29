@@ -222,7 +222,7 @@ const UnitAbilitiesModal = (props) => {
                 return (
                     <Chip
                         classes={{ root: classes.chipRoot}}
-                        label={k.name}
+                        label={<b>{k.name}</b>}
                     />
                 )
             } else {
@@ -230,7 +230,7 @@ const UnitAbilitiesModal = (props) => {
                     <Tooltip title={k.desc} placement="top">
                         <Chip
                             classes={{ root: getPillClassForColor(k.color)}}
-                            label={k.name}
+                            label={<b>{k.name}</b>}
                         />
                     </Tooltip>
                 )

@@ -184,7 +184,7 @@ const CreateRosterPage = (props) => {
                 Create Roster
             </div>
             <div className={classes.subTitle}>
-                Select the units you want to be included using the table below. Weapons and abilities may be added or removed with the corresponding buttons. <b> Psychic Powers and Warlord Traits are included in the abilities section.</b>
+                Select the units you want to be included using the table below. Weapons and abilities may be added or removed with the corresponding buttons. <b> Psychic Powers, Relics, Wargear, and Warlord Traits are included in the abilities section.</b>
             </div>
             <InteractiveTable
                 values={getFormattedValues()}
