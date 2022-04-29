@@ -29,7 +29,6 @@ const InteractiveTable = (props) => {
     } = props;
     const classes = useStyles(props);
 
-    console.log('headaers ', headers)
     const renderHeaderCells = () => {
         const output = [];
         for(let i = 0; i < headers.length; i++) {
@@ -38,8 +37,8 @@ const InteractiveTable = (props) => {
                 display: 'inline-block',
                 borderTopLeftRadius: i === 0 ? '3px' : '0px',
                 borderTopRightRadius: i === headers.length-1 ? '3px' : '0px',
-                textAlign: header.textAlign || 'center',
                 paddingLeft: header.textAlign === 'left' ? '10px' : 'auto',
+                textAlign: header.textAlign || 'center',
                 width: header.textAlign === 'left' ? `calc(${header.width} - 10px)` : header.width,
                 fontSize: props.small ? '14pt' : '16pt',
                 fontWeight: 'bold',
