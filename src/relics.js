@@ -23,7 +23,7 @@ export const shardgullet = {
         s: '12',
         ap: '-5',
         d: '5',
-        notes: 'Blast',
+        notes: '-',
     },
 }
 
