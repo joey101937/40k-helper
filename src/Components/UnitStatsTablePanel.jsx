@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => {
             borderRadius: '5px',
             paddingRight: '10px',
             paddingLeft: '10px',
-            '&:hover' : {
+            '&:hover': {
                 background: 'rgba(40,40,40,.23)',
             },
         }),
@@ -74,20 +74,20 @@ const UnitStatsTablePanel = (props) => {
     const [rModalOpen, setRModalOpen] = useState(false);
     const [selectedUnitWeapons, setSelectedUnitWeapon] = useState(null);
     const [selectedUnitAbilities, setSelectedUnitAbility] = useState(null);
-    
+
 
 
 
     const headers = [
         {
             label: (
-            <div style={{color: 'rgba(0,0,0,0)'}}>
-                <SettingsRounded
-                    className={classes.settingButton}
-                    onClick={() => setSettingsModalOpen(true)}
-                />
-                &nbws;
-            </div>
+                <div style={{ color: 'rgba(0,0,0,0)' }}>
+                    <SettingsRounded
+                        className={classes.settingButton}
+                        onClick={() => setSettingsModalOpen(true)}
+                    />
+                    &nbws;
+                </div>
             ),
             value: 'icon',
             width: '5%',
@@ -156,7 +156,7 @@ const UnitStatsTablePanel = (props) => {
     ];
 
     const getIconFromRole = (role) => {
-        switch(role) {
+        switch (role) {
             case 'troops':
                 return (<img height="18px" src={troopIcon} alt="troop icon" />)
             case 'fastAttack':
@@ -167,34 +167,34 @@ const UnitStatsTablePanel = (props) => {
                 return (<img height="18px" src={heavySupportIcon} alt="heavySupport icon" />)
             case 'hq':
                 return (<img height="18px" src={hqIcon} alt="hq icon" />)
-            default: 
-                return(<img height="18px" src={fistIcon} alt="default icon" />)
+            default:
+                return (<img height="18px" src={fistIcon} alt="default icon" />)
         }
     }
 
     const getCellStylesForUnit = (unit) => {
-        switch(unit.role) {
+        switch (unit.role) {
             case 'troops':
                 return { background: troopColor };
             case 'fastAttack':
                 return { background: fastAttackColor };
             case 'elite':
-                    return { background: eliteColor };
+                return { background: eliteColor };
             case 'heavySupport':
                 return { background: heavySupportColor };
             case 'hq':
                 return { background: hqColor };
-            default: 
+            default:
                 return {};
         }
     }
 
     const getFormattedValues = () => {
         const out = [];
-        for(let i = 0; i < rosterUnits.length; i++) {
+        for (let i = 0; i < rosterUnits.length; i++) {
             const unit = rosterUnits[i];
             unit.stats?.forEach((statline, statlineIndex) => {
-                if(!showBrackets && statlineIndex > 0) return;
+                if (!showBrackets && statlineIndex > 0) return;
                 out.push({
                     name: statlineIndex === 0 ? unit.name : '- - -',
                     m: statline.m,
@@ -223,64 +223,66 @@ const UnitStatsTablePanel = (props) => {
         }
         return out;
     };
-    
+
     return (
         <>
-        <InfoBanner
-            onSiClick={() => setSiModalOpen(true)}
-            onWiClick={() => setWtModalOpen(true)}
-            onPpClick={() => setPpModalOpen(true)}
-            onApClick={() => setApModalOpen(true)}
-            onRClick={() => setRModalOpen(true)}
-        />
-        <InteractiveTable
-            headers={headers}
-            values={getFormattedValues()}
-        />
-        <div style={{ paddingBottom: '15px' }}>
-            <HiveFleetPanel currentHiveFleet={currentHiveFleet} setCurrentHiveFleet={setCurrentHiveFleet} />
-        </div>
-        <SettingsModal 
-            open={settingsModalOpen}
-            onClose={() => setSettingsModalOpen(false)}
-            showBrackets={showBrackets}
-            unitRoleBackgrounds={unitRoleBackgrounds}
-            toggleShowBrackets={() => setShowBrackets(!showBrackets)}
-            toggleShowBackgrounds={() => setUnitRoleBackgrounds(!unitRoleBackgrounds)}
-        />
-        <UnitWeaponsModal
-            open={!!selectedUnitWeapons}
-            onClose={() => setSelectedUnitWeapon(null)}
-            unit={selectedUnitWeapons}
-        />
-        <UnitAbilitiesModal
-            open={!!selectedUnitAbilities}
-            onClose={() => setSelectedUnitAbility(null)}
-            unit={selectedUnitAbilities}
-        />
-        <SynapticImperativesModal 
-            open={siModalOpen}
-            onClose={() => setSiModalOpen(false)}
-        />
-        <WarlordTraitsModal
-            open={wtModalOpen}
-            onClose={() => setWtModalOpen(false)}
-            currentHiveFleet={currentHiveFleet}
-        />
-        <PsychicPowerModal
-            open={ppModalOpen}
-            onClose={() => setPpModalOpen(false)}
-            currentHiveFleet={currentHiveFleet}
-        />
-        <AdaptivePhysoilogyModal
-            open={apModalOpen}
-            onClose={() => setApModalOpen(false)}
-        />
-        <RelicsModel
-            open={rModalOpen}
-            onClose={() => setRModalOpen(false)}
-            currentHiveFleet={currentHiveFleet}
-        />
+            <InfoBanner
+                onSiClick={() => setSiModalOpen(true)}
+                onWiClick={() => setWtModalOpen(true)}
+                onPpClick={() => setPpModalOpen(true)}
+                onApClick={() => setApModalOpen(true)}
+                onRClick={() => setRModalOpen(true)}
+            />
+            <div>
+                <InteractiveTable
+                    headers={headers}
+                    values={getFormattedValues()}
+                />
+            </div>
+            <div style={{ paddingBottom: '15px' }}>
+                <HiveFleetPanel currentHiveFleet={currentHiveFleet} setCurrentHiveFleet={setCurrentHiveFleet} />
+            </div>
+            <SettingsModal
+                open={settingsModalOpen}
+                onClose={() => setSettingsModalOpen(false)}
+                showBrackets={showBrackets}
+                unitRoleBackgrounds={unitRoleBackgrounds}
+                toggleShowBrackets={() => setShowBrackets(!showBrackets)}
+                toggleShowBackgrounds={() => setUnitRoleBackgrounds(!unitRoleBackgrounds)}
+            />
+            <UnitWeaponsModal
+                open={!!selectedUnitWeapons}
+                onClose={() => setSelectedUnitWeapon(null)}
+                unit={selectedUnitWeapons}
+            />
+            <UnitAbilitiesModal
+                open={!!selectedUnitAbilities}
+                onClose={() => setSelectedUnitAbility(null)}
+                unit={selectedUnitAbilities}
+            />
+            <SynapticImperativesModal
+                open={siModalOpen}
+                onClose={() => setSiModalOpen(false)}
+            />
+            <WarlordTraitsModal
+                open={wtModalOpen}
+                onClose={() => setWtModalOpen(false)}
+                currentHiveFleet={currentHiveFleet}
+            />
+            <PsychicPowerModal
+                open={ppModalOpen}
+                onClose={() => setPpModalOpen(false)}
+                currentHiveFleet={currentHiveFleet}
+            />
+            <AdaptivePhysoilogyModal
+                open={apModalOpen}
+                onClose={() => setApModalOpen(false)}
+            />
+            <RelicsModel
+                open={rModalOpen}
+                onClose={() => setRModalOpen(false)}
+                currentHiveFleet={currentHiveFleet}
+            />
         </>
     );
 };
