@@ -1,9 +1,45 @@
-import { behemoth } from "./fleets"
+import { behemoth, gorgon, hydra, jormungandr, kraken, kronos, leviathan } from "./fleets"
 
 export const monsterousMusculature = {
     name: '(BEHEMOTH) Monsterous Musculature',
     desc: 'Add 1 to the Damage characteristic of melee weapons the bearer is equipped with.',
     fleet: behemoth.key,
+}
+
+export const chameleonicMutation = {
+    name: `(${kraken.name.toUpperCase()}) Chameleonic Mutation`,
+    desc: 'Each time an attack is made against the bearer: Subtract 1 from that attack\'s hit roll. The hit roll cannot be re-rolled.',
+    fleet: kraken.key,
+}
+
+export const precepticNode = {
+    name: `(${leviathan.name.toUpperCase()}) Preceptic Node`,
+    desc: 'In the Reinforcements step of your opponent\'s Movement phase, each time an enemy unit is set up as Reinforcements within 18" of the bearer, you can select one friendly LEVIATHAN (CORE OR CHARACTER) unit within 6" of the bearer. If you do, that friendly unit can shoot as if it were your Shooting phase, but its models can only target that enemy Reinforcements unit. A unit cannot be selected to fire more than once per phase as a result of this Relic.',
+    fleet: leviathan.key,
+}
+
+export const hypermorphicBiology = {
+    name: `(${gorgon.name.toUpperCase()}) Hypermorphic Biology`,
+    desc: 'Add 1 to the Toughness characteristic of the bearer. If the bearer\'s characteristics can change as they suffer damage, they are considered to have double the number of wounds remaining for the purposes of determining what those characteristics are.',
+    fleet: gorgon.key,
+}
+
+export const infrasonicRoar = {
+    name: `(${jormungandr.name.toUpperCase()}) Infrasonic Roar`,
+    desc: 'At the end of your Movement phase, select one enemy unit within 12" of the bearer and roll 3D6; if the result is equal to or higher than that enemy unit’s Leadership characteristic, until the start of your next Movement phase, that unit cannot perform actions (if that unit is currently performing an action, it immediately fails).',
+    fleet: jormungandr.key,
+}
+
+export const nullnode = {
+    name: `(${kronos.name.toUpperCase()}) Nullnode`,
+    desc: 'In your Command phase, select one enemy unit within Synaptic Link range of the bearer. Until the start of your next Command phase: Each time a model in that unit makes an attack, the hit roll cannot be re-rolled and the wound roll cannot be re-rolled. Psychic tests taken for that unit cannot be re-rolled.',
+    fleet: kronos.key,
+}
+
+export const barbwormInfestation = {
+    name: `(${hydra.name.toUpperCase()}) Barbworm Infestation`,
+    desc: 'Each time the bearer makes a ranged attack, you can re-roll the wound roll.',
+    fleet: hydra.key,
 }
 
 export const balethornCannon = {

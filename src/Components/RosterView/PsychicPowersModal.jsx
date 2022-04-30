@@ -72,7 +72,7 @@ const PsychicPowerModal = (props) => {
     const classes = useStyles(props);
 
     const getFormattedValues = () => {
-      return Object.values(powers).filter(x => x.name && (!x.fleet || x.fleet === currentHiveFleet)).map(x => ({
+      return Object.values(powers).filter(x => x.name && (!x.fleet || x.fleet === currentHiveFleet)).sort((a,b) => a.name === 'Smite' ? 1 : -1).map(x => ({
         ...x,
         name: <b>{x.name}</b>,
         cellStyles: { background: lightGray },
