@@ -20,6 +20,7 @@ import AdaptivePhysoilogyModal from './RosterView/AdaptivePhysiologyModel';
 import { eliteColor, fastAttackColor, heavySupportColor, hqColor, troopColor } from '../GLOBALS';
 import RelicsModel from './RosterView/RelicsModel';
 import { noFleet } from '../fleets';
+import HiveFleetPanel from './RosterView/HiveFleetPanel';
 
 
 const useStyles = makeStyles((theme) => {
@@ -225,13 +226,12 @@ const UnitStatsTablePanel = (props) => {
             onPpClick={() => setPpModalOpen(true)}
             onApClick={() => setApModalOpen(true)}
             onRClick={() => setRModalOpen(true)}
-            currentHiveFleet={currentHiveFleet}
-            onHiveFleetChange={setCurrentHiveFleet}
         />
         <InteractiveTable
             headers={headers}
             values={getFormattedValues()}
         />
+        <HiveFleetPanel currentHiveFleet={currentHiveFleet} setCurrentHiveFleet={setCurrentHiveFleet} />
         <SettingsModal 
             open={settingsModalOpen}
             onClose={() => setSettingsModalOpen(false)}
@@ -257,10 +257,12 @@ const UnitStatsTablePanel = (props) => {
         <WarlordTraitsModal
             open={wtModalOpen}
             onClose={() => setWtModalOpen(false)}
+            currentHiveFleet={currentHiveFleet}
         />
         <PsychicPowerModal
             open={ppModalOpen}
             onClose={() => setPpModalOpen(false)}
+            currentHiveFleet={currentHiveFleet}
         />
         <AdaptivePhysoilogyModal
             open={apModalOpen}
@@ -269,6 +271,7 @@ const UnitStatsTablePanel = (props) => {
         <RelicsModel
             open={rModalOpen}
             onClose={() => setRModalOpen(false)}
+            currentHiveFleet={currentHiveFleet}
         />
         </>
     );

@@ -33,6 +33,7 @@ const useStyles = makeStyles((theme) => {
         buttonRoot: () => ({
             backgroundColor: 'rgb(150, 0, 0) !important',
             color: 'white !important',
+            marginBottom: '10px',
         }),
         body: () => ({
             marginLeft: '0%'
@@ -61,24 +62,16 @@ const headers = [
 ]
 
 
-const values = [
-    traits.alienCunning,
-    traits.heightenedSenses,
-    traits.synapticLynchpin,
-    traits.directGuidence,
-    traits.synapticTendrils,
-    traits.adaptiveBiology,
-]
 
 const WarlordTraitsModal = (props) => {
-    const {open, onClose} = props;
+    const {open, onClose, currentHiveFleet} = props;
     const classes = useStyles(props);
 
     const getFormattedValues = () => {
-      return values.map(x => ({
+      return Object.values(traits).filter(x => !x.fleet || x.fleet === currentHiveFleet).map(x => ({
         ...x,
         name: <b>{x.name}</b>,
-        cellStyles: { background: lightGray },
+        cellStyles: { background: lightGray, verticalAlign: 'middle' },
       }));
     }
 

@@ -1,7 +1,9 @@
+import { behemoth } from "./fleets"
+
 export const monsterousMusculature = {
     name: '(BEHEMOTH) Monsterous Musculature',
     desc: 'Add 1 to the Damage characteristic of melee weapons the bearer is equipped with.',
-    fleet: 'behemoth',
+    fleet: behemoth.key,
 }
 
 export const balethornCannon = {

@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => {
 const InfoBanner = (props) => {
     const classes = useStyles(props);
     const {
-        onSiClick, onWiClick, onPpClick, onApClick, onRClick, currentHiveFleet, onHiveFleetChange
+        onSiClick, onWiClick, onPpClick, onApClick, onRClick
     } = props;
     return (
         <div className={classes.root}>
@@ -57,11 +57,8 @@ const InfoBanner = (props) => {
             <div className={classes.item} onClick={onWiClick}>
                 Warlord Traits
             </div>
-            <div className={classes.item} onClick={onRClick} currentHiveFleet={currentHiveFleet}>
+            <div className={classes.item} onClick={onRClick}>
                 Relics
-            </div>
-            <div>
-                <HiveFleetPanel currentHiveFleet={currentHiveFleet} onHiveFleetChange={onHiveFleetChange} />
             </div>
         </div>
     );

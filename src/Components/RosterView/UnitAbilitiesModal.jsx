@@ -6,10 +6,10 @@ import { Button, Checkbox, Chip, Dialog, DialogContent, Tooltip } from '@materia
 import InteractiveTable from '../Table/InteractiveTable';
 import { lightGray, mediumGray,  miscKewordColor,  psykerColor,  red1, relicColor, wargearColor, warlordTraitColor, } from '../../GLOBALS';
 import AddItemPanel from './AddItemPanel';
-import { allPsychicPowers } from '../../psychicPowers';
 import * as warlordTraits from '../../warlordTraits';
 import * as adaptivePhysiologies from '../../adaptivePhysiologies';
 import * as relics from '../../relics';
+import * as powers from '../../psychicPowers';
 
 const useStyles = makeStyles((theme) => {
     return {
@@ -169,7 +169,7 @@ const headers = [
 
 
 const UnitAbilitiesModal = (props) => {
-    const {open, onClose, unit, editMode, onUnitUpdate} = props;
+    const {open, onClose, unit, editMode, onUnitUpdate, currentHiveFleet} = props;
     const classes = useStyles(props);
 
     const [addItemOptions, setAddItemOptions] = useState([]);
@@ -440,6 +440,10 @@ const UnitAbilitiesModal = (props) => {
         },
     ]
 
+    const hiveFleetCheck = (x) => {
+        return !x.fleet || x.fleet === currentHiveFleet;
+    }
+
     return (
         <Dialog classes={classes} open={open} onClose={onClose} maxWidth={'lg'}>
             <DialogContent className={classes.modalContents}>
@@ -471,7 +475,7 @@ const UnitAbilitiesModal = (props) => {
                                 classes={{ root: classes.addPsychicButton}}
                                 onClick={() => {
                                     setAddItemCatagory('psychicPower');
-                                    setAddItemOptions(allPsychicPowers);
+                                    setAddItemOptions(Object.values(powers).filter(hiveFleetCheck));
                                 }}
                             >
                                 + Psychic Power
@@ -491,7 +495,7 @@ const UnitAbilitiesModal = (props) => {
                                 classes={{ root: classes.addWarlordTraitButton}}
                                 onClick={() => {
                                     setAddItemCatagory('warlordTrait');
-                                    setAddItemOptions(Object.values(warlordTraits));
+                                    setAddItemOptions(Object.values(warlordTraits).filter(hiveFleetCheck));
                                 }}
                             >
                                 + Warlord Trait
@@ -501,7 +505,7 @@ const UnitAbilitiesModal = (props) => {
                                 classes={{ root: classes.addRelicButton}}
                                 onClick={() => {
                                     setAddItemCatagory('relic');
-                                    setAddItemOptions(Object.values(relics));
+                                    setAddItemOptions(Object.values(relics).filter(hiveFleetCheck));
                                 }}
                             >
                                 + Relic

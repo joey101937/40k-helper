@@ -7,6 +7,8 @@ import { Button, Checkbox } from '@material-ui/core';
 import { eliteColor, fastAttackColor, heavySupportColor, hqColor, lightGray, red1, red2, troopColor } from '../GLOBALS';
 import UnitWeaponsModal from './RosterView/UnitWeaponsModal';
 import UnitAbilitiesModal from './RosterView/UnitAbilitiesModal';
+import { noFleet } from '../fleets';
+import HiveFleetPanel from './RosterView/HiveFleetPanel';
 
 const useStyles = makeStyles((theme) => {
     return {
@@ -87,6 +89,7 @@ const CreateRosterPage = (props) => {
     const classes = useStyles(props);
     const { onCreateRoster } = props;
 
+    const [currentHiveFleet, setCurrentHiveFleet] = useState(noFleet.key);
     const [currentRoster, setCurrentRoster] = useState(units);
     const [weaponUnit, setWeaponUnit] = useState(null);
     const [abilityUnit, setAbilityUnit] = useState(null);
@@ -185,6 +188,9 @@ const CreateRosterPage = (props) => {
             </div>
             <div className={classes.subTitle}>
                 Select the units you want to be included using the table below. Weapons and abilities may be added or removed with the corresponding buttons. <b> Psychic Powers, Relics, Wargear, and Warlord Traits are included in the abilities section.</b>
+            <div>
+                <HiveFleetPanel currentHiveFleet={currentHiveFleet} setCurrentHiveFleet={setCurrentHiveFleet} />
+            </div>
             </div>
             <InteractiveTable
                 values={getFormattedValues()}
@@ -219,6 +225,7 @@ const CreateRosterPage = (props) => {
             onClose={() => setAbilityUnit(null)}
             editMode
             onUnitUpdate={updateUnit}
+            currentHiveFleet={currentHiveFleet}
         />
         </>
     );
