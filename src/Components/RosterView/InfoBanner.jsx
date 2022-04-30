@@ -1,5 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@mui/styles';
+import HiveFleetPanel from './HiveFleetPanel';
 
 const useStyles = makeStyles((theme) => {
     return {
@@ -29,7 +30,7 @@ const useStyles = makeStyles((theme) => {
             borderRadius: '5px',
             "&:hover": {
                 background: "rgb(60,60,60)"
-              },
+            },
         })
     }
 });
@@ -37,27 +38,30 @@ const useStyles = makeStyles((theme) => {
 const InfoBanner = (props) => {
     const classes = useStyles(props);
     const {
-        onSiClick, onWiClick, onPpClick, onApClick, onRClick
+        onSiClick, onWiClick, onPpClick, onApClick, onRClick, currentHiveFleet, onHiveFleetChange
     } = props;
     return (
         <div className={classes.root}>
             <div className={classes.item}>
-             Strategems
+                Strategems
             </div>
             <div className={classes.item} onClick={onSiClick}>
-             Synaptic Imperatives
+                Synaptic Imperatives
             </div>
             <div className={classes.item} onClick={onPpClick}>
-             Psychic Powers
+                Psychic Powers
             </div>
             <div className={classes.item} onClick={onApClick}>
-             Adaptive Physiologies
+                Adaptive Physiologies
             </div>
             <div className={classes.item} onClick={onWiClick}>
-             Warlord Traits
+                Warlord Traits
             </div>
-            <div className={classes.item} onClick={onRClick}>
-             Relics
+            <div className={classes.item} onClick={onRClick} currentHiveFleet={currentHiveFleet}>
+                Relics
+            </div>
+            <div>
+                <HiveFleetPanel currentHiveFleet={currentHiveFleet} onHiveFleetChange={onHiveFleetChange} />
             </div>
         </div>
     );

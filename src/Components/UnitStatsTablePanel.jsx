@@ -19,6 +19,7 @@ import PsychicPowerModal from './RosterView/PsychicPowersModal';
 import AdaptivePhysoilogyModal from './RosterView/AdaptivePhysiologyModel';
 import { eliteColor, fastAttackColor, heavySupportColor, hqColor, troopColor } from '../GLOBALS';
 import RelicsModel from './RosterView/RelicsModel';
+import { noFleet } from '../fleets';
 
 
 const useStyles = makeStyles((theme) => {
@@ -52,6 +53,8 @@ const UnitStatsTablePanel = (props) => {
     const classes = useStyles(props);
 
     const { rosterUnits = units } = props;
+
+    const [currentHiveFleet, setCurrentHiveFleet] = useState(noFleet.key);
 
     const [showBrackets, setShowBrackets] = useState(false);
     const [unitRoleBackgrounds, setUnitRoleBackgrounds] = useState(true);
@@ -222,6 +225,8 @@ const UnitStatsTablePanel = (props) => {
             onPpClick={() => setPpModalOpen(true)}
             onApClick={() => setApModalOpen(true)}
             onRClick={() => setRModalOpen(true)}
+            currentHiveFleet={currentHiveFleet}
+            onHiveFleetChange={setCurrentHiveFleet}
         />
         <InteractiveTable
             headers={headers}
