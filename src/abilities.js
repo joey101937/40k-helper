@@ -55,17 +55,17 @@ export const synapticGuidence = {
 
 export const psyker1 = {
     name: 'Psyker (1)',
-    desc: 'This model can attempt to manifest one psychic power in your Psychic phase and attempt to deny one psychic power in your opponent’s Psychic phase. It knows Smite and one psychic powers from the Hive Mind discipline.'
+    desc: 'This model can attempt to manifest one psychic power in your Psychic phase and attempt to deny one psychic power in your opponent\'s Psychic phase. It knows Smite and one psychic powers from the Hive Mind discipline.'
 }
 
 export const psyker2 = {
     name: 'Psyker (2)',
-    desc: 'This model can attempt to manifest two psychic powers in your Psychic phase and attempt to deny one psychic power in your opponent’s Psychic phase. It knows Smite and two psychic powers from the Hive Mind discipline.'
+    desc: 'This model can attempt to manifest two psychic powers in your Psychic phase and attempt to deny one psychic power in your opponent\'s Psychic phase. It knows Smite and two psychic powers from the Hive Mind discipline.'
 }
 
 export const psyker2_2 = {
     name: 'Psyker (2,2)',
-    desc: 'This model can attempt to manifest two psychic powers in your Psychic phase and attempt to deny two psychic powers in your opponent’s Psychic phase. It knows Smite and two psychic powers from the Hive Mind discipline.'
+    desc: 'This model can attempt to manifest two psychic powers in your Psychic phase and attempt to deny two psychic powers in your opponent\'s Psychic phase. It knows Smite and two psychic powers from the Hive Mind discipline.'
 }
 
 export const psychicNode = {
@@ -90,7 +90,7 @@ export const wallOfflesh = {
 
 export const broodProgenitor = {
     name: 'Brood Progenitor:',
-    desc: 'In your Command phase, select one friendly <HIVE FLEET> TERMAGANTS unit within Synaptic Link range of this model that has not already been selected for this ability this turn. Until the start of your next Command phase, each time a model in that unit makes a ranged attack, add 1 to that attack’s hit roll.'
+    desc: 'In your Command phase, select one friendly <HIVE FLEET> TERMAGANTS unit within Synaptic Link range of this model that has not already been selected for this ability this turn. Until the start of your next Command phase, each time a model in that unit makes a ranged attack, add 1 to that attack\'s hit roll.'
 }
 
 export const spawnTermagants = {
@@ -120,7 +120,7 @@ export const insidiousInfestation = {
 
 export const insidiousinfestationAction = {
     name: 'Insidious Infestation (Action)',
-    desc: 'In your Command phase, any number of GENESTEALERS units from your army can start to perform this action. The action is completed at the end of your next Movement phase. When it is completed, set up this unit’s <HIVE FLEET> Infestation Node marker on the battlefield within 1" of this unit.'
+    desc: 'In your Command phase, any number of GENESTEALERS units from your army can start to perform this action. The action is completed at the end of your next Movement phase. When it is completed, set up this unit\'s <HIVE FLEET> Infestation Node marker on the battlefield within 1" of this unit.'
 }
 
 export const graspingTendrils = {
@@ -135,7 +135,7 @@ export const toxicMiasma = {
 
 export const foulSpores  = {
     name: 'Foul Spores ',
-    desc: 'While a friendly <HIVE FLEET> unit (excluding TITANIC units) is within 6" of this unit, each time a ranged attack is made against that friendly unit, subtract 1 from that attack\’s hit roll.'
+    desc: 'While a friendly <HIVE FLEET> unit (excluding TITANIC units) is within 6" of this unit, each time a ranged attack is made against that friendly unit, subtract 1 from that attack\'s hit roll.'
 }
 
 export const swarmingMasses = {
@@ -153,14 +153,39 @@ export const seedSporeMines = {
     desc: 'This unit can perform the following action: At the start of your Shooting phase, one BIOVORES unit from your army can start to perform this action. The action is completed at the end of that phase. When it is completed, set up a new friendly SPORE MINES unit on the battlefield more than 6" away from any enemy units and wholly within 48" of this unit. That SPORE MINES unit contains D3 models for each BIOVORES model in this unit, and, if you are playing a game that uses a points limit, does not cost any Reinforcement points.'
 }
 
+export const viciousHunter = {
+    name: 'Vicious Hunter',
+    desc: 'Each time this model makes a ranged attack, the target does not revceive the benefits of Light Cover and unmodified wound rolls of 6 have their AP value improved by 1',
+}
+
 export const boundingLeap = {
     name: 'Bounding Leap',
     desc: 'Each time a model in this unit makes a pile-in move, it can move up to an additional 3" to a maximum of 9"'
 }
 
+export const distensibleJaws = {
+    name: 'Distensible Jaws',
+    desc: 'Each time this model is selected to Fight, select one enemy unit (excluding VEHICLE units) within Engagement Range of this model and roll one D6: on a 2-5, that enemy unit suffers D3 mortal wounds; on a 6, that enemy unit suffers 3 mortal wounds. If any models are destroyed as a result of those mortal wounds, until the end of the turn, that enemy unit counts as being below Half-strength for the purpose of Combat Attrition tests.'
+}
+
+export const terrorFromTheDeep = {
+    name: 'Terror from the Deep:',
+    desc: 'In your Command phase, if any MAWLOC models from your army are underground, you can select one of those models and select one point on the battlefield and place a Terror from the Deep marker on that point. If you do so, that model cannot be set up using its Death from Below ability this turn and, at the start of the Reinforcements step of your next turn\'s Movement phase, roll one D6 for each enemy unit within 6" of the centre of that marker, adding 1 if the unit being rolled for contains between 6 and 10 models, and adding 2 if the unit being rolled for contains 11 or more models: on a 3-6, that unit suffers D3 mortal wounds; on a 7+, that unit suffers D3+3 mortal wounds. Then set the selected MAWLOC model up anywhere on the battlefield that is within 12" of the centre of that marker and not within Engagement Range of any enemy models, and remove that marker. If that MAWLOC model is set up within 9" of any enemy models, until the end of the turn, it cannot charge.'
+}
+
 export const deathFromBelow = {
     name: 'Death From Below',
     desc: 'During deployment, you can set up this unit underground instead of setting it up on the battlefield. If you do so, then during the Reinforcements step of one of your Movement phases, you can set up this unit anywhere on the battlefield that is more than 9" away from any enemy models.'
+}
+
+export const serpentineBodies = {
+    name: 'Serpentine Bodies',
+    desc: 'Each time a melee attack is made against this unit, subtract 1 from that attack’s hit roll.'
+}
+
+export const viciousDevouerers = {
+    name: 'Vicious Devourers',
+    desc: 'Each time a model in this unit makes a melee attack, if that model is not equipped with any ranged weapons, re-roll a hit roll of 1.'
 }
 
 export const serpentineCoils = {

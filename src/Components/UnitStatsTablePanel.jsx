@@ -46,6 +46,12 @@ const useStyles = makeStyles((theme) => {
             color: 'blue',
             cursor: 'pointer',
             display: 'inline-block',
+            borderRadius: '5px',
+            paddingRight: '10px',
+            paddingLeft: '10px',
+            '&:hover' : {
+                background: 'rgba(40,40,40,.23)',
+            },
         }),
     }
 });

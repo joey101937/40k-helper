@@ -272,6 +272,16 @@ export const warriorScythingtalon = {
     notes: '+1 attack per talon',
 }
 
+export const ravenerClaws = {
+    name: 'Ravener Claws',
+    type: 'Melee',
+    range: 'Melee',
+    s: 'user',
+    ap: '-2',
+    d: '1',
+    notes: '-',
+}
+
 export const bioPlasmicCannon = {
     name: 'Bio-Plasmic Cannon',
     type: 'Heavy D3 + 6',
@@ -359,6 +369,16 @@ export const trygonTalons = {
     s: 'user',
     ap: '-3',
     d: '2',
+    notes: '-',
+}
+
+export const mawlocTalons = {
+    name: 'Mawloc Scything Talons',
+    type: 'Melee',
+    range: 'Melee',
+    s: 'user',
+    ap: '-1',
+    d: '1',
     notes: '-',
 }
 
