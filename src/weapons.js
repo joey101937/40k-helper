@@ -48,7 +48,7 @@ export const tyrantStranglethron = {
     notes: 'Blast',
 }
 
-export const tervigonStingerSalvoes = {
+export const stingerSalvoes = {
     name: 'Stinger Salvoes',
     type: 'Assault 8',
     range: '24"',
@@ -270,6 +270,76 @@ export const warriorScythingtalon = {
     ap: '-1',
     d: '1',
     notes: '+1 attack per talon',
+}
+
+export const bioPlasmicCannon = {
+    name: 'Bio-Plasmic Cannon',
+    type: 'Heavy D3 + 6',
+    range: '36"',
+    s: '8',
+    ap: '-4',
+    d: '3',
+    notes: 'Blast',
+}
+
+export const tyrannofexAcidSpray = {
+    name: 'Acid Spray',
+    type: 'Heavy D6 + 6',
+    range: '18"',
+    s: '6',
+    ap: '-3',
+    d: '2',
+    notes: 'Each time an attack is made with this weapon, that attack automatically hits the target.',
+}
+
+export const fleshborerHive = {
+    name: 'Fleshborer Hive',
+    type: 'Assault 30',
+    range: '24"',
+    s: '5',
+    ap: '-1',
+    d: '1',
+    notes: '-',
+}
+
+export const ruptureCannon = {
+    name: 'Rupture Cannon',
+    type: 'Heavy 3',
+    range: '48"',
+    s: '14',
+    ap: '-4',
+    d: 'D6 + 4',
+    notes: '-',
+}
+
+export const powerfulLimbs = {
+    name: 'Powerful Limbs',
+    type: 'Melee',
+    range: 'Melee',
+    s: 'user',
+    ap: '-1',
+    d: '2',
+    notes: '-',
+}
+
+export const chitinBarbedFists = {
+    name: 'Chitin Barbed Fists',
+    type: 'Melee',
+    range: 'Melee',
+    s: 'user',
+    ap: '-1',
+    d: '1',
+    notes: '-',
+}
+
+export const sporeMineLauncher = {
+    name: 'Spore Mine Launcher',
+    type: 'Heavy 3',
+    range: '48"',
+    s: '*',
+    ap: '*',
+    d: '*',
+    notes: 'Indirect Fire. This weapon can target units that are not visible to the bearer, as long as they are visible to a friendly <HIVE FLEET> SYNAPSE model. Each time an attack is made with this weapon, if a hit is scored, the target suffers 1 mortal wound and the attack sequence ends.',
 }
 
 export const trygonBioPulse = {

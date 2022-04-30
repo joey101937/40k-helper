@@ -180,7 +180,7 @@ export const units = [
             tyranids,
         ],
         weapons: [
-            weapons.tervigonStingerSalvoes,
+            weapons.stingerSalvoes,
             weapons.tervigonCrushingClaws,
             weapons.tervigonTalonsStrike,
             weapons.tervigonTalonsSweep,
@@ -703,6 +703,142 @@ export const units = [
         wargear: [
             adrenalGlands,
             toxinSacs,
+        ],
+    },
+    {
+        name: 'Biovore',
+        type: 'infantry',
+        role: 'heavySupport',
+        stats: [{
+            m: '5"',
+            ws: '4+',
+            bs: '4+',
+            s: '5',
+            t: '5',
+            w: '4',
+            a: '2',
+            ld: '5',
+            sv: '4+',
+        }],
+        keywords: [
+            infantry,
+            hiveTentril,
+            tyranids,
+        ],
+        weapons: [
+            weapons.sporeMineLauncher,
+            weapons.chitinBarbedFists,
+        ],
+        abilities:[
+            abilities.seedSporeMines,
+        ],
+        wargear: [
+        ],
+    },
+    {
+        name: 'Exocrine',
+        type: 'monster',
+        role: 'heavySupport',
+        stats: [{
+            m: '8"',
+            ws: '3+',
+            bs: '3+',
+            s: '7',
+            t: '8',
+            w: '15',
+            a: '3',
+            ld: '7',
+            sv: '2+',
+        },{
+            m: '7"',
+            ws: '4+',
+            bs: '4+',
+            s: '7',
+            t: '8',
+            w: '<8',
+            a: '3',
+            ld: '7',
+            sv: '2+',
+        },{
+            m: '5"',
+            ws: '5+',
+            bs: '5+',
+            s: '7',
+            t: '8',
+            w: '<5',
+            a: '3',
+            ld: '7',
+            sv: '2+',
+        }],
+        keywords: [
+            monster,
+            hiveTentril,
+            tyranids,
+        ],
+        weapons: [
+            weapons.bioPlasmicCannon,
+            weapons.powerfulLimbs,
+        ],
+        abilities:[
+            abilities.symbioticTargeting,
+            abilities.deathThroes
+        ],
+        wargear: [
+        ],
+    },
+    {
+        name: 'Tyrannofex',
+        type: 'monster',
+        role: 'heavySupport',
+        stats: [{
+            m: '9"',
+            ws: '3+',
+            bs: '3+',
+            s: '7',
+            t: '8',
+            w: '17',
+            a: '4',
+            ld: '7',
+            sv: '2+',
+        },{
+            m: '8"',
+            ws: '4+',
+            bs: '4+',
+            s: '7',
+            t: '8',
+            w: '<9',
+            a: '4',
+            ld: '7',
+            sv: '2+',
+        },{
+            m: '6"',
+            ws: '5+',
+            bs: '5+',
+            s: '7',
+            t: '8',
+            w: '<5',
+            a: '4',
+            ld: '7',
+            sv: '2+',
+        }],
+        keywords: [
+            monster,
+            hiveTentril,
+            tyranids,
+        ],
+        weapons: [
+            weapons.tyrannofexAcidSpray,
+            weapons.fleshborerHive,
+            weapons.ruptureCannon,
+            weapons.stingerSalvoes,
+            weapons.powerfulLimbs,
+        ],
+        abilities:[
+            abilities.deathThroes
+        ],
+        wargear: [
+            adrenalGlands,
+            toxinSacs
         ],
     },
 ];

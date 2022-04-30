@@ -143,6 +143,16 @@ export const swarmingMasses = {
     desc: 'Each time this unit fights, models in this unit can fight if it is either in engagement range or within 2.5" of enemy units. If, in the Fight phase, this unit is subject to any other rules that would reduce the number of models from this unit that are able to fight, then neither those rules nor the Swarming Masses rule take effect for that phase.'
 }
 
+export const symbioticTargeting = {
+    name: 'Symbiotic Targeting',
+    desc: 'In your Movement phase, if this model Remains Stationary or moves a total distance of less than half its Move characteristic, until the end of the turn, each time this model makes a ranged attack, the target does not receive the benefits of cover against that attack.'
+}
+
+export const seedSporeMines = {
+    name: 'Seed Spore Mines',
+    desc: 'This unit can perform the following action: At the start of your Shooting phase, one BIOVORES unit from your army can start to perform this action. The action is completed at the end of that phase. When it is completed, set up a new friendly SPORE MINES unit on the battlefield more than 6" away from any enemy units and wholly within 48" of this unit. That SPORE MINES unit contains D3 models for each BIOVORES model in this unit, and, if you are playing a game that uses a points limit, does not cost any Reinforcement points.'
+}
+
 export const boundingLeap = {
     name: 'Bounding Leap',
     desc: 'Each time a model in this unit makes a pile-in move, it can move up to an additional 3" to a maximum of 9"'
