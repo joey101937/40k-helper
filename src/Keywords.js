@@ -20,7 +20,7 @@ export const swarm = {
 
 export const monster = {
     name: 'Monster',
-    desc: 'Can use non-blast ranged weapons while in melee but with -1 to hit. See \"Big Guns Never Tire\" special rule.'
+    desc: 'Can use non-blast ranged weapons while in melee. Heavy weapons shot this way get -1 to hit. See \"Big Guns Never Tire\" special rule.'
 }
 
 export const burrower = {
