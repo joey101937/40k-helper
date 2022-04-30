@@ -231,7 +231,9 @@ const UnitStatsTablePanel = (props) => {
             headers={headers}
             values={getFormattedValues()}
         />
-        <HiveFleetPanel currentHiveFleet={currentHiveFleet} setCurrentHiveFleet={setCurrentHiveFleet} />
+        <div style={{ paddingBottom: '15px' }}>
+            <HiveFleetPanel currentHiveFleet={currentHiveFleet} setCurrentHiveFleet={setCurrentHiveFleet} />
+        </div>
         <SettingsModal 
             open={settingsModalOpen}
             onClose={() => setSettingsModalOpen(false)}

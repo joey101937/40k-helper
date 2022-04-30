@@ -31,6 +31,10 @@ export const hiveTentril = {
     name: 'Hive Tendril',
 }
 
+export const carnifexKeyword = {
+    name: 'Carnifex',
+}
+
 export const core = {
     name: 'Core',
 }

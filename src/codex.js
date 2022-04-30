@@ -1,5 +1,5 @@
 import * as abilities from "./abilities";
-import { burrower, character, core, endlessMultitude, feederTendrils, fly, hiveTentril, hiveTyrantKeyword, hornedChitin, infantry, monster, psycher1Keyword, psycher2Keyword, sporeCaster, swarm, synapse, toxicLashes, tyranids, psycher2_2Keyword } from "./Keywords";
+import { burrower, character, core, endlessMultitude, feederTendrils, fly, hiveTentril, hiveTyrantKeyword, hornedChitin, infantry, monster, psycher1Keyword, psycher2Keyword, sporeCaster, swarm, synapse, toxicLashes, tyranids, psycher2_2Keyword, carnifexKeyword } from "./Keywords";
 import { acidMawWargear, adrenalGlands, biostaticRattle, chitinThrons, enhancedSenses, extendedCarapace, fleshHooks, infestationNode, lashWhip, prehensilePincerTail, sporeCysts, toxinSacs, tusks } from "./Wargear";
 import * as weapons from "./weapons";
 
@@ -601,6 +601,7 @@ export const units = [
         keywords: [
             monster,
             core,
+            carnifexKeyword,
             hiveTentril,
             tyranids,
         ],
@@ -630,6 +631,78 @@ export const units = [
             enhancedSenses,
             sporeCysts,
             tusks,
+        ],
+    },
+    {
+        name: 'Screamer Killer',
+        type: 'monster',
+        role: 'heavySupport',
+        stats: [{
+            m: '10"',
+            ws: '3+',
+            bs: '4+',
+            s: '6',
+            t: '7',
+            w: '9',
+            a: '10',
+            ld: '6',
+            sv: '2+',
+        }],
+        keywords: [
+            monster,
+            core,
+            carnifexKeyword,
+            hiveTentril,
+            tyranids,
+        ],
+        weapons: [
+            weapons.bioPlasmicScream,
+            weapons.screamerKillerTalons,
+        ],
+        abilities: [
+            abilities.ArmouredExoskeleton,
+            abilities.blisteringAssault,
+            abilities.monsterousBrood,
+            abilities.deathThroes,
+            abilities.terrifying,
+        ],
+        wargear: [
+            adrenalGlands,
+            toxinSacs,
+            sporeCysts,
+        ],
+    },
+    {
+        name: 'Hive Guard',
+        type: 'infantry',
+        role: 'heavySupport',
+        stats: [{
+            m: '6"',
+            ws: '4+',
+            bs: '3+',
+            s: '5',
+            t: '6',
+            w: '4',
+            a: '3',
+            ld: '5',
+            sv: '3+',
+        }],
+        keywords: [
+            infantry,
+            hiveTentril,
+            tyranids,
+        ],
+        weapons: [
+            weapons.shockCannon,
+            weapons.impalerCannon,
+        ],
+        abilities:[
+            abilities.defensiveStance,
+            abilities.synapticGuidence,
+        ],
+        wargear: [
+            adrenalGlands,
+            toxinSacs,
         ],
     },
 ];

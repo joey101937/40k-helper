@@ -38,6 +38,21 @@ export const deathThroes = {
     desc: 'When this model is destroyed, roll one D6 before removing it from play. On a 6+, the closest enemy unit within 6" suffers D3 mortal wounds.'
 }
 
+export const terrifying = {
+    name: 'Terrifying',
+    desc: 'Each time this model destroys a model in an enemy unit, until the end of the turn, subtract 1 from the Leadership characteristic of models in that enemy unit (to a maximum of -4).'
+}
+
+export const defensiveStance = {
+    name: 'Defensive Stance',
+    desc: 'This Unit can perform the following action: At the start of your Command phase, any number of HIVE GUARD units from your army can start to perform this action. The action is completed at the end of your next Movement phase. When it is completed, until the start of your next Movement phase, each model in this unit counts as 3 models when determining control of an objective marker.'
+}
+
+export const synapticGuidence = {
+    name: 'Synaptic Guidence',
+    desc: 'Each time a model in this unit makes a ranged attack against an enemy unit that is visible to a friendly <HIVE FLEET> SYNAPSE model, you can ignore any or all hit roll and Ballistic Skill modifiers.'
+}
+
 export const psyker1 = {
     name: 'Psyker (1)',
     desc: 'This model can attempt to manifest one psychic power in your Psychic phase and attempt to deny one psychic power in your opponent’s Psychic phase. It knows Smite and one psychic powers from the Hive Mind discipline.'

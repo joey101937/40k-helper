@@ -120,6 +120,26 @@ export const venomthropeLashes = {
 }
 
 
+export const impalerCannon = {
+    name: 'Impaler Cannon',
+    type: 'Heavy 3',
+    range: '24"',
+    s: '6',
+    ap: '-2',
+    d: '2',
+    notes: 'Indirect Fire. This weapon can target units that are not visible to the bearer, as long as the target is visible to a friendly <HIVE FLEET> SYNAPSE model. Each time an attack is made with this weapon, the target does not receive the benefits of Light Cover against that attack.',
+};
+
+export const shockCannon = {
+    name: 'Shock Cannon',
+    type: 'Assault 2',
+    range: '36"',
+    s: '7',
+    ap: '-2',
+    d: '3',
+    notes: 'If this weapon wounds a VEHICLE target on an unmodified wound roll of 4+, inflict 1 mortal wound to that vehicle in addition to normal damage.',
+};
+
 export const termigantFleshborer = {
     name: 'Fleshborer',
     type: 'Assault 1',
@@ -299,6 +319,26 @@ export const ripperSpineMaw = {
     s: '2',
     ap: '0',
     d: '1',
+    notes: '-',
+}
+
+export const bioPlasmicScream = {
+    name: 'Bio-Plasmic Scream',
+    type: 'Assault D6',
+    range: '18"',
+    s: '8',
+    ap: '-4',
+    d: '1',
+    notes: 'Blast',
+}
+
+export const screamerKillerTalons = {
+    name: 'Screamer Killer Talons',
+    type: 'Melee',
+    range: 'Melee',
+    s: 'user',
+    ap: '-3',
+    d: '3',
     notes: '-',
 }
 
