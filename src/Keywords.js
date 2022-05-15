@@ -37,6 +37,7 @@ export const carnifexKeyword = {
 
 export const core = {
     name: 'Core',
+    desc: 'Includes: Gargoyles, Hormagaunts, Termagants, Tyranid Warriors, Genestealers, Pyrovores, Tyrant Guard, Venomthropes, Zoanthropes, Raveners, Carnifexes, Screamer-Killers, Thornbacks'
 }
 
 export const psycher1Keyword = {
@@ -72,6 +73,11 @@ export const character = {
 export const hornedChitin = {
     name: 'Horned Chitin',
     desc: 'Units with this keyword enhance the effect of the \"Trampling Charge\" strategem when targeted'
+}
+
+export const acidBlood = {
+    name: 'Acid Blood',
+    desc: 'Units with this keyword enhance the effect of the \"CORROSIVE VISCERA\" strategem when targeted'
 }
 
 export const tyranids = {

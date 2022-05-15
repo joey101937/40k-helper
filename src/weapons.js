@@ -119,6 +119,35 @@ export const venomthropeLashes = {
     notes: 'Unmodified wound rolls of 2+ are always successful',
 }
 
+export const flamespurtBurningSpray = {
+    name: 'Flamespurt - Burning Spray',
+    type: 'Assault D6',
+    range: '12"',
+    s: '6',
+    ap: '2',
+    d: '2',
+    notes: 'Each time an attack is made with this weapon, that attack automatically hits the target.',
+};
+
+export const flamespurtPyrogout = {
+    name: 'Flamespurt - Pyrogout',
+    type: 'Assault 2D6',
+    range: '18"',
+    s: '4',
+    ap: '1',
+    d: '1',
+    notes: 'Each time an attack is made with this weapon, that attack automatically hits the target.',
+};
+
+export const bludgeoningFists = {
+    name: 'Bludgeoning Fists',
+    type: 'Melee',
+    range: 'Melee',
+    s: '+1',
+    ap: '-3',
+    d: '1',
+    notes: '-',
+}
 
 export const impalerCannon = {
     name: 'Impaler Cannon',

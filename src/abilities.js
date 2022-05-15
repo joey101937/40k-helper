@@ -283,10 +283,10 @@ export const swiftOnslaught = {
     desc: 'Friendly units within 6" of this SYNAPSE model gain the following trait: Each time a model in this unit makes a pile-in or consolidation mode, it can mode up to an additional 3" (up to max of 9")'
 }
 
-// export const blank = {
-//     name: '',
-//     desc: ''
-// }
+export const volatile = {
+    name: 'Volatile',
+    desc: 'Each time a model in this unit is destroyed, roll one D6 before removing it from play. On a 6, it explodes, and each unit within 3" suffers 1 mortal wound.',
+}
 
 // export const blank = {
 //     name: '',

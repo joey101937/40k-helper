@@ -3,7 +3,7 @@ import { makeStyles } from '@mui/styles';
 import { Button, Dialog, DialogContent } from '@material-ui/core';
 import InteractiveTable from '../Table/InteractiveTable';
 import { goadedToSlaughter, guideMind, predatoryGuile, psychicAugmentation, psychicOversight, relentlessFurocity, surgingVitality, swiftOnslaught, thrashingDemise, warpShielding } from '../../abilities';
-import { lightGray } from '../../GLOBALS';
+import { eliteColor, fastAttackColor, hqColor, lightGray, troopColor } from '../../GLOBALS';
 
 const useStyles = makeStyles((theme) => {
     return {
@@ -68,44 +68,53 @@ const headers = [
 const values = [
     {
         unit: 'Hive Tyrant',
-        ability: relentlessFurocity
+        ability: relentlessFurocity,
+        background: hqColor,
     },
     {
         unit: 'Broodlord',
         ability: predatoryGuile,
+        background: hqColor,
     },
     {
         unit: 'Tervigon',
-        ability: surgingVitality
+        ability: surgingVitality,
+        background: hqColor,
     },
     {
         unit: 'Tyranid Prime',
-        ability: guideMind
+        ability: guideMind,
+        background: hqColor,
     },
-    {
-        unit: 'Warriors',
-        ability: goadedToSlaughter
-    },
-    
     {
         unit: 'Neurothrope',
-        ability: psychicAugmentation
+        ability: psychicAugmentation,
+        background: hqColor,
     },
     {
         unit: 'Trygon Prime',
-        ability: thrashingDemise
+        ability: thrashingDemise,
+        background: hqColor,
     },
     {
         unit: 'Maleceptor',
-        ability: psychicOversight
+        ability: psychicOversight,
+        background: eliteColor,
     },
     {
         unit: 'Zoanthropes',
-        ability: warpShielding
+        ability: warpShielding,
+        background: eliteColor,
+    },
+    {
+        unit: 'Warriors',
+        ability: goadedToSlaughter,
+        background: troopColor,
     },
     {
         unit: 'Parasite Of Mortrex',
-        ability: swiftOnslaught
+        ability: swiftOnslaught,
+        background: fastAttackColor,
     },
 ]
 
@@ -118,7 +127,7 @@ const SynapticImperativesModal = (props) => {
         ...x,
         unit: <b>{x.unit}</b>,
         desc: x.ability.desc,
-        cellStyles: { background: lightGray },
+        cellStyles: { background: x.background },
       }));
     }
 

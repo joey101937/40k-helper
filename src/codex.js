@@ -1,5 +1,5 @@
 import * as abilities from "./abilities";
-import { burrower, character, core, endlessMultitude, feederTendrils, fly, hiveTentril, hiveTyrantKeyword, hornedChitin, infantry, monster, psycher1Keyword, psycher2Keyword, sporeCaster, swarm, synapse, toxicLashes, tyranids, psycher2_2Keyword, carnifexKeyword } from "./Keywords";
+import { burrower, character, core, endlessMultitude, feederTendrils, fly, hiveTentril, hiveTyrantKeyword, hornedChitin, infantry, monster, psycher1Keyword, psycher2Keyword, sporeCaster, swarm, synapse, toxicLashes, tyranids, psycher2_2Keyword, carnifexKeyword, acidBlood } from "./Keywords";
 import { acidMawWargear, adrenalGlands, biostaticRattle, chitinThrons, enhancedSenses, extendedCarapace, fleshHooks, infestationNode, lashWhip, prehensilePincerTail, sporeCysts, toxinSacs, toxinSpike, tusks } from "./Wargear";
 import * as weapons from "./weapons";
 
@@ -346,6 +346,40 @@ export const units = [
             abilities.graspingTendrils,
             abilities.toxicMiasma,
             abilities.foulSpores
+        ]
+    },
+    {
+        name: 'Pyrovore',
+        type: 'infantry',
+        role: 'elite',
+        stats: [{
+            m: '5"',
+            ws: '3+',
+            bs: '3+',
+            s: '5',
+            t: '5',
+            w: '5',
+            a: '3',
+            ld: '5',
+            sv: '3+',
+        }],
+        keywords: [
+            infantry,
+            core,
+            acidBlood,
+            hiveTentril,
+            tyranids,
+        ],
+        weapons: [
+            weapons.flamespurtBurningSpray,
+            weapons.flamespurtPyrogout,
+            weapons.bludgeoningFists,           
+        ],
+        wargear: [
+            acidMawWargear,
+        ],
+        abilities: [
+            abilities.volatile,
         ]
     },
     {
