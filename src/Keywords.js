@@ -71,6 +71,7 @@ export const character = {
 
 export const hornedChitin = {
     name: 'Horned Chitin',
+    desc: 'Units with this keyword enhance the effect of the \"Trampling Charge\" strategem when targeted'
 }
 
 export const tyranids = {

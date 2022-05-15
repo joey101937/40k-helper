@@ -3,7 +3,7 @@ import _ from 'lodash';
 import { makeStyles } from '@mui/styles';
 import { Button, Dialog, DialogContent, Checkbox } from '@material-ui/core';
 import InteractiveTable from '../Table/InteractiveTable';
-import { lightGray, relicColor } from '../../GLOBALS';
+import { lightGray, relicColor, wargearColor } from '../../GLOBALS';
 
 const useStyles = makeStyles((theme) => {
     return {
@@ -122,6 +122,15 @@ const UnitWeaponsModal = (props) => {
                 cellStyles: { background: lightGray, },
                 formattedName: <b>{x.name}</b>,
             })) || [];
+        }
+        if (unit?.wargear?.filter(x => !!x.weapon && x.active)) {
+            unit.wargear.filter(x => !!x.weapon && x.active).forEach(x => {
+                output.push({
+                    ...x.weapon,
+                    cellStyles: { background: wargearColor, },
+                    formattedName: <b>(Wargear) {x.weapon.name}</b>
+                });
+            });
         }
         if (unit?.relics?.filter(x => !!x.weapon)) {
             unit.relics.filter(x => !!x.weapon).forEach(x => {

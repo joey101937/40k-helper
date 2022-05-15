@@ -24,7 +24,7 @@ export const synapticTendrils = {
 }
 
 export const adaptiveBiology = {
-    name: 'Adaptic Biology',
+    name: 'Adaptive Biology',
     desc: 'Each time this warlord would lose a wound, roll one D6: on a 5+, that wound is not lost.'
 }
 

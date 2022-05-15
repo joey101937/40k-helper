@@ -66,3 +66,17 @@ export const chitinThrons = {
     name: 'Chitin Thorns',
     desc: 'Each time this model makes a melee attack, improve the Armour Penetration characteristic of that attack by 1.',
 }
+
+export const toxinSpike = {
+    name: 'Toxin Spike',
+    desc: 'Bearer gets a toxinspike melee weapon which can be used as an additional attack once per fight',
+    weapon: {
+        name: 'Toxin Spike',
+        type: 'Melee',
+        range: 'Melee',
+        s: 'user',
+        ap: '-3',
+        d: '2',
+        notes: '+1 attack (Once per fight)',
+    }
+}

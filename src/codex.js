@@ -1,6 +1,6 @@
 import * as abilities from "./abilities";
 import { burrower, character, core, endlessMultitude, feederTendrils, fly, hiveTentril, hiveTyrantKeyword, hornedChitin, infantry, monster, psycher1Keyword, psycher2Keyword, sporeCaster, swarm, synapse, toxicLashes, tyranids, psycher2_2Keyword, carnifexKeyword } from "./Keywords";
-import { acidMawWargear, adrenalGlands, biostaticRattle, chitinThrons, enhancedSenses, extendedCarapace, fleshHooks, infestationNode, lashWhip, prehensilePincerTail, sporeCysts, toxinSacs, tusks } from "./Wargear";
+import { acidMawWargear, adrenalGlands, biostaticRattle, chitinThrons, enhancedSenses, extendedCarapace, fleshHooks, infestationNode, lashWhip, prehensilePincerTail, sporeCysts, toxinSacs, toxinSpike, tusks } from "./Wargear";
 import * as weapons from "./weapons";
 
 
@@ -232,6 +232,7 @@ export const units = [
             abilities.spiritLeech,
             abilities.warpSiphon,
             abilities.shadowInTheWarp,
+            abilities.psychicAugmentation,
         ],
         wargear: [
         ],
@@ -257,7 +258,6 @@ export const units = [
             fly,
             synapse,
             psycher1Keyword,
-            hornedChitin,
             hiveTentril,
             tyranids,
         ],
@@ -267,8 +267,9 @@ export const units = [
         abilities: [
             abilities.warpField4,
             abilities.warpBlast,
-            abilities.psybroodCoterie,
             abilities.shadowInTheWarp,
+            abilities.psybroodCoterie,
+            abilities.warpShielding,
         ],
         wargear: [
         ],
@@ -539,7 +540,6 @@ export const units = [
         weapons: [
             weapons.trygonBioPulse,
             weapons.trygonTalons,
-            weapons.trygonToxinSpike,
         ],
         abilities:[
             abilities.deathFromBelow,
@@ -551,6 +551,7 @@ export const units = [
             toxinSacs,
             prehensilePincerTail,
             biostaticRattle,
+            {active: true, ...toxinSpike},
         ],
     },
     {
@@ -596,7 +597,6 @@ export const units = [
         ],
         weapons: [
             weapons.mawlocTalons,
-            weapons.trygonToxinSpike,
         ],
         abilities:[
             abilities.terrorFromTheDeep,
@@ -610,6 +610,7 @@ export const units = [
             toxinSacs,
             prehensilePincerTail,
             biostaticRattle,
+            {active: true, ...toxinSpike},
         ],
     },
     {
@@ -963,6 +964,7 @@ export const units = [
         }],
         keywords: [
             monster,
+            hornedChitin,
             hiveTentril,
             tyranids,
         ],

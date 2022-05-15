@@ -382,16 +382,6 @@ export const mawlocTalons = {
     notes: '-',
 }
 
-export const trygonToxinSpike = {
-    name: 'Toxin Spike',
-    type: 'Melee',
-    range: 'Melee',
-    s: 'user',
-    ap: '-3',
-    d: '2',
-    notes: '+1 attack (Once per fight)',
-}
-
 export const ripperClaws = {
     name: 'Claws',
     type: 'Melee',
