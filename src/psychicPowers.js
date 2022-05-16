@@ -59,7 +59,7 @@ export const synapticLure = {
 export const hiveNexus = {
     name: `(${leviathan.name.toUpperCase()}) Hive Nexus`,
     warpChargeValue: '7',
-    desc: `Blessing: Select one friendly LEVIATHAN Synapse model within synaptic link range. You may then choose another LEVIATHAN unit within synaptic link range to grant the benefits of the synapse unit's \"Synaptic Imperative\" ability as if it were active for your army.`,
+    desc: `Blessing: Select one friendly LEVIATHAN Synapse model within synaptic link range. You may then choose another LEVIATHAN CORE unit within synaptic link range to grant the benefits of the synapse unit's \"Synaptic Imperative\" ability as if it were active for your army.`,
     fleet: leviathan.key
 }
 

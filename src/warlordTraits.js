@@ -35,13 +35,13 @@ export const monsterousHunger = {
 }
 
 export const perfectlyAdaptyed = {
-    name: '(LEVIATHAN) Monsterous Hunger',
+    name: '(LEVIATHAN) Perfectly Adapted',
     desc: 'Once per battle round, you can re-roll one of the following rolls made for this WARLORD: hit roll; wound roll; damage roll; Advance roll; charge roll; Psychic test; saving throw.',
     fleet: 'leviathan',
 }
 
 export const oneStepAhead = {
-    name: '(KRAKEN) Monsterous Hunger',
+    name: '(KRAKEN) One Step Ahead',
     desc: 'Each time your opponent uses a Stratagem, if this WARLORD is on the battlefield, roll one D6: on a 5+, you gain 1 Command point.',
     fleet: 'kraken',
 }
