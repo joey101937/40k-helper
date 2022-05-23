@@ -126,6 +126,49 @@ export const theDeepestShadow = {
     desc: 'Use this Stratagem in your opponent’s Psychic phase, when an enemy unit fails a Psychic test. Select a friendly KRONOS PSYKER unit within 18" of that enemy unit. That enemy unit suffers D3 mortal wounds and the selected friendly unit gains the following aura ability: While an enemy PSYKER unit is within 18" of this unit, each time a Psychic test taken for that unit is failed, that unit suffers D3 mortal wounds.'
 }
 
+export const reinforcedHiveNode = {
+    name: 'Reinforced Hive Node',
+    timing: 'anyPhase',
+    type: 'Battle Tactic',
+    cost: '1-2cp',
+    desc: 'Use this Stratagem in any phase, when a TYRANID WARRIORS or TYRANID PRIME unit from your army is selected as the target of an attack. Until the end of the phase, each time an attack is allocated to a model in that unit, subtract 1 from the Damage characteristic of that attack (to a minimum of 1). If that unit contains 5 or fewer models, this Stratagem costs 1CP; otherwise, it costs 2CP.'
+}
+
+
+export const shardLure = {
+    name: 'Shard Lure',
+    timing: 'shootingPhase',
+    type: 'Strategic Ploy',
+    cost: '1cp',
+    desc: 'Use this Stratagem in your Shooting phase, when a ranged attack made by a model in a <HIVE FLEET> SYNAPSE unit from your army scores a hit against an enemy unit. Until the end of the turn, each time a friendly <HIVE FLEET> unit declares a charge, if that enemy unit is one of the targets of that charge, roll one additional D6 and discard one of the dice when making the charge roll.'
+}
+
+
+export const tramplingCharge = {
+    name: 'Trampling Charge',
+    timing: 'chargePhase',
+    type: 'Strategic Ploy',
+    cost: '1cp',
+    desc: 'Use this Stratagem in your Charge phase, when a HIVE TENDRIL MONSTER model from your army finishes a charge move. Select one enemy unit within Engagement Range of that MONSTER model and roll one D6: If that MONSTER model has the HORNED CHITIN keyword, on a 2-4, that enemy unit suffers 3 mortal wounds; on a 5+, that enemy unit suffers D3+3 mortal wounds. If the MONSTER does not have horned chitin, the values are 2-4 = D3 and 5+ = 3 mortal wounds.'
+}
+
+export const adrenalSurge = {
+    name: 'Adrenal Surge',
+    timing: 'fightPhase',
+    type: 'Strategic Ploy',
+    cost: '1-2cp',
+    desc: 'Use this Stratagem in the Fight phase, when an ADRENAL GLANDS unit from your army is selected to fight. Until the end of the phase, if that unit made a charge move this turn: models in that unit have their attack characteristic increased by 1. Monster models gain D3 attack isntead. If that unit contains 19 or fewer models, this Stratagem costs 1CP; otherwise, it costs 2CP.'
+}
+
+
+export const deathFrenzy = {
+    name: 'Death Frenzy',
+    timing: 'fightPhase',
+    type: 'Epic Deed',
+    cost: '2cp',
+    desc: 'Use this Stratagem in the Fight phase, when a HIVE TENDRIL CHARACTER model from your army that has not already been selected to fight this phase is destroyed, instead of using any rules that are triggered when that model is destroyed (e.g. the Death Throes ability). Do not remove that model from play - it can fight after the attacking model’s unit has finished making attacks. When making those attacks, if the destroyed model’s characteristics can change as they suffer damage, that model is considered to have its full wounds remaining for the purpose of determining what those characteristics are. After resolving the destroyed model’s attacks, it is then removed.'
+}
+
 /*
 export const rapicRegeneration = {
     name: 'Rapid Regeneration',

@@ -178,6 +178,11 @@ export const deathFromBelow = {
     desc: 'During deployment, you can set up this unit underground instead of setting it up on the battlefield. If you do so, then during the Reinforcements step of one of your Movement phases, you can set up this unit anywhere on the battlefield that is more than 9" away from any enemy models.'
 }
 
+export const deathFromAbove = {
+    name: 'Death From Above',
+    desc: 'During deployment, you can set up this unit high in the sky instead of setting it up on the battlefield. If you do so, then during the Reinforcements step of one of your Movement phases, you can set up this unit anywhere on the battlefield that is more than 9" away from any enemy models.'
+}
+
 export const serpentineBodies = {
     name: 'Serpentine Bodies',
     desc: 'Each time a melee attack is made against this unit, subtract 1 from that attack’s hit roll.'

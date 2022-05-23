@@ -4,12 +4,13 @@ import { Close } from '@material-ui/icons';
 import { makeStyles } from '@mui/styles';
 import { Button, Checkbox, Chip, Dialog, DialogContent, Tooltip } from '@material-ui/core';
 import InteractiveTable from '../Table/InteractiveTable';
-import { lightGray, mediumGray,  miscKewordColor,  psykerColor,  red1, relicColor, wargearColor, warlordTraitColor, } from '../../GLOBALS';
+import { lightGray, mediumGray,  miscKewordColor,  psykerColor,  red1, relicColor, wargearColor, warlordTraitColor, strategemColor } from '../../GLOBALS';
 import AddItemPanel from './AddItemPanel';
 import * as warlordTraits from '../../warlordTraits';
 import * as adaptivePhysiologies from '../../adaptivePhysiologies';
 import * as relics from '../../relics';
 import * as powers from '../../psychicPowers';
+import * as strategems from '../../strategems';
 
 const useStyles = makeStyles((theme) => {
     return {
@@ -65,6 +66,11 @@ const useStyles = makeStyles((theme) => {
         }),
         addRelicButton: () => ({
             backgroundColor: `${relicColor} !important`,
+            color: 'white !important',
+            marginRight: '10px !important',
+        }),
+        addStrategemButton: () => ({
+            backgroundColor: `${strategemColor} !important`,
             color: 'white !important',
             marginRight: '10px !important',
         }),
@@ -246,6 +252,11 @@ const UnitAbilitiesModal = (props) => {
                 if (!newUnit.psychicPowers.filter(x => x.name === value.name).length) newUnit.psychicPowers.push(value);
                 onUnitUpdate(newUnit);
                 break;
+            case 'strategem':
+                newUnit.strategems = newUnit.strategems || [];
+                if (!newUnit.strategems.filter(x => x.name === value.name).length) newUnit.strategems.push(value);
+                onUnitUpdate(newUnit);
+                break;
             case 'warlordTrait':
                 newUnit.warlordTraits = newUnit.warlordTraits || [];
                 if (!newUnit.warlordTraits.filter(x => x.name === value.name).length) newUnit.warlordTraits.push(value);
@@ -275,6 +286,12 @@ const UnitAbilitiesModal = (props) => {
     const onRemovePsychicPower = (power) => {
         const newUnit = _.cloneDeep(unit);
         newUnit.psychicPowers = newUnit.psychicPowers.filter(x => x.name !== power.name)
+        onUnitUpdate(newUnit);
+    }
+
+    const onRemoveStrategem = (power) => {
+        const newUnit = _.cloneDeep(unit);
+        newUnit.strategems = newUnit.strategems.filter(x => x.name !== power.name)
         onUnitUpdate(newUnit);
     }
 
@@ -309,6 +326,7 @@ const UnitAbilitiesModal = (props) => {
             case 'warlordTrait': return 'Trait';
             case 'adaptivePhysiologies': return 'Physiology';
             case 'relic': return 'Relic';
+            case 'strategem': return 'Strategem';
             default: return 'Item'
         }
     };
@@ -329,6 +347,27 @@ const UnitAbilitiesModal = (props) => {
                     </div>
                     <div className={classes.itemDesc}>
                         {typeof p.desc === 'string' ? p.desc : React.createClass(p.desc)}
+                    </div>
+                </div>
+            )
+        }) || [];
+    }
+
+    const renderStrategems = () => {
+        return unit?.strategems?.map(s => {
+            return (
+                <div className={classes.itemContainer}>
+                    <div className={classes.itemTitleBar} style={{ background: strategemColor}}>
+                        {s.name} - {s.cost}
+                        {editMode && (
+                        <Close
+                            style={{ float: 'right', color: 'white', cursor: 'pointer'}}
+                            onClick={() => onRemoveStrategem(s)}
+                        />
+                        )}
+                    </div>
+                    <div className={classes.itemDesc}>
+                        {typeof s.desc === 'string' ? s.desc : React.createClass(s.desc)}
                     </div>
                 </div>
             )
@@ -467,6 +506,7 @@ const UnitAbilitiesModal = (props) => {
                         {renderWargear()}
                         {renderAtaptivePhysiologies()}
                         {renderPsychicPowers()}
+                        {renderStrategems()}
                     </div>
                     </div>
                     <div className={classes.editModeButtons}>
@@ -519,6 +559,16 @@ const UnitAbilitiesModal = (props) => {
                                 }}
                             >
                                 + Adaptive Physiology
+                            </Button>)}
+                            {editMode && 
+                            (<Button
+                                classes={{ root: classes.addStrategemButton}}
+                                onClick={() => {
+                                    setAddItemCatagory('strategem');
+                                    setAddItemOptions(Object.values(strategems).filter(hiveFleetCheck).sort((a,b) => a.name > b.name ? 1 : -1 ));
+                                }}
+                            >
+                                + Strategem
                             </Button>)}
                         </div>
                     {editMode && addItemOptions?.length > 0 && (

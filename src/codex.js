@@ -1,5 +1,6 @@
 import * as abilities from "./abilities";
 import { burrower, character, core, endlessMultitude, feederTendrils, fly, hiveTentril, hiveTyrantKeyword, hornedChitin, infantry, monster, psycher1Keyword, psycher2Keyword, sporeCaster, swarm, synapse, toxicLashes, tyranids, psycher2_2Keyword, carnifexKeyword, acidBlood } from "./Keywords";
+import { smite } from "./psychicPowers";
 import { acidMawWargear, adrenalGlands, biostaticRattle, chitinThrons, enhancedSenses, extendedCarapace, fleshHooks, infestationNode, lashWhip, prehensilePincerTail, sporeCysts, toxinSacs, toxinSpike, tusks } from "./Wargear";
 import * as weapons from "./weapons";
 
@@ -125,6 +126,7 @@ export const units = [
         abilities: [
             abilities.psychicBarrier,
             abilities.willOfTheHiveMind,
+            abilities.deathFromAbove,
             abilities.deathThroes,
             abilities.shadowInTheWarp,
             abilities.relentlessFurocity,
@@ -273,6 +275,9 @@ export const units = [
         ],
         wargear: [
         ],
+        psychicPowers: [
+            smite,
+        ]
     },
     {
         name: 'Genestealers',
