@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import _ from 'lodash';
-import { Close } from '@material-ui/icons';
+import Close from '@material-ui/icons/Close';
 import { makeStyles } from '@mui/styles';
 import { Button, Checkbox, Chip, Dialog, DialogContent, Tooltip } from '@material-ui/core';
 import InteractiveTable from '../Table/InteractiveTable';

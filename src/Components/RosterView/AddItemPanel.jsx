@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@mui/styles';
-import { Close } from '@material-ui/icons';
+import Close from '@material-ui/icons/Close';
 import { mediumGray } from '../../GLOBALS';
 import { FormControl, MenuItem, Select, InputLabel } from '@material-ui/core';
 
