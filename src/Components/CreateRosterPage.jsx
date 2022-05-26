@@ -9,6 +9,7 @@ import UnitWeaponsModal from './RosterView/UnitWeaponsModal';
 import UnitAbilitiesModal from './RosterView/UnitAbilitiesModal';
 import { noFleet } from '../fleets';
 import HiveFleetPanel from './RosterView/HiveFleetPanel';
+import SaveRosterModal from './SaveRosterModal';
 
 const useStyles = makeStyles((theme) => {
     return {
@@ -92,12 +93,13 @@ const saveToCache = (rosterToSave, defaultFleet) => {
 
 const CreateRosterPage = (props) => {
     const classes = useStyles(props);
-    const { onCreateRoster } = props;
+    const { onCreateRoster, currentUser, loginModalProps, setLoadedRoster } = props;
 
     const [currentHiveFleet, setCurrentHiveFleet] = useState(noFleet.key);
     const [currentRoster, setCurrentRoster] = useState(units);
     const [weaponUnit, setWeaponUnit] = useState(null);
     const [abilityUnit, setAbilityUnit] = useState(null);
+    const [saveModalOpen, setSaveModalOpen] = useState(false);
 
     
     const headers = [
@@ -210,8 +212,7 @@ const CreateRosterPage = (props) => {
             <Button
                 classes={{ root: classes.finishAndSaveButton}}
                 onClick={() => {
-                    saveToCache(currentRoster, currentHiveFleet);
-                    onCreateRoster();
+                    setSaveModalOpen(true);
                 }}
             >
             {'Finish & Save'}
@@ -231,6 +232,17 @@ const CreateRosterPage = (props) => {
             editMode
             onUnitUpdate={updateUnit}
             currentHiveFleet={currentHiveFleet}
+        />
+        <SaveRosterModal
+            open={saveModalOpen}
+            onClose={() => setSaveModalOpen(false)}
+            units={currentRoster}
+            currentHiveFleet={currentHiveFleet}
+            saveToCache={saveToCache}
+            onCreateRoster={onCreateRoster}
+            currentUser={currentUser}
+            loginModalProps={loginModalProps}
+            setLoadedRoster={setLoadedRoster}
         />
         </>
     );

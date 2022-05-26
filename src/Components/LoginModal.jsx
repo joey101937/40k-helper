@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@mui/styles';
 import { Button, CircularProgress, Dialog, DialogContent, OutlinedInput } from '@material-ui/core';
-import { red1 } from '../GLOBALS';
+import { loginColor, red1 } from '../GLOBALS';
 
 const useStyles = makeStyles((theme) => {
     return {
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => {
             marginTop: '20px',
         }),
         LoginButton: () => ({
-            backgroundColor: 'rgb(150, 0, 0) !important',
+            backgroundColor: `${loginColor} !important`,
             color: 'white !important',
             marginBottom: '2px',
             minWidth: '100px',

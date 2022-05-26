@@ -1,10 +1,11 @@
 import React from 'react';
 import { makeStyles } from '@mui/styles';
+import { loginColor } from '../GLOBALS';
 
 const useStyles = makeStyles((theme) => {
     return {
         loginButton: (props) => ({
-            background: 'rgba(110,110,255, .9)',
+            background: loginColor,
             textAlign: 'center',
             height: '30px',
             width: '100px',
@@ -18,7 +19,7 @@ const useStyles = makeStyles((theme) => {
             cursor: 'pointer',
         }),
         profilePanel: (props) => ({
-            background: 'rgba(110,110,255, .9)',
+            background: loginColor,
             textAlign: 'center',
             height: '30px',
             width: '100px',
@@ -55,7 +56,7 @@ const ProfileLoginButton = (props) => {
     if (!currentUser) {
         return (
             <div className={classes.loginButton} onClick={openLoginModal}>
-                Login
+                Log In
             </div>
         );
     } else {
@@ -63,7 +64,7 @@ const ProfileLoginButton = (props) => {
             <div className={classes.profilePanel}>
                 {currentUser?.user?.username || 'error'}
                 <div className={classes.logoutButton} onClick={doLogout}>
-                    Logout
+                    Log Out
                 </div>
             </div>
         )

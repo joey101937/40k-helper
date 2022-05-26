@@ -1,7 +1,7 @@
 import { API_URL } from '../GLOBALS';
 import * as axiosUtil from './axiosUtil';
 
-export const upsertExperienceState = async (roster) => {
+export const upsertRoster = async (roster) => {
     const url = `${API_URL}/roster/save`;
     const data = await axiosUtil.postApi(url, roster);
     return data;

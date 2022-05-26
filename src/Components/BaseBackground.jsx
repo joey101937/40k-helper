@@ -34,6 +34,11 @@ const BaseBackground = (props) => {
 
     const [loadedRoster, setLoadedRoster] = useState(null); 
 
+    const onSetLoadedRoster = (r) => {
+        setLoadedRoster(r);
+        localStorage.setItem('whHelperLoadedRoster', JSON.stringify(r));
+    }
+
     const logout = () => {
         localStorage.removeItem(LOGIN_OBJ_KEY);
         setCurrentUser(null);
@@ -77,6 +82,13 @@ const BaseBackground = (props) => {
         loginViaCache();
     }, [])
 
+    useEffect(() => {
+        const loadedRosterInCache = localStorage.getItem('whHelperLoadedRoster');
+        if(loadedRosterInCache) {
+            setLoadedRoster(JSON.parse(loadedRosterInCache));
+        }
+    }, [])
+
     return (
         <>
         <TopBanner currentUser={currentUser} openLoginModal={()=>{setLoginModalOpen(true)}} doLogout={logout} />
@@ -85,10 +97,10 @@ const BaseBackground = (props) => {
             <Routes>
                 <Route path="/" element={<UnitStatsTablePanel />} />
                 <Route path="fullRoster" element={<UnitStatsTablePanel />} />
-                <Route path="load" element={<LoadRosterPage currentUser={currentUser} setLoadedRoster={setLoadedRoster} />} />
+                <Route path="load" element={<LoadRosterPage currentUser={currentUser} setLoadedRoster={onSetLoadedRoster} />} />
                 <Route path="cached" element={<UnitStatsTablePanel rosterUnits={cachedRoster?.content?.filter(x => x.selected)} defaultFleet={cachedRoster?.metadata?.fleet}/>} />
                 <Route path="loaded" element={<UnitStatsTablePanel rosterUnits={loadedRoster?.content?.filter?.(x => x.selected)} defaultFleet={loadedRoster?.metadata?.fleet} />} />
-                <Route path="createRoster" element={<div><CreateRosterPage onCreateRoster={() => {setRerender(!rerender)}}/></div>} />
+                <Route path="createRoster" element={<div><CreateRosterPage setLoadedRoster={onSetLoadedRoster} loginModalProps={{ onLogin: login, onRegister: register }} currentUser={currentUser} onCreateRoster={() => {setRerender(!rerender)}}/></div>} />
             </Routes>
         </div>
         </>
