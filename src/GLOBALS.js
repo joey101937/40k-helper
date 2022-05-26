@@ -26,5 +26,5 @@ export const miscKewordColor = 'rgb(40, 110, 40)';
 
 export const LOGIN_OBJ_KEY = 'whHelperUser'
 
-// export const API_URL = 'https://wh-helper-backend.herokuapp.com';
-export const API_URL = 'http://localhost:8080';
+export const API_URL = 'https://wh-helper-backend.herokuapp.com';
+// export const API_URL = 'http://localhost:8080';
