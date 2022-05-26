@@ -118,6 +118,7 @@ const SaveRosterModal = (props) => {
                                         saveToCache(units, currentHiveFleet);
                                         onCreateRoster();
                                         onClose();
+                                        navigate('/cached');
                                     }}
                                 >
                                     Save to Cache
