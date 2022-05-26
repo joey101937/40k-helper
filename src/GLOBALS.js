@@ -21,3 +21,7 @@ export const warlordTraitColor = 'rgb(110, 110, 250)';
 export const strategemColor = 'rgb(40, 40, 40)';
 
 export const miscKewordColor = 'rgb(40, 110, 40)';
+
+export const LOGIN_OBJ_KEY = 'whHelperUser'
+// export const API_URL = 'https://wh-helper-backend.herokuapp.com';
+export const API_URL = 'http://localhost:8080';

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@mui/styles';
 import InteractiveTable from './Table/InteractiveTable';
 import { units } from '../codex';
@@ -59,7 +59,7 @@ const useStyles = makeStyles((theme) => {
 const UnitStatsTablePanel = (props) => {
     const classes = useStyles(props);
 
-    const { rosterUnits = units } = props;
+    const { rosterUnits = units, defaultFleet } = props;
 
     const [currentHiveFleet, setCurrentHiveFleet] = useState(noFleet.key);
 
@@ -75,7 +75,9 @@ const UnitStatsTablePanel = (props) => {
     const [selectedUnitWeapons, setSelectedUnitWeapon] = useState(null);
     const [selectedUnitAbilities, setSelectedUnitAbility] = useState(null);
 
-
+    useEffect(() => {
+        if(defaultFleet) setCurrentHiveFleet(defaultFleet);
+    }, [defaultFleet])
 
 
     const headers = [

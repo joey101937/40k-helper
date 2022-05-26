@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@mui/styles';
 import { Route, Routes } from 'react-router-dom';
 import UnitStatsTablePanel from './UnitStatsTablePanel';
 import TopBanner from './TopBanner';
 import CreateRosterPage from './CreateRosterPage';
+import { LOGIN_OBJ_KEY } from '../GLOBALS';
+import { doLogin, registerUser, validateJwt } from '../actions/userActions';
+import LoginModal from './LoginModal';
+import LoadRosterPage from './LoadRosterPage';
 
 const useStyles = makeStyles((theme) => {
     return {
@@ -22,16 +26,68 @@ const BaseBackground = (props) => {
 
     const [rerender, setRerender] = useState(false);
 
+    const [loginModalOpen, setLoginModalOpen] = useState(false);
+
     const cachedRoster = JSON.parse(localStorage.getItem('whHelperCachedRoster')) || [];
+
+    const [currentUser, setCurrentUser] = useState();
+
+    const [loadedRoster, setLoadedRoster] = useState(null); 
+
+    const logout = () => {
+        localStorage.removeItem(LOGIN_OBJ_KEY);
+        setCurrentUser(null);
+    }
+
+    const login = async (u, p) => {
+        const res = await doLogin(u, p);
+        if(res.jwt) {
+            setCurrentUser(res);
+        }
+        console.log(res);
+        return res;
+    }
+
+    const register = async (u, p) => {
+        const res = await registerUser({
+            username: u,
+            password: p,
+        });
+        if(res.jwt) {
+            setCurrentUser(res);
+        }
+        return res;
+    }
+
+    
+    useEffect(() => {
+        // attempt to login using cached login info
+        const loginViaCache = async () => {
+            let cachedLogin = localStorage.getItem(LOGIN_OBJ_KEY);
+            if(!cachedLogin) return;
+            cachedLogin = JSON.parse(cachedLogin);
+            const stillValid = await validateJwt(cachedLogin.jwt);
+            console.log(stillValid);
+            if (stillValid) {
+                setCurrentUser(cachedLogin);
+            } else {
+                localStorage.removeItem(LOGIN_OBJ_KEY);
+            }
+        };
+        loginViaCache();
+    }, [])
 
     return (
         <>
-        <TopBanner />
+        <TopBanner currentUser={currentUser} openLoginModal={()=>{setLoginModalOpen(true)}} doLogout={logout} />
+        <LoginModal open={loginModalOpen} onClose={() => setLoginModalOpen(false)} onLogin={login} onRegister={register}/>
         <div className={classes.root}>
             <Routes>
                 <Route path="/" element={<UnitStatsTablePanel />} />
                 <Route path="fullRoster" element={<UnitStatsTablePanel />} />
-                <Route path="cached" element={<UnitStatsTablePanel rosterUnits={cachedRoster.filter(x => x.selected)} />} />
+                <Route path="load" element={<LoadRosterPage currentUser={currentUser} setLoadedRoster={setLoadedRoster} />} />
+                <Route path="cached" element={<UnitStatsTablePanel rosterUnits={cachedRoster?.content?.filter(x => x.selected)} defaultFleet={cachedRoster?.metadata?.fleet}/>} />
+                <Route path="loaded" element={<UnitStatsTablePanel rosterUnits={loadedRoster?.content?.filter?.(x => x.selected)} defaultFleet={loadedRoster?.metadata?.fleet} />} />
                 <Route path="createRoster" element={<div><CreateRosterPage onCreateRoster={() => {setRerender(!rerender)}}/></div>} />
             </Routes>
         </div>

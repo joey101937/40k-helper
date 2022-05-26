@@ -78,11 +78,16 @@ const getColorForRole = (unit) => {
     }
 }
 
-const saveToCache = (rosterToSave) => {
+const saveToCache = (rosterToSave, defaultFleet) => {
     if(localStorage.getItem('whHelperCachedRoster')) {
         // alert('overriding');
     }
-    localStorage.setItem('whHelperCachedRoster', JSON.stringify(rosterToSave));
+    const saveItem = {
+        content: rosterToSave,
+        metadata: { fleet: defaultFleet },
+        name: 'Cached Roster',
+    }
+    localStorage.setItem('whHelperCachedRoster', JSON.stringify(saveItem));
 }
 
 const CreateRosterPage = (props) => {
@@ -205,7 +210,7 @@ const CreateRosterPage = (props) => {
             <Button
                 classes={{ root: classes.finishAndSaveButton}}
                 onClick={() => {
-                    saveToCache(currentRoster);
+                    saveToCache(currentRoster, currentHiveFleet);
                     onCreateRoster();
                 }}
             >

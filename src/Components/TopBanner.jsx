@@ -3,6 +3,7 @@ import { makeStyles } from '@mui/styles';
 import { Link } from 'react-router-dom';
 import image from '../40khelperlogo.png'
 import { darkGray, mediumGray } from '../GLOBALS';
+import ProfileLoginButton from './ProfileLoginButton';
 
 const useStyles = makeStyles((theme) => {
     return {
@@ -48,11 +49,12 @@ const TopBanner = (props) => {
                     Create Roster
                 </div>
             </Link>
-            <Link to={'/cached'}>
+            <Link to={'/load'}>
                 <div className={classes.item}>
                     Load Roster
                 </div>
             </Link>
+            <ProfileLoginButton currentUser={props.currentUser} openLoginModal={props.openLoginModal} doLogout={props.doLogout} />
         </div>
     );
 };
