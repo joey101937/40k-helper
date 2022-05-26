@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme) => {
 });
 
 const LoadRosterPage = (props) => {
-    const { currentUser, setLoadedRoster } = props;
+    const { currentUser, setLoadedRoster, loadingLoginRequest } = props;
     const cachedRoster = JSON.parse(localStorage.getItem('whHelperCachedRoster'));
     const [accountRosters, setAccountRosters] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -107,7 +107,7 @@ const LoadRosterPage = (props) => {
             <div>
                 {cachedRoster && <Link style={{ textDecoration: 'none' }} to='/cached'><div className={classes.rosterItem} >Cached Roster</div></Link>}
             </div>
-            {isLoading && <CircularProgress style={{ color: red1}} />}
+            {(isLoading || loadingLoginRequest) && <CircularProgress style={{ color: red1}} />}
             {renderAccountRosters()}
         </div>
     );

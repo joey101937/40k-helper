@@ -2,8 +2,9 @@ import React from 'react';
 import { makeStyles } from '@mui/styles';
 import { Link } from 'react-router-dom';
 import image from '../40khelperlogo.png'
-import { darkGray, mediumGray } from '../GLOBALS';
+import { darkGray, loginColor, mediumGray, red1 } from '../GLOBALS';
 import ProfileLoginButton from './ProfileLoginButton';
+import { CircularProgress } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => {
     return {
@@ -38,6 +39,7 @@ const useStyles = makeStyles((theme) => {
 });
 
 const TopBanner = (props) => {
+    const { loadingLoginRequest } = props;
     const classes = useStyles(props);
     return (
         <div className={classes.root}>
@@ -54,7 +56,8 @@ const TopBanner = (props) => {
                     Load Roster
                 </div>
             </Link>
-            <ProfileLoginButton currentUser={props.currentUser} openLoginModal={props.openLoginModal} doLogout={props.doLogout} />
+            {loadingLoginRequest && <CircularProgress style={{ color: loginColor, float: 'right', marginRight: '25px'}} />}
+            {!loadingLoginRequest && <ProfileLoginButton currentUser={props.currentUser} openLoginModal={props.openLoginModal} doLogout={props.doLogout} />}
         </div>
     );
 };

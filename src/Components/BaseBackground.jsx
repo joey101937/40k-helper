@@ -32,7 +32,9 @@ const BaseBackground = (props) => {
 
     const [currentUser, setCurrentUser] = useState();
 
-    const [loadedRoster, setLoadedRoster] = useState(null); 
+    const [loadedRoster, setLoadedRoster] = useState(null);
+
+    const [loadingLoginRequest, setLoadingLoginRequest] = useState(false);
 
     const onSetLoadedRoster = (r) => {
         setLoadedRoster(r);
@@ -45,12 +47,19 @@ const BaseBackground = (props) => {
     }
 
     const login = async (u, p) => {
-        const res = await doLogin(u, p);
-        if(res.jwt) {
-            setCurrentUser(res);
+        setLoadingLoginRequest(true);
+        try {
+            const res = await doLogin(u, p);
+            if (res.jwt) {
+                setCurrentUser(res);
+            }
+            console.log(res);
+            setLoadingLoginRequest(false);
+            return res;
+        } catch (e) {
+            console.log(e);
         }
-        console.log(res);
-        return res;
+        setLoadingLoginRequest(false);
     }
 
     const register = async (u, p) => {
@@ -58,20 +67,22 @@ const BaseBackground = (props) => {
             username: u,
             password: p,
         });
-        if(res.jwt) {
+        if (res.jwt) {
             setCurrentUser(res);
         }
         return res;
     }
 
-    
+
     useEffect(() => {
         // attempt to login using cached login info
         const loginViaCache = async () => {
             let cachedLogin = localStorage.getItem(LOGIN_OBJ_KEY);
-            if(!cachedLogin) return;
+            if (!cachedLogin) return;
             cachedLogin = JSON.parse(cachedLogin);
+            setLoadingLoginRequest(true);
             const stillValid = await validateJwt(cachedLogin.jwt);
+            setLoadingLoginRequest(false);
             console.log(stillValid);
             if (stillValid) {
                 setCurrentUser(cachedLogin);
@@ -84,25 +95,25 @@ const BaseBackground = (props) => {
 
     useEffect(() => {
         const loadedRosterInCache = localStorage.getItem('whHelperLoadedRoster');
-        if(loadedRosterInCache) {
+        if (loadedRosterInCache) {
             setLoadedRoster(JSON.parse(loadedRosterInCache));
         }
     }, [])
 
     return (
         <>
-        <TopBanner currentUser={currentUser} openLoginModal={()=>{setLoginModalOpen(true)}} doLogout={logout} />
-        <LoginModal open={loginModalOpen} onClose={() => setLoginModalOpen(false)} onLogin={login} onRegister={register}/>
-        <div className={classes.root}>
-            <Routes>
-                <Route path="/" element={<UnitStatsTablePanel />} />
-                <Route path="fullRoster" element={<UnitStatsTablePanel />} />
-                <Route path="load" element={<LoadRosterPage currentUser={currentUser} setLoadedRoster={onSetLoadedRoster} />} />
-                <Route path="cached" element={<UnitStatsTablePanel rosterUnits={cachedRoster?.content?.filter(x => x.selected)} defaultFleet={cachedRoster?.metadata?.fleet}/>} />
-                <Route path="loaded" element={<UnitStatsTablePanel rosterUnits={loadedRoster?.content?.filter?.(x => x.selected)} defaultFleet={loadedRoster?.metadata?.fleet} />} />
-                <Route path="createRoster" element={<div><CreateRosterPage setLoadedRoster={onSetLoadedRoster} loginModalProps={{ onLogin: login, onRegister: register }} currentUser={currentUser} onCreateRoster={() => {setRerender(!rerender)}}/></div>} />
-            </Routes>
-        </div>
+            <TopBanner loadingLoginRequest={loadingLoginRequest} currentUser={currentUser} openLoginModal={() => { setLoginModalOpen(true) }} doLogout={logout} />
+            <LoginModal open={loginModalOpen} onClose={() => setLoginModalOpen(false)} onLogin={login} onRegister={register} />
+            <div className={classes.root}>
+                <Routes>
+                    <Route path="/" element={<UnitStatsTablePanel />} />
+                    <Route path="fullRoster" element={<UnitStatsTablePanel />} />
+                    <Route path="load" element={<LoadRosterPage loadingLoginRequest={loadingLoginRequest} currentUser={currentUser} setLoadedRoster={onSetLoadedRoster} />} />
+                    <Route path="cached" element={<UnitStatsTablePanel rosterUnits={cachedRoster?.content?.filter(x => x.selected)} defaultFleet={cachedRoster?.metadata?.fleet} />} />
+                    <Route path="loaded" element={<UnitStatsTablePanel rosterUnits={loadedRoster?.content?.filter?.(x => x.selected)} defaultFleet={loadedRoster?.metadata?.fleet} />} />
+                    <Route path="createRoster" element={<div><CreateRosterPage setLoadedRoster={onSetLoadedRoster} loginModalProps={{ onLogin: login, onRegister: register }} currentUser={currentUser} onCreateRoster={() => { setRerender(!rerender) }} /></div>} />
+                </Routes>
+            </div>
         </>
     );
 };
