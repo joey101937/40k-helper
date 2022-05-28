@@ -7,9 +7,9 @@ export const upsertRoster = async (roster) => {
     return data;
 };
 
-export const deleteExperienceStateById = async (id) => {
-    const url = `${API_URL}/roster/delete?id=${id}`;
-    const data = await axiosUtil.getApi(url);
+export const deleteRosterById = async (id) => {
+    const url = `${API_URL}/roster/byId?id=${id}`;
+    const data = await axiosUtil.deleteApi(url);
     return data;
 };
 
