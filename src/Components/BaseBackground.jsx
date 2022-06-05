@@ -69,6 +69,7 @@ const BaseBackground = (props) => {
         });
         if (res.jwt) {
             setCurrentUser(res);
+            setLoadingLoginRequest(false);
         }
         return res;
     }

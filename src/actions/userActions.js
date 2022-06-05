@@ -21,6 +21,10 @@ export const doLogin = async (username, password) => {
 export const registerUser = async (user) => {
     const url = `${API_URL}/user/register`;
     const data = await axiosUtil.postApi(url, user);
+    if(data.jwt) {
+        axios.defaults.headers.common['Authorization'] = `Bearer ${data.jwt}`;
+        localStorage.setItem(LOGIN_OBJ_KEY, JSON.stringify(data));
+    }
     return data;
 };
 

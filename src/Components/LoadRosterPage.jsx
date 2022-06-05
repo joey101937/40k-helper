@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@mui/styles';
 import { useNavigate } from "react-router-dom";
-import { getMyRosters } from '../actions/rosterActions';
+import { deleteRosterById, getMyRosters } from '../actions/rosterActions';
 import { Link } from 'react-router-dom';
 import { CircularProgress } from '@material-ui/core';
 import { red1 } from '../GLOBALS';
+import Close from '@material-ui/icons/Close';
+import ConfirmModal from './ConfirmModal';
 
 const useStyles = makeStyles((theme) => {
     return {
@@ -55,7 +57,17 @@ const useStyles = makeStyles((theme) => {
             fontWeight: 'bold',
             padding: '5px',
             color: 'black',
-        })
+        }),
+        deleteButton: () => ({
+            marginRight: '10px',
+            marginTop: '3px',
+            marginBottom: '5px',
+            background: red1,
+            color: 'white',
+            float: 'right',
+            display: 'inline-block',
+            cursor: 'pointer',
+        }),
     }
 });
 
@@ -64,6 +76,7 @@ const LoadRosterPage = (props) => {
     const cachedRoster = JSON.parse(localStorage.getItem('whHelperCachedRoster'));
     const [accountRosters, setAccountRosters] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const [recordToDelete, setRecordToDelete] = useState(null);
     const navigate = useNavigate();
 
     const onLoadAccountRoster = (accountRoster) => {
@@ -71,12 +84,25 @@ const LoadRosterPage = (props) => {
         navigate('/loaded');
     };
 
+    const triggerDelete = async (ar) => {
+        setRecordToDelete(null);
+        const res = await deleteRosterById(ar.id);
+        if(res.status >= 200 && res.status < 300) {
+            setAccountRosters(accountRosters.filter(x => x.id !== ar.id));
+        }
+    }
+
     const renderAccountRosters = () => {
         if (!accountRosters) return <div></div>;
         return accountRosters.map((ar) => {
             return (
-                <div className={classes.accountRosterItem} onClick={() => onLoadAccountRoster(ar)}>
-                    {ar.name}
+                <div>
+                    <div className={classes.deleteButton} onClick={() => setRecordToDelete(ar)}>
+                        <Close />
+                    </div>
+                    <div className={classes.accountRosterItem} onClick={() => onLoadAccountRoster(ar)}>
+                        {ar?.name}
+                    </div>
                 </div>
             )
         });
@@ -99,17 +125,26 @@ const LoadRosterPage = (props) => {
     }, [currentUser])
     const classes = useStyles(props);
     return (
-        <div className={classes.root}>
-            <div className={classes.titleBar}>
-                Load Roster
+        <>
+            <ConfirmModal
+                title={'Confirm Delete'}
+                bodyText={`Are you sure you want to delete ${recordToDelete?.name}?`}
+                open={!!recordToDelete}
+                onDeny={() => setRecordToDelete(null)}
+                onConfirm={() => triggerDelete(recordToDelete)}
+            />
+            <div className={classes.root}>
+                <div className={classes.titleBar}>
+                    Load Roster
+                </div>
+                {!cachedRoster && !accountRosters.length && <div className={classes.noRotersMessage}>No Rosters to Load!</div>}
+                <div>
+                    {cachedRoster && <Link style={{ textDecoration: 'none' }} to='/cached'><div className={classes.rosterItem} >Cached Roster</div></Link>}
+                </div>
+                {(isLoading || loadingLoginRequest) && <CircularProgress style={{ color: red1 }} />}
+                {renderAccountRosters()}
             </div>
-            {!cachedRoster && !accountRosters.length && <div className={classes.noRotersMessage}>No Rosters to Load!</div>}
-            <div>
-                {cachedRoster && <Link style={{ textDecoration: 'none' }} to='/cached'><div className={classes.rosterItem} >Cached Roster</div></Link>}
-            </div>
-            {(isLoading || loadingLoginRequest) && <CircularProgress style={{ color: red1}} />}
-            {renderAccountRosters()}
-        </div>
+        </>
     );
 };
 
