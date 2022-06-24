@@ -62,7 +62,7 @@ export const psycher2_2Keyword = {
 export const hiveTyrantKeyword = {
     name: 'Hive Tyrant',
     color: 'red',
-    desc: 'Hive Tyrant units are limited to 1 per detachment'
+    desc: 'Hive Tyrant units are limited to 1 per detachment. Must be your warlord if able.'
 }
 
 export const character = {
