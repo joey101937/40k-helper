@@ -9,7 +9,7 @@ export const upsertRoster = async (roster) => {
 
 export const deleteRosterById = async (id) => {
     const url = `${API_URL}/roster/byId`;
-    const data = await axiosUtil.deleteWithBodyApi(url, {id});
+    const data = await axiosUtil.deleteWithBodyApi(url, { id });
     return data;
 };
 
