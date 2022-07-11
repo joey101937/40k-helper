@@ -43,12 +43,12 @@ export const synapticLegacy = {
     desc: 'Use this Stratagem when selecting a Synaptic Imperative ability to be active for your army. If your WARLORD is on the battlefield and has the HIVE TENDRIL keyword, this turn you can select the Synaptic Imperative ability of a destroyed model from your army instead of one from a model that is on the battlefield. Note that, unless otherwise allowed, you still cannot select that ability if it has already been selected by you earlier in the battle.'
 }
 
-export const rapicRegeneration = {
+export const rapidRegeneration = {
     name: 'Rapid Regeneration',
     timing: 'commandPhase',
     type: 'Strategic Ploy',
     cost: '1cp',
-    desc: 'Select one HIVE TENDRIL model from your army. That model regenerates and regains up to D3 lost wounds. Each model can only be regenerated once per turn.'
+    desc: 'Use this strategem in your Command Phase. Select one HIVE TENDRIL model from your army. That model regenerates and regains up to D3 lost wounds. Each model can only be regenerated once per turn.'
 }
 
 export const endlessSwarm = {

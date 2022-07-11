@@ -1,5 +1,5 @@
 import * as abilities from "./abilities";
-import { burrower, character, core, endlessMultitude, feederTendrils, fly, hiveTentril, hiveTyrantKeyword, hornedChitin, infantry, monster, psycher1Keyword, psycher2Keyword, sporeCaster, swarm, synapse, toxicLashes, tyranids, psycher2_2Keyword, carnifexKeyword, acidBlood } from "./Keywords";
+import { burrower, character, core, endlessMultitude, feederTendrils, fly, hiveTentril, hiveTyrantKeyword, hornedChitin, infantry, monster, psycher1Keyword, psycher2Keyword, sporeCaster, swarm, synapse, toxicLashes, tyranids, psycher2_2Keyword, carnifexKeyword, acidBlood, aircraft } from "./Keywords";
 import { smite } from "./psychicPowers";
 import { acidMawWargear, adrenalGlands, biostaticRattle, chitinThrons, enhancedSenses, extendedCarapace, fleshHooks, infestationNode, lashWhip, prehensilePincerTail, sporeCysts, toxinSacs, toxinSpike, tusks } from "./Wargear";
 import * as weapons from "./weapons";
@@ -717,6 +717,125 @@ export const units = [
             abilities.lesserOrganism,
             abilities.deathFromBelow,
             abilities.burrowAndSqurim,
+        ]
+    },
+    {
+        name: 'Harpy',
+        type: 'monster',
+        role: 'flyers',
+        stats: [{
+            m: '15-40"',
+            ws: '3+',
+            bs: '3+',
+            s: '6',
+            t: '7',
+            w: '13',
+            a: '4',
+            ld: '8',
+            sv: '3+',
+        },
+        {
+            m: '15-30"',
+            ws: '4+',
+            bs: '4+',
+            s: '6',
+            t: '7',
+            w: '<7',
+            a: '4',
+            ld: '8',
+            sv: '3+',
+        },
+        {
+            m: '15-20"',
+            ws: '5+',
+            bs: '5+',
+            s: '6',
+            t: '7',
+            w: '<4',
+            a: '4',
+            ld: '8',
+            sv: '3+',
+        }],
+        keywords: [
+            aircraft,
+            monster,
+            fly,
+            hiveTentril,
+            tyranids,
+        ],
+        weapons: [
+            weapons.tyrantVenomCannon,
+            weapons.tyrantStranglethron,
+            weapons.stingerSalvoes,
+            weapons.scythingWings,
+        ],
+        abilities: [
+            abilities.sporeMineCysts,
+            abilities.airbornePredator,
+            abilities.manoeuvrable,
+            abilities.hardToHit,
+            abilities.hover,
+            abilities.deathThroes,
+        ]
+    },
+    {
+        name: 'Hive Crone',
+        type: 'monster',
+        role: 'flyers',
+        stats: [{
+            m: '15-40"',
+            ws: '3+',
+            bs: '3+',
+            s: '6',
+            t: '7',
+            w: '13',
+            a: '4',
+            ld: '8',
+            sv: '3+',
+        },
+        {
+            m: '15-30"',
+            ws: '4+',
+            bs: '4+',
+            s: '6',
+            t: '7',
+            w: '<7',
+            a: '4',
+            ld: '8',
+            sv: '3+',
+        },
+        {
+            m: '15-20"',
+            ws: '5+',
+            bs: '5+',
+            s: '6',
+            t: '7',
+            w: '<4',
+            a: '4',
+            ld: '8',
+            sv: '3+',
+        }],
+        keywords: [
+            aircraft,
+            monster,
+            fly,
+            hiveTentril,
+            tyranids,
+        ],
+        weapons: [
+            weapons.droolCannon,
+            weapons.tentaclids,
+            weapons.stingerSalvoes,
+            weapons.scythingWings,
+            weapons.thoraxSpur,
+        ],
+        abilities: [
+            abilities.huntersInstincts,
+            abilities.airbornePredator,
+            abilities.manoeuvrable,
+            abilities.hardToHit,
+            abilities.hover,
+            abilities.deathThroes,
         ]
     },
     {

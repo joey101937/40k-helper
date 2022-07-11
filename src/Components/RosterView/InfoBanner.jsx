@@ -38,11 +38,11 @@ const useStyles = makeStyles((theme) => {
 const InfoBanner = (props) => {
     const classes = useStyles(props);
     const {
-        onSiClick, onWiClick, onPpClick, onApClick, onRClick
+        onSiClick, onWiClick, onPpClick, onApClick, onRClick, onSClick
     } = props;
     return (
         <div className={classes.root}>
-            <div className={classes.item}>
+            <div className={classes.item} onClick={onSClick}>
                 Strategems
             </div>
             <div className={classes.item} onClick={onSiClick}>

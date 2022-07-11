@@ -108,6 +108,16 @@ export const genestealerClaws = {
     notes: '-',
 }
 
+export const scythingWings = {
+    name: 'Scything wings',
+    type: 'Melee',
+    range: 'Melee',
+    s: 'user',
+    ap: '-2',
+    d: '2',
+    notes: '-',
+}
+
 
 export const venomthropeLashes = {
     name: 'Toxic Lashes',
@@ -147,6 +157,37 @@ export const bludgeoningFists = {
     ap: '-3',
     d: '1',
     notes: '-',
+}
+
+export const droolCannon = {
+    name: 'Drool Cannon',
+    type: 'Assault 2D6',
+    range: '18"',
+    s: '6',
+    ap: '-2',
+    d: '1',
+    notes: 'Each time an attack is made with this weapon, that attack automatically hits the target.',
+}
+
+
+export const tentaclids = {
+    name: 'Tentaclids',
+    type: 'Assault 4',
+    range: '36"',
+    s: '7',
+    ap: '-3',
+    d: '2',
+    notes: 'Unmodified wound rolls of 4+ always wound VEHICLE units. If the target is an AIRCRAFT unit, increase the damage characteristic to 4',
+}
+
+export const thoraxSpur = {
+    name: 'Thorax Spur',
+    type: 'Melee',
+    range: 'Melee',
+    s: '+3',
+    ap: '-4',
+    d: '3',
+    notes: '+1 attack with this weapon (Once per fight)',
 }
 
 export const impalerCannon = {

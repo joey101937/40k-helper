@@ -4,7 +4,7 @@ import Close from '@material-ui/icons/Close';
 import { makeStyles } from '@mui/styles';
 import { Button, Checkbox, Chip, Dialog, DialogContent, Tooltip } from '@material-ui/core';
 import InteractiveTable from '../Table/InteractiveTable';
-import { lightGray, mediumGray,  miscKewordColor,  psykerColor,  red1, relicColor, wargearColor, warlordTraitColor, strategemColor } from '../../GLOBALS';
+import { lightGray, mediumGray,  miscKewordColor,  psykerColor,  red1, relicColor, wargearColor, warlordTraitColor, strategemColor, flyersColor } from '../../GLOBALS';
 import AddItemPanel from './AddItemPanel';
 import * as warlordTraits from '../../warlordTraits';
 import * as adaptivePhysiologies from '../../adaptivePhysiologies';
@@ -118,6 +118,13 @@ const useStyles = makeStyles((theme) => {
             marginLeft: '10px !important',
             color: 'white !important',
         }),
+        interactiveChipRootBlue: () => ({
+            background: `${flyersColor} !important`,
+            cursor: 'pointer !important',
+            fontWeight: 'bold !imporant',
+            marginLeft: '10px !important',
+            color: 'white !important',
+        }),
         checkboxColor: () => ({
             color: 'rgb(150, 0, 0)  !important',
         }),
@@ -218,6 +225,7 @@ const UnitAbilitiesModal = (props) => {
             case 'red': return classes.interactiveChipRootRed;
             case 'purple': return classes.interactiveChipRootPurple;
             case 'green': return classes.interactiveChipRootGreen;
+            case 'blue': return classes.interactiveChipRootBlue;
             default: return classes.interactiveChipRoot;
         }
     }

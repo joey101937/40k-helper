@@ -132,7 +132,7 @@ const SynapticImperativesModal = (props) => {
     }
 
 
-    const summaryText = 'At the start of the battle round, you can select one of the Synaptic Imperative abilities from a unit from your army to activate. That unit must be on the battlefield. Each synaptic imperative can be activated only once per game. Once activated, each SYANPASE model gains its effects until the end of the battle round.'
+    const summaryText = 'At the start of the battle round, you can select one of the Synaptic Imperative abilities from a unit from your army to activate. That unit and your warlord must be on the battlefield. Each synaptic imperative can be activated only once per game. Once activated, each SYANPASE model gains its effects until the end of the battle round.'
 
     return (
         <Dialog classes={classes} open={open} onClose={onClose} maxWidth={'lg'}>

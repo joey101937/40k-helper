@@ -18,6 +18,12 @@ export const swarm = {
     name: 'Swarm',
 }
 
+export const aircraft = {
+    name: 'Aircraft',
+    color: 'blue',
+    desc: 'This Model must move at least its minimum M" or be destroyed. Other Models can move within an enemy AIRCRAFT’s Engagement Range or over them when they make any kind of move. AIRCRAFT can make a Normal Move or an Advance even when within Engagement Range of enemy models. When a non-flying model performs a Heroic Intervention, piles in or consolidates, ignore AIRCRAFT',
+}
+
 export const monster = {
     name: 'Monster',
     desc: 'Can use non-blast ranged weapons while in melee. Heavy weapons shot this way get -1 to hit. See \"Big Guns Never Tire\" special rule.'

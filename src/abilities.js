@@ -293,6 +293,36 @@ export const volatile = {
     desc: 'Each time a model in this unit is destroyed, roll one D6 before removing it from play. On a 6, it explodes, and each unit within 3" suffers 1 mortal wound.',
 }
 
+export const sporeMineCysts = {
+    name: 'Spore Mine Cysts',
+    desc: 'Once per turn, after this model has moved in your Movement phase, you can select one unit it moved across or one point on the battlefield it moved across. If you select a unit, roll six D6s for each VEHICLE or MONSTER model in that unit and roll one D6 for each other model in that unit (to a maximum of ten D6s): for each 4+, that unit suffers 1 mortal wound. If you select a point on the battlefield, set up a new friendly SPORE MINES unit of 3 models on the battlefield not within 6" of any enemy units and within 1" of the selected point. If you are playing a game that uses a points limit, this unit does not cost any Reinforcement points.'
+}
+
+export const airbornePredator = {
+    name: 'Airborne Predator',
+    desc: 'Each time you declare a charge with this model, you can only select AIRCRAFT units as the target(s) of that charge. This model can only be chosen as a target of a charge if the unit making the charge can FLY. You can only fight with this model if it is within engagement Range of any enemy units that can FLY, and this model can only make melee attacks against units that can FLY. Enemy units can only make melee attacks against this model if they can FLY.'
+}
+
+export const manoeuvrable = {
+    name: 'Manoeuvrable',
+    desc: 'Each time this model makes a Normal Move, Advances or Falls Back, first pivot it on the spot up to 90° (this does not contribute to how far the model moves), then move the model straight forwards. It can pivot up to 90° one more time, at any point, during the move.'
+}
+
+export const hardToHit = {
+    name: 'Hard to Hit',
+    desc: 'Each time a ranged attack is made against this model, subtract 1 from that attack’s hit roll.'
+}
+
+export const hover = {
+    name: 'Hover',
+    desc: 'In your Command phase, this model can hover. If it does so, then until the start of your next Command phase, its Move characteristic becomes 15" and it loses the Airborne Predator, Hard to Hit and Manoeuvrable abilities.'
+}
+
+export const huntersInstincts = {
+    name: 'Hunter\'s Instincts',
+    desc: 'Each time this model makes an attack against a unit that can FLY, add 1 to that attack’s hit roll.'
+}
+
 // export const blank = {
 //     name: '',
 //     desc: ''

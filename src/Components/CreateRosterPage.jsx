@@ -4,7 +4,7 @@ import { makeStyles } from '@mui/styles';
 import { units } from '../codex';
 import InteractiveTable from './Table/InteractiveTable';
 import { Button, Checkbox } from '@material-ui/core';
-import { eliteColor, fastAttackColor, heavySupportColor, hqColor, lightGray, red1, red2, troopColor } from '../GLOBALS';
+import { eliteColor, fastAttackColor, flyersColor, heavySupportColor, hqColor, lightGray, red1, red2, troopColor } from '../GLOBALS';
 import UnitWeaponsModal from './RosterView/UnitWeaponsModal';
 import UnitAbilitiesModal from './RosterView/UnitAbilitiesModal';
 import { noFleet } from '../fleets';
@@ -74,6 +74,8 @@ const getColorForRole = (unit) => {
             return heavySupportColor;
         case 'hq':
             return hqColor;
+        case 'flyers':
+            return flyersColor;
         default: 
             return lightGray;
     }

@@ -8,6 +8,7 @@ import eliteIcon from '../Icons/eliteIcon.png'
 import heavySupportIcon from '../Icons/heavySupportIcon.png'
 import fastAttackIcon from '../Icons/fastAttackIcon.png'
 import hqIcon from '../Icons/hqIcon.png'
+import aircraftIcon from '../Icons/aircraftIcon.png';
 import SettingsModal from './RosterView/SettingsModal';
 import SettingsRounded from '@material-ui/icons/SettingsRounded';
 import UnitWeaponsModal from './RosterView/UnitWeaponsModal';
@@ -17,10 +18,11 @@ import SynapticImperativesModal from './RosterView/SynapticImperativesModal';
 import WarlordTraitsModal from './RosterView/WarlordTraitsModal';
 import PsychicPowerModal from './RosterView/PsychicPowersModal';
 import AdaptivePhysoilogyModal from './RosterView/AdaptivePhysiologyModel';
-import { eliteColor, fastAttackColor, heavySupportColor, hqColor, troopColor } from '../GLOBALS';
+import { eliteColor, fastAttackColor, flyersColor, heavySupportColor, hqColor, troopColor } from '../GLOBALS';
 import RelicsModel from './RosterView/RelicsModel';
 import { noFleet } from '../fleets';
 import HiveFleetPanel from './RosterView/HiveFleetPanel';
+import StrategemsModal from './RosterView/StrategemsModal';
 
 
 const useStyles = makeStyles((theme) => {
@@ -72,6 +74,8 @@ const UnitStatsTablePanel = (props) => {
     const [ppModalOpen, setPpModalOpen] = useState(false);
     const [apModalOpen, setApModalOpen] = useState(false);
     const [rModalOpen, setRModalOpen] = useState(false);
+    const [sModalOpen, setSModalOpen] = useState(false);
+    
     const [selectedUnitWeapons, setSelectedUnitWeapon] = useState(null);
     const [selectedUnitAbilities, setSelectedUnitAbility] = useState(null);
 
@@ -97,13 +101,13 @@ const UnitStatsTablePanel = (props) => {
         {
             label: '',
             value: 'name',
-            width: '25%',
-            textAlign: 'left'
+            width: '24%',
+            textAlign: 'center'
         },
         {
             label: 'M',
             value: 'm',
-            width: '5%',
+            width: '6%',
         },
         {
             label: 'WS',
@@ -169,6 +173,8 @@ const UnitStatsTablePanel = (props) => {
                 return (<img height="18px" src={heavySupportIcon} alt="heavySupport icon" />)
             case 'hq':
                 return (<img height="18px" src={hqIcon} alt="hq icon" />)
+            case 'flyers':
+                return (<img height="18px" src={aircraftIcon} alt="flyers icon" />)
             default:
                 return (<img height="18px" src={fistIcon} alt="default icon" />)
         }
@@ -186,6 +192,8 @@ const UnitStatsTablePanel = (props) => {
                 return { background: heavySupportColor };
             case 'hq':
                 return { background: hqColor };
+            case 'flyers':
+                return { background: flyersColor};
             default:
                 return {};
         }
@@ -234,6 +242,7 @@ const UnitStatsTablePanel = (props) => {
                 onPpClick={() => setPpModalOpen(true)}
                 onApClick={() => setApModalOpen(true)}
                 onRClick={() => setRModalOpen(true)}
+                onSClick={() => setSModalOpen(true)}
             />
             <div>
                 <InteractiveTable
@@ -283,6 +292,11 @@ const UnitStatsTablePanel = (props) => {
             <RelicsModel
                 open={rModalOpen}
                 onClose={() => setRModalOpen(false)}
+                currentHiveFleet={currentHiveFleet}
+            />
+            <StrategemsModal
+                open={sModalOpen}
+                onClose={() => setSModalOpen(false)}
                 currentHiveFleet={currentHiveFleet}
             />
         </>
