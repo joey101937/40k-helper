@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => {
         root: (props) => ({
             background: 'linear-gradient(180deg, rgba(80,80,80,1) 0%, rgba(92,56,56,1) 0%, rgba(135,45,45,1) 100%, rgba(150,150,150,1) 100%)',
             textAlign: 'center',
-            minHeight: '100vh',
+            minHeight: 'max(100vh, 1100px)',
             minWidth: '1100px',
             paddingTop: '20px',
         }),
