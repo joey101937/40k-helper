@@ -111,7 +111,7 @@ const StrategemsModal = (props) => {
 
     const getFormattedValues = () => {
       return values
-      .filter(x => (!x.fleet || x.fleet.key === currentHiveFleet) && !(hideBeforeBattle && x.timing=== 'beforeBattle'))
+      .filter(x => (!x.fleet || x.fleet === currentHiveFleet) && !(hideBeforeBattle && x.timing=== 'beforeBattle'))
       .sort(getSortFuntion(orderByTiming)).map(x => ({
         ...x,
         name: <b>{x.name}<br/>{x.cost}</b>,

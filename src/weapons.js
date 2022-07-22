@@ -108,6 +108,16 @@ export const genestealerClaws = {
     notes: '-',
 }
 
+export const broodlordClaws = {
+    name: 'Broodlord Claws and Talons',
+    type: 'Melee',
+    range: 'Melee',
+    s: 'user',
+    ap: '-3',
+    d: '2',
+    notes: 'Each time an attack is made with this weapon, you can re-roll the wound roll, and on an unmodified wound roll of 6, that attack has an AP characteristic of -5.',
+}
+
 export const scythingWings = {
     name: 'Scything wings',
     type: 'Melee',
@@ -428,6 +438,16 @@ export const trygonBioPulse = {
     range: '12"',
     s: '5',
     ap: '0',
+    d: '1',
+    notes: '-',
+}
+
+export const trygonBioPulseWithContainmentSpines = {
+    name: 'Bio-Electric Pulse With Containment Spines',
+    type: 'Assault 8',
+    range: '12"',
+    s: '5',
+    ap: '-2',
     d: '1',
     notes: '-',
 }

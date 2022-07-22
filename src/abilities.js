@@ -103,6 +103,16 @@ export const lightningReflexes = {
     desc: 'Models in this unit have a 5+ invulnerable save. Models in this unit have a 4+ invulnerable save against melee attacks.'
 }
 
+export const broodloprdLightningReflexes = {
+    name: 'Lightning Reflexes',
+    desc: 'This model has a 4+ invulnerable save.'
+}
+
+export const viciousInsight = {
+    name: 'Vicious Insight',
+    desc: ' In your Command phase, select one friendly <HIVE FLEET> CORE unit within Synaptic Link range of this model that has not already been selected for this ability this turn. Until the start of your next Command phase, each time a model in that unit makes a melee attack, on an unmodified wound roll of 6, improve the Armour Penetration characteristic of that attack by 1.'
+}
+
 export const vanguardPredator = {
     name: 'Vanguard Predator',
     desc: 'During deployment, this unit can be set up anywhere on the battlefield that is more than 9" away from the enemy deployment zone and any enemy models. After this unit is set up, if it is equipped with an infestation node, you can set up one friendly <HIVE FLEET> Infestation Node marker on the battlefield within 1" of this unit.'
@@ -198,9 +208,19 @@ export const serpentineCoils = {
     desc: 'Each time a melee attack is made against this unit, subtract 1 from that attack\'s hit roll.'
 }
 
+export const bioImpulses = {
+    name: 'Bio Impulses',
+    desc: ' In your Command phase, select one friendly <HIVE FLEET> CORE unit within Synaptic Link range of this model that has not already been selected for this ability this turn. Until the start of your next Command phase, add 1 to Advance rolls and add 1 to charge rolls made for that unit.'
+}
+
 export const warriorSpawning = {
     name: 'Warrior Spawning',
     desc: 'If your army is Battle-forged, then for each Detachment that includes any <HIVE FLEET> TYRANID WARRIORS units, one <HIVE FLEET> TYRANID PRIME model can be included in that Detachment without taking up a Battlefield Role slot.'
+}
+
+export const alphaWarrior = {
+    name: 'Alpha Warrior',
+    desc: 'In your Command phase, select one friendly <HIVE FLEET> CORE unit within Synaptic Link range of this model that has not already been selected for this ability this turn. Until the start of your next Command phase, each time a model in that unit makes an attack, re-roll a wound roll of 1.'
 }
 
 export const lesserOrganism = {
@@ -267,7 +287,7 @@ export const psychicAugmentation = {
 export const thrashingDemise = {
     name: 'Synaptic Imperative',
     subName: 'THRASHING DEMISE',
-    desc: 'Friendly units within 6" of this SYNAPSE model gain the following traits: This unit has +3 to its <i>Death Throes</i> ability if it has the ability. If it doesn\'t, then each time a model in this unit would die from a melee attack, roll a D6. On a 6, the attacking model\'s unit suffers 1 mortal wound after making all of its attacks.'
+    desc: 'Friendly units within 6" of this SYNAPSE model gain the following traits: This unit has +3 to its Death Throes ability if it has the ability. If it doesn\'t, then each time a model in this unit would die from a melee attack, roll a D6. On a 6, the attacking model\'s unit suffers 1 mortal wound after making all of its attacks.'
 }
 
 export const psychicOversight = {

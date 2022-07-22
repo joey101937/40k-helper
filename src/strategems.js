@@ -1,4 +1,4 @@
-import { jormungandr, kraken, kronos } from './fleets';
+import { behemoth, jormungandr, kraken, kronos } from './fleets';
 
 
 export const hivePredator = {
@@ -30,7 +30,7 @@ export const burriedInWait = {
     name: 'Burried in Wait',
     timing: 'beforeBattle',
     type: 'Requisition',
-    fleet: jormungandr,
+    fleet: jormungandr.key,
     cost: '1cp',
     desc: 'Use this Stratagem before the battle, during the Declare Reserves and Transports step (if you are playing a mission without this step, use this Stratagem during deployment instead). Select one ENDLESS MULTITUDE unit from your army. During deployment, when you set up that unit, it can be set up anywhere on the battlefield that is wholly within an Area Terrain feature and more than 9" away from the enemy deployment zone and any enemy models.'
 }
@@ -122,7 +122,7 @@ export const theDeepestShadow = {
     type: 'Epid Deed',
     cost: '1cp',
     enemyTurn: true,
-    fleet: kronos,
+    fleet: kronos.key,
     desc: 'Use this Stratagem in your opponent’s Psychic phase, when an enemy unit fails a Psychic test. Select a friendly KRONOS PSYKER unit within 18" of that enemy unit. That enemy unit suffers D3 mortal wounds and the selected friendly unit gains the following aura ability: While an enemy PSYKER unit is within 18" of this unit, each time a Psychic test taken for that unit is failed, that unit suffers D3 mortal wounds.'
 }
 
@@ -167,6 +167,15 @@ export const deathFrenzy = {
     type: 'Epic Deed',
     cost: '2cp',
     desc: 'Use this Stratagem in the Fight phase, when a HIVE TENDRIL CHARACTER model from your army that has not already been selected to fight this phase is destroyed, instead of using any rules that are triggered when that model is destroyed (e.g. the Death Throes ability). Do not remove that model from play - it can fight after the attacking model’s unit has finished making attacks. When making those attacks, if the destroyed model’s characteristics can change as they suffer damage, that model is considered to have its full wounds remaining for the purpose of determining what those characteristics are. After resolving the destroyed model’s attacks, it is then removed.'
+}
+
+export const unparalleledFurocity = {
+    name: 'UNPARALLELED FEROCITY',
+    timing: 'fightPhase',
+    type: 'Battle Tactic',
+    cost: '1-2cp',
+    fleet: behemoth.key,
+    desc: 'when a non-character BEHEMOTH INFANTRY unit from your army that has not fought this phase is selected as the target of a melee attack. Until the attacking model’s unit has finished making its attacks, each time a model in that unit is destroyed, instead of using any rules that are triggered when that model is destroyed, do not remove the destroyed model from play - it can, after the attacking model’s unit has finished making its attacks, attack as if its unit had been selected to fight. After resolving these attacks, the destroyed model is then removed. If that unit has the ENDLESS MULTITUDE keyword, this Stratagem costs 1CP; otherwise, it costs 2CP.'
 }
 
 /*
