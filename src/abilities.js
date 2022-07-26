@@ -103,7 +103,7 @@ export const lightningReflexes = {
     desc: 'Models in this unit have a 5+ invulnerable save. Models in this unit have a 4+ invulnerable save against melee attacks.'
 }
 
-export const broodloprdLightningReflexes = {
+export const broodlordLightningReflexes = {
     name: 'Lightning Reflexes',
     desc: 'This model has a 4+ invulnerable save.'
 }
@@ -342,6 +342,31 @@ export const huntersInstincts = {
     name: 'Hunter\'s Instincts',
     desc: 'Each time this model makes an attack against a unit that can FLY, add 1 to that attack’s hit roll.'
 }
+
+export const parasyticInfection = {
+    name: 'Parasitic Infection',
+    desc: 'Each time an attack made with this weapon successfully wounds an enemy unit (excluding VEHICLE units), that unit suffers 1 mortal wound in addition to any normal damage and becomes infected with parasites. At the start of your opponent’s Command phase, for each enemy unit that is infected with parasites, your opponent must roll one D6: On a 1-3, that unit being rolled for suffers D3 mortal wounds and is no longer infected with parasites. On a 4-6, that unit being rolled for suffers D3 mortal wounds and remains infected with parasites.\n\nIf that unit suffers 2 or more mortal wounds as a result of this ability this phase, set up a new friendly <HIVE FLEET> RIPPER SWARMS unit on the battlefield within 3" of that unit and not within Engagement Range of any enemy units. That RIPPER SWARMS unit contains 1 model, and, if you are playing a game that uses a points limit, does not cost any Reinforcement points.'
+}
+
+export const itItches = {
+    name: 'it Itches',
+    desc: 'While a unit is infected with parasites (see Parasitic Infection), it loses the Objective Secured ability.'
+}
+
+export const shadowHunter = {
+    name: 'Shadow Hunter',
+    desc: 'Each time an attack is made against this model, subtract 1 from that attack’s hit roll and that hit roll cannot be re-rolled.'
+}
+
+// export const blank = {
+//     name: '',
+//     desc: ''
+// }
+
+// export const blank = {
+//     name: '',
+//     desc: ''
+// }
 
 // export const blank = {
 //     name: '',

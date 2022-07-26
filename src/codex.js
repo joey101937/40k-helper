@@ -374,7 +374,7 @@ export const units = [
             weapons.broodlordClaws
         ],
         abilities: [
-            abilities.lightningReflexes,
+            abilities.broodlordLightningReflexes,
             abilities.vanguardPredator,
             abilities.viciousInsight,
             abilities.shadowInTheWarp
@@ -858,6 +858,40 @@ export const units = [
             abilities.lesserOrganism,
             abilities.deathFromBelow,
             abilities.burrowAndSqurim,
+        ]
+    },
+    {
+        name: 'Parasite of Mortrex',
+        type: 'infantry',
+        role: 'fastAttack',
+        stats: [{
+            m: '16"',
+            ws: '2+',
+            bs: '3+',
+            s: '5',
+            t: '5',
+            w: '6',
+            a: '6',
+            ld: '8',
+            sv: '4+',
+        }],
+        keywords: [
+            character,
+            fly,
+            synapse,
+            hiveTentril,
+            tyranids,
+        ],
+        weapons: [
+            weapons.clawedLimbs,
+            weapons.barbedOvipositor,
+        ],
+        abilities: [
+            abilities.shadowInTheWarp,
+            abilities.parasyticInfection,
+            abilities.itItches,
+            abilities.shadowHunter,
+            abilities.deathFromAbove,
         ]
     },
     {

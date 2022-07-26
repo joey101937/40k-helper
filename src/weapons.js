@@ -492,6 +492,26 @@ export const ripperSpineMaw = {
     notes: '-',
 }
 
+export const clawedLimbs = {
+    name: 'Clawed Limbs',
+    type: 'Melee',
+    range: 'Melee',
+    s: 'user',
+    ap: '-2',
+    d: '1',
+    notes: '-',
+}
+
+export const barbedOvipositor = {
+    name: 'Barbed Ovipositor',
+    type: 'Melee', 
+    range: 'Melee',
+    s: 'user',
+    ap: '-1',
+    d: '1',
+    notes: 'Parasitic Infection. Each time the bearer fights, it makes 1 additional attack with this weapon, and no more than 1 attack can be made with this weapon while resolving that fight.',
+}
+
 export const bioPlasmicScream = {
     name: 'Bio-Plasmic Scream',
     type: 'Assault D6',
