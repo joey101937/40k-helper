@@ -93,6 +93,21 @@ const saveToCache = (rosterToSave, defaultFleet) => {
     localStorage.setItem('whHelperCachedRoster', JSON.stringify(saveItem));
 }
 
+const getStatValuesForUnit = (u) => {
+    if(!u.selected) return {};
+    else return {
+        m: u.stats[0].m,
+        ws: u.stats[0].ws,
+        bs: u.stats[0].bs,
+        s: u.stats[0].s,
+        t: u.stats[0].t,
+        w: u.stats[0].w,
+        a: u.stats[0].a,
+        ld: u.stats[0].ld,
+        sv: u.stats[0].sv,
+    }
+}
+
 const CreateRosterPage = (props) => {
     const classes = useStyles(props);
     const { onCreateRoster, currentUser, loginModalProps, setLoadedRoster, startingRoster } = props;
@@ -113,18 +128,63 @@ const CreateRosterPage = (props) => {
         {
             label: '',
             value: 'formattedName',
-            width: '65%',
+            width: '24%',
             textAlign: 'left',
+        },
+        {
+            label: 'M',
+            value: 'm',
+            width: '6%',
+        },
+        {
+            label: 'WS',
+            value: 'ws',
+            width: '5%',
+        },
+        {
+            label: 'BS',
+            value: 'bs',
+            width: '5%',
+        },
+        {
+            label: 'S',
+            value: 's',
+            width: '5%',
+        },
+        {
+            label: 'T',
+            value: 't',
+            width: '5%',
+        },
+        {
+            label: 'W',
+            value: 'w',
+            width: '5%',
+        },
+        {
+            label: 'A',
+            value: 'a',
+            width: '5%',
+        },
+        {
+            label: 'Ld',
+            value: 'ld',
+            width: '5%',
+        },
+        {
+            label: 'Sv',
+            value: 'sv',
+            width: '5%',
         },
         {
             label: 'Weapons',
             value: 'weaponButton',
-            width: '15%',
+            width: '12.5%',
         },
         {
             label: 'Abilities',
             value: 'abilitiesButton',
-            width: '15%',
+            width: '12.5%',
         },
     ];
 
@@ -160,6 +220,7 @@ const CreateRosterPage = (props) => {
         return currentRoster.map(x => {
             return {
                 ...x,
+                ...getStatValuesForUnit(x),
                 formattedName: <div style={{cursor: 'pointer'}} onClick={() => onCheckboxClick(x)}>{x.name}</div>,
                 checkbox: <Checkbox
                         color={'primary'}
