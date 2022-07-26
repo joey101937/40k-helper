@@ -375,7 +375,7 @@ export const units = [
         ],
         abilities: [
             abilities.broodlordLightningReflexes,
-            abilities.vanguardPredator,
+            abilities.broodlordVanguardPredator,
             abilities.viciousInsight,
             abilities.shadowInTheWarp
         ],

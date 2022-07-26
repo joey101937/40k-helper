@@ -64,15 +64,28 @@ const useStyles = makeStyles((theme) => {
             marginBottom: '5px',
             background: red1,
             color: 'white',
-            float: 'right',
-            display: 'inline-block',
+            position: 'absolute',
+            right: '10px',
             cursor: 'pointer',
+            borderRadius: '4px',
+        }),
+        editButton: () => ({
+            marginRight: '10px',
+            marginTop: '3px',
+            marginBottom: '5px',
+            background: red1,
+            color: 'white',
+            position: 'absolute',
+            right: '45px',
+            cursor: 'pointer',
+            borderRadius: '4px',
+            padding: '4px',
         }),
     }
 });
 
 const LoadRosterPage = (props) => {
-    const { currentUser, setLoadedRoster, loadingLoginRequest } = props;
+    const { currentUser, setLoadedRoster, loadingLoginRequest, handleEditRoster } = props;
     const cachedRoster = JSON.parse(localStorage.getItem('whHelperCachedRoster'));
     const [accountRosters, setAccountRosters] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -96,9 +109,12 @@ const LoadRosterPage = (props) => {
         if (!accountRosters) return <div></div>;
         return accountRosters.map((ar) => {
             return (
-                <div>
+                <div style={{position: 'relative'}}>
                     <div className={classes.deleteButton} onClick={() => setRecordToDelete(ar)}>
                         <Close />
+                    </div>
+                    <div className={classes.editButton} onClick={() => handleEditRoster(ar)}>
+                        Edit
                     </div>
                     <div className={classes.accountRosterItem} onClick={() => onLoadAccountRoster(ar)}>
                         {ar?.name}

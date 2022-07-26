@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@mui/styles';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useNavigate, useLocation } from 'react-router-dom';
 import UnitStatsTablePanel from './UnitStatsTablePanel';
 import TopBanner from './TopBanner';
 import CreateRosterPage from './CreateRosterPage';
@@ -23,6 +23,8 @@ const useStyles = makeStyles((theme) => {
 
 const BaseBackground = (props) => {
     const classes = useStyles(props);
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const [rerender, setRerender] = useState(false);
 
@@ -34,11 +36,18 @@ const BaseBackground = (props) => {
 
     const [loadedRoster, setLoadedRoster] = useState(null);
 
+    const [rosterForEdit, setRosterForEdit] = useState(null);
+
     const [loadingLoginRequest, setLoadingLoginRequest] = useState(false);
 
     const onSetLoadedRoster = (r) => {
         setLoadedRoster(r);
         localStorage.setItem('whHelperLoadedRoster', JSON.stringify(r));
+    }
+
+    const onEditRosterStart = (roster) => {
+        setRosterForEdit(roster);
+        navigate('/createRoster')
     }
 
     const logout = () => {
@@ -92,7 +101,14 @@ const BaseBackground = (props) => {
             }
         };
         loginViaCache();
-    }, [])
+    }, []);
+
+    useEffect(() => {
+        if(location.pathname !== 'createRoster') {
+            console.log('clearing');
+            setRosterForEdit(null);
+        }
+    }, [ location.pathname ]);
 
     useEffect(() => {
         const loadedRosterInCache = localStorage.getItem('whHelperLoadedRoster');
@@ -109,10 +125,10 @@ const BaseBackground = (props) => {
                 <Routes>
                     <Route path="/" element={<UnitStatsTablePanel />} />
                     <Route path="fullRoster" element={<UnitStatsTablePanel />} />
-                    <Route path="load" element={<LoadRosterPage loadingLoginRequest={loadingLoginRequest} currentUser={currentUser} setLoadedRoster={onSetLoadedRoster} />} />
+                    <Route path="load" element={<LoadRosterPage loadingLoginRequest={loadingLoginRequest} currentUser={currentUser} setLoadedRoster={onSetLoadedRoster} handleEditRoster={onEditRosterStart} />} />
                     <Route path="cached" element={<UnitStatsTablePanel rosterUnits={cachedRoster?.content?.filter(x => x.selected)} defaultFleet={cachedRoster?.metadata?.fleet} />} />
                     <Route path="loaded" element={<UnitStatsTablePanel rosterUnits={loadedRoster?.content?.filter?.(x => x.selected)} defaultFleet={loadedRoster?.metadata?.fleet} />} />
-                    <Route path="createRoster" element={<div><CreateRosterPage setLoadedRoster={onSetLoadedRoster} loginModalProps={{ onLogin: login, onRegister: register }} currentUser={currentUser} onCreateRoster={() => { setRerender(!rerender) }} /></div>} />
+                    <Route path="createRoster" element={<div><CreateRosterPage setLoadedRoster={onSetLoadedRoster} loginModalProps={{ onLogin: login, onRegister: register }} currentUser={currentUser} onCreateRoster={() => { setRerender(!rerender) }} startingRoster={rosterForEdit} /></div>} />
                 </Routes>
             </div>
         </>

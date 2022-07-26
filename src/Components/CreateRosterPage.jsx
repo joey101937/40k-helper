@@ -95,10 +95,10 @@ const saveToCache = (rosterToSave, defaultFleet) => {
 
 const CreateRosterPage = (props) => {
     const classes = useStyles(props);
-    const { onCreateRoster, currentUser, loginModalProps, setLoadedRoster } = props;
+    const { onCreateRoster, currentUser, loginModalProps, setLoadedRoster, startingRoster } = props;
 
     const [currentHiveFleet, setCurrentHiveFleet] = useState(noFleet.key);
-    const [currentRoster, setCurrentRoster] = useState(units);
+    const [currentRoster, setCurrentRoster] = useState(startingRoster?.content || units);
     const [weaponUnit, setWeaponUnit] = useState(null);
     const [abilityUnit, setAbilityUnit] = useState(null);
     const [saveModalOpen, setSaveModalOpen] = useState(false);
