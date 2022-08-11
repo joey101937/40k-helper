@@ -118,6 +118,11 @@ export const vanguardPredator = {
     desc: 'During deployment, this unit can be set up anywhere on the battlefield that is more than 9" away from the enemy deployment zone and any enemy models. After this unit is set up, if it is equipped with an infestation node, you can set up one friendly <HIVE FLEET> Infestation Node marker on the battlefield within 1" of this unit.'
 }
 
+export const broodlordVanguardPredator = {
+    name: 'Vanguard Predator',
+    desc: 'During deployment, this unit can be set up anywhere on the battlefield that is more than 9" away from the enemy deployment zone and any enemy models.'
+}
+
 export const infiltrationSpawning = {
     name: 'Infiltration Spawning',
     desc: 'If your army is Battle-forged, then for each Detachment that includes any <HIVE FLEET> GENESTEALERS units, one <HIVE FLEET> BROODLORD unit can be included in that Detachment without taking up a Battlefield Role slot.'
