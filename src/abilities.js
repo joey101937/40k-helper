@@ -318,6 +318,21 @@ export const volatile = {
     desc: 'Each time a model in this unit is destroyed, roll one D6 before removing it from play. On a 6, it explodes, and each unit within 3" suffers 1 mortal wound.',
 }
 
+export const chameleonicSkin = {
+    name: 'Chameleonic Skin',
+    desc: 'Each time an attack is made against this model, subtract 1 from that attack’s hit roll.\nWhile this model is receiving the benefits of cover, it cannot be selected as the target of a ranged attack if the attacker is more than 12" away.\nThis model has a 5+ invulnerable save.'
+};
+
+export const inhumanSwiftness = {
+    name: 'Inhuman Swiftness',
+    desc: 'At the start of the Fight phase, if this model is within Engagement Range of any enemy units, it can fight first that phase.',
+};
+
+export const hiddenHunter = {
+    name: 'Hidden Hunter',
+    desc: 'During deployment, you can set up this model in hiding instead of setting it up on the battlefield. If you do so, then in the Reinforcements step of one of your Movement phases you can set up this model wholly within 6" of any battlefield edge or any terrain features and more than 9" away from any enemy models (or more then 6" away from enemy models if this model is set up wholly within your deployment zone), and, until the end of the turn, you can re-roll charge rolls made for this model.',
+};
+
 export const sporeMineCysts = {
     name: 'Spore Mine Cysts',
     desc: 'Once per turn, after this model has moved in your Movement phase, you can select one unit it moved across or one point on the battlefield it moved across. If you select a unit, roll six D6s for each VEHICLE or MONSTER model in that unit and roll one D6 for each other model in that unit (to a maximum of ten D6s): for each 4+, that unit suffers 1 mortal wound. If you select a point on the battlefield, set up a new friendly SPORE MINES unit of 3 models on the battlefield not within 6" of any enemy units and within 1" of the selected point. If you are playing a game that uses a points limit, this unit does not cost any Reinforcement points.'
@@ -363,15 +378,20 @@ export const shadowHunter = {
     desc: 'Each time an attack is made against this model, subtract 1 from that attack’s hit roll and that hit roll cannot be re-rolled.'
 }
 
-// export const blank = {
-//     name: '',
-//     desc: ''
-// }
+export const bladeParry = {
+    name: 'Blade Parry',
+    desc: 'Once per turn, the first time a saving throw made against a melee attack is failed for this model, the Damage characteristic of that attack is changed to 0.',
+}
 
-// export const blank = {
-//     name: '',
-//     desc: ''
-// }
+export const dominationOfTheHiveMind = {
+    name: 'Domination of the Hive Mind',
+    desc: 'In your Command phase, select one friendly <HIVE FLEET> CORE unit within Synaptic Link range of this model. Until the start of your next Command phase, each time a model in that unit makes an attack, you can re-roll the hit roll.',
+}
+
+export const hiveCommander = {
+    name: 'Hive Commander',
+    desc: 'In your Command phase, select one friendly <HIVE FLEET> CORE unit within Synaptic Link range of this model. Until the start of your next Command phase, that unit gains the Objective Secured ability. If that unit already has this ability, models in that unit count as one additional model when determining control of an objective marker.',
+}
 
 // export const blank = {
 //     name: '',

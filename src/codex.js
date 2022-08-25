@@ -1,7 +1,9 @@
 import * as abilities from "./abilities";
 import { burrower, character, core, endlessMultitude, feederTendrils, fly, hiveTentril, hiveTyrantKeyword, hornedChitin, infantry, monster, psycher1Keyword, psycher2Keyword, sporeCaster, swarm, synapse, toxicLashes, tyranids, psycher2_2Keyword, carnifexKeyword, acidBlood, aircraft } from "./Keywords";
 import { smite } from "./psychicPowers";
+import { boundingAdvance, reinforcedHiveNode } from "./strategems";
 import { acidMawWargear, adrenalGlands, biostaticRattle, chitinThrons, enhancedSenses, extendedCarapace, fleshHooks, infestationNode, lashWhip, prehensilePincerTail, sporeCysts, toxinSacs, toxinSpike, tusks } from "./Wargear";
+import { synapticLynchpin } from "./warlordTraits";
 import * as weapons from "./weapons";
 
 
@@ -137,6 +139,71 @@ export const units = [
             {...lashWhip, active: true},
             {...prehensilePincerTail, active: true}
         ],
+    },
+    {
+        name: 'The Swarmlord',
+        type: 'monster',
+        role: 'hq',
+        stats: [{
+            m: '9"',
+            ws: '2+',
+            bs: '2+',
+            s: '8',
+            t: '8',
+            w: '13',
+            a: '9',
+            ld: '10',
+            sv: '2+',
+        },{
+            m: '8"',
+            ws: '3+',
+            bs: '3+',
+            s: '8',
+            t: '8',
+            w: '<7',
+            a: '9',
+            ld: '10',
+            sv: '2+',
+        },{
+            m: '6"',
+            ws: '4+',
+            bs: '4+',
+            s: '8',
+            t: '8',
+            w: '<4',
+            a: '9',
+            ld: '10',
+            sv: '2+',
+        }],
+        keywords: [
+            monster,
+            character,
+            synapse,
+            psycher2_2Keyword,
+            hornedChitin,
+            hiveTyrantKeyword,
+            hiveTentril,
+            tyranids,
+        ],
+        weapons: [
+            weapons.boneSabres,
+        ],
+        abilities: [
+            abilities.psychicBarrier,
+            abilities.deathThroes,
+            abilities.shadowInTheWarp,
+            abilities.relentlessFurocity,
+            abilities.dominationOfTheHiveMind,
+            abilities.hiveCommander,
+        ],
+        wargear: [
+            adrenalGlands,
+            toxinSacs,
+            {...lashWhip, active: true},
+        ],
+        warlordTraits: [
+            synapticLynchpin,
+        ]
     },
     {
         name: 'Tervigon',
@@ -529,6 +596,39 @@ export const units = [
         ]
     },
     {
+        name: 'Lictor',
+        type: 'infantry',
+        role: 'elite',
+        stats: [{
+            m: '10"',
+            ws: '2+',
+            bs: '6+',
+            s: '7',
+            t: '5',
+            w: '5',
+            a: '6',
+            ld: '8',
+            sv: '4+',
+        }],
+        keywords: [
+            infantry,
+            hiveTentril,
+            tyranids,
+            feederTendrils
+        ],
+        weapons: [
+            weapons.lictorClawsAndTalons,          
+        ],
+        wargear: [
+            {...fleshHooks, active: true},
+        ],
+        abilities: [
+            abilities.chameleonicSkin,
+            abilities.inhumanSwiftness,
+            abilities.hiddenHunter,
+        ]
+    },
+    {
         name: 'Termigant',
         type: 'infantry',
         role: 'troops',
@@ -596,6 +696,9 @@ export const units = [
             adrenalGlands,
             toxinSacs,
         ],
+        strategems: [
+            boundingAdvance,
+        ]
     },
     {
         name: 'Gargoyle',
@@ -675,6 +778,9 @@ export const units = [
             fleshHooks,
             {...lashWhip, active: true},
         ],
+        strategems: [
+            reinforcedHiveNode,
+        ]
     },
     {
         name: 'Trygon',

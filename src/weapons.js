@@ -631,3 +631,23 @@ export const carnifexThresherScythe = {
     d: '1',
     notes: '+3 attacks with this weapon, once per fight',
 }
+
+export const lictorClawsAndTalons = {
+    name: 'Lictor Claws and Talons',
+    type: 'Melee',
+    range: 'Melee',
+    s: 'user',
+    ap: '-3',
+    d: '2',
+    notes: '-',
+}
+
+export const boneSabres = {
+    name: 'Bone Sabres',
+    type: 'Melee',
+    range: 'Melee',
+    s: '+1',
+    ap: '-4',
+    d: '3',
+    notes: '-',
+}

@@ -11,6 +11,7 @@ import * as adaptivePhysiologies from '../../adaptivePhysiologies';
 import * as relics from '../../relics';
 import * as powers from '../../psychicPowers';
 import * as strategems from '../../strategems';
+import { character, monster } from '../../Keywords';
 
 const useStyles = makeStyles((theme) => {
     return {
@@ -538,7 +539,7 @@ const UnitAbilitiesModal = (props) => {
                             >
                                 + Wargear
                             </Button>)}
-                            {editMode && unit?.role === 'hq' && 
+                            {editMode && unit?.keywords.some(k => k.name === character.name) && 
                             (<Button
                                 classes={{ root: classes.addWarlordTraitButton}}
                                 onClick={() => {
@@ -548,7 +549,7 @@ const UnitAbilitiesModal = (props) => {
                             >
                                 + Warlord Trait
                             </Button>)}
-                            {editMode && unit?.role === 'hq' && 
+                            {editMode && unit?.keywords.some(k => k.name === character.name) && 
                             (<Button
                                 classes={{ root: classes.addRelicButton}}
                                 onClick={() => {
@@ -558,7 +559,7 @@ const UnitAbilitiesModal = (props) => {
                             >
                                 + Relic
                             </Button>)}
-                            {editMode && unit?.keywords.filter(k => k.name === "Monster").length > 0 && unit?.keywords.filter(k => k.name === "Character").length === 0 &&
+                            {editMode && unit?.keywords.filter(k => k.name === monster.name).length > 0 && unit?.keywords.filter(k => k.name === character.name).length === 0 &&
                             (<Button
                                 classes={{ root: classes.addAdaptivePhysiologyButton}}
                                 onClick={() => {
