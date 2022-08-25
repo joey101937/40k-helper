@@ -3,7 +3,7 @@ import { burrower, character, core, endlessMultitude, feederTendrils, fly, hiveT
 import { smite } from "./psychicPowers";
 import { boundingAdvance, reinforcedHiveNode } from "./strategems";
 import { acidMawWargear, adrenalGlands, biostaticRattle, chitinThrons, enhancedSenses, extendedCarapace, fleshHooks, infestationNode, lashWhip, prehensilePincerTail, sporeCysts, toxinSacs, toxinSpike, tusks } from "./Wargear";
-import { synapticLynchpin } from "./warlordTraits";
+import { alienCunning, synapticLynchpin } from "./warlordTraits";
 import * as weapons from "./weapons";
 
 
@@ -627,6 +627,98 @@ export const units = [
             abilities.inhumanSwiftness,
             abilities.hiddenHunter,
         ]
+    },
+    {
+        name: 'Deathleaper',
+        type: 'infantry',
+        role: 'elite',
+        stats: [{
+            m: '10"',
+            ws: '2+',
+            bs: '6+',
+            s: '7',
+            t: '5',
+            w: '7',
+            a: '7',
+            ld: '8',
+            sv: '4+',
+        }],
+        keywords: [
+            infantry,
+            character,
+            hiveTentril,
+            tyranids,
+            feederTendrils
+        ],
+        weapons: [
+            weapons.lictorClawsAndTalons,          
+        ],
+        wargear: [
+            {...fleshHooks, active: true},
+        ],
+        abilities: [
+            abilities.superiorChameleonicSkin,
+            abilities.inhumanSwiftness,
+            abilities.hiddenHunter,
+            abilities.itsOutThere,
+            abilities.fearOfTheUnseen,
+        ],
+        warlordTraits: [
+            alienCunning,
+        ]
+    },
+    {
+        name: 'Haruspex',
+        type: 'monster',
+        role: 'elite',
+        stats: [{
+            m: '8"',
+            ws: '3+',
+            bs: '3+',
+            s: '7',
+            t: '8',
+            w: '15',
+            a: '5',
+            ld: '7',
+            sv: '2+',
+        },{
+            m: '7"',
+            ws: '4+',
+            bs: '4+',
+            s: '7',
+            t: '8',
+            w: '<7',
+            a: '5',
+            ld: '7',
+            sv: '2+',
+        },{
+            m: '5"',
+            ws: '5+',
+            bs: '5+',
+            s: '7',
+            t: '8',
+            w: '<5',
+            a: '5',
+            ld: '7',
+            sv: '2+',
+        }],
+        keywords: [
+            monster,
+            hiveTentril,
+            hornedChitin,
+            acidBlood,
+            tyranids,
+        ],
+        weapons: [
+            weapons.graspingTongue,
+            weapons.ravenousMaw,
+            weapons.shovellingClaws,
+        ],
+        abilities:[
+            abilities.rapaciousHunger,
+            abilities.grislySpectacle,
+            abilities.deathThroes
+        ],
     },
     {
         name: 'Termigant',

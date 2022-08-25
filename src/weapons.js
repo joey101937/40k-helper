@@ -412,6 +412,36 @@ export const powerfulLimbs = {
     notes: '-',
 }
 
+export const graspingTongue = {
+    name: 'Grasping Tongue',
+    type: 'Assault 1',
+    range: '12"',
+    s: '6',
+    ap: '-3',
+    d: '3',
+    notes: 'Each time you select a target for this weapon, you can ignore the Look Out, Sir rule.',
+}
+
+export const ravenousMaw = {
+    name: 'Ravenous maw',
+    type: 'Melee',
+    range: 'Melee',
+    s: 'user',
+    ap: '-1',
+    d: '2',
+    notes: 'Each time an attack is made with this weapon, make 3 hit rolls instead of 1.',
+}
+
+export const shovellingClaws = {
+    name: 'Shovelling claws',
+    type: 'Melee',
+    range: 'Melee',
+    s: 'x2',
+    ap: '-3',
+    d: 'D3+3',
+    notes: '-',
+}
+
 export const chitinBarbedFists = {
     name: 'Chitin Barbed Fists',
     type: 'Melee',

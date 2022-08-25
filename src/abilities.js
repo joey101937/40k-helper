@@ -323,6 +323,11 @@ export const chameleonicSkin = {
     desc: 'Each time an attack is made against this model, subtract 1 from that attack’s hit roll.\nWhile this model is receiving the benefits of cover, it cannot be selected as the target of a ranged attack if the attacker is more than 12" away.\nThis model has a 5+ invulnerable save.'
 };
 
+export const superiorChameleonicSkin = {
+    name: 'Superior Chameleonic Skin',
+    desc: 'Each time an attack is made against this model, subtract 1 from that attack’s hit roll.\nWhile this model is receiving the benefits of cover, it cannot be selected as the target of a ranged attack if the attacker is more than 12" away.\nThis model has a 4+ invulnerable save.'
+};
+
 export const inhumanSwiftness = {
     name: 'Inhuman Swiftness',
     desc: 'At the start of the Fight phase, if this model is within Engagement Range of any enemy units, it can fight first that phase.',
@@ -331,6 +336,16 @@ export const inhumanSwiftness = {
 export const hiddenHunter = {
     name: 'Hidden Hunter',
     desc: 'During deployment, you can set up this model in hiding instead of setting it up on the battlefield. If you do so, then in the Reinforcements step of one of your Movement phases you can set up this model wholly within 6" of any battlefield edge or any terrain features and more than 9" away from any enemy models (or more then 6" away from enemy models if this model is set up wholly within your deployment zone), and, until the end of the turn, you can re-roll charge rolls made for this model.',
+};
+
+export const itsOutThere = {
+    name: 'Its Out There',
+    desc: '(Aura): While an enemy unit is within 6" of this model, that enemy unit cannot start to perform actions.',
+};
+
+export const fearOfTheUnseen = {
+    name: 'Fear of the Unseen',
+    desc: 'While an enemy unit is within Engagement Range of this model, that unit cannot be selected for Stratagems used by your opponent, and that unit cannot be affected by Stratagems used by your opponent when that unit is selected to shoot or fight.',
 };
 
 export const sporeMineCysts = {
@@ -392,6 +407,21 @@ export const hiveCommander = {
     name: 'Hive Commander',
     desc: 'In your Command phase, select one friendly <HIVE FLEET> CORE unit within Synaptic Link range of this model. Until the start of your next Command phase, that unit gains the Objective Secured ability. If that unit already has this ability, models in that unit count as one additional model when determining control of an objective marker.',
 }
+
+export const rapaciousHunger = {
+    name: 'Rapacious Hunger:',
+    desc: 'Each time an enemy model is destroyed as a result of an attack made by this model, this model regains 1 lost wound (to a maximum of 3 regained wounds per phase).',
+}
+
+export const grislySpectacle = {
+    name: 'Grisly Spectacle (Aura)',
+    desc: 'While an enemy unit is within 6" of this model, subtract 2 from the Leadership characteristic of models in that unit.',
+}
+
+// export const blank = {
+//     name: '',
+//     desc: ''
+// }
 
 // export const blank = {
 //     name: '',
