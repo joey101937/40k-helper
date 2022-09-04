@@ -38,6 +38,11 @@ export const deathThroes = {
     desc: 'When this model is destroyed, roll one D6 before removing it from play. On a 6+, the closest enemy unit within 6" suffers D3 mortal wounds.'
 }
 
+export const deathThroesFlat3 = {
+    name: 'Death Throes',
+    desc: 'When this model is destroyed, roll one D6 before removing it from play. On a 6+, the closest enemy unit within 6" suffers 3 mortal wounds.'
+}
+
 export const terrifying = {
     name: 'Terrifying',
     desc: 'Each time this model destroys a model in an enemy unit, until the end of the turn, subtract 1 from the Leadership characteristic of models in that enemy unit (to a maximum of -4).'
