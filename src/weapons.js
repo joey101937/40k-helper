@@ -681,3 +681,23 @@ export const boneSabres = {
     d: '3',
     notes: '-',
 }
+
+export const heiroduleAcidSpray = {
+    name: 'Bio-acid Spray',
+    type: 'Heavy 3D6',
+    range: '18"',
+    s: '6',
+    ap: '-2',
+    d: '1',
+    notes: 'Each time an attack is made with this weapon, that attack automatically hits the target.',
+}
+
+export const heiroduleClaws = {
+    name: 'Heirodule Scything Talons',
+    type: 'Melee',
+    range: 'Melee',
+    s: '+2',
+    ap: '-3',
+    d: 'D3+3',
+    notes: 'Each time an attack is made with this weapon, re-roll a hit roll of 1.',
+}

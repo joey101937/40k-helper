@@ -1514,4 +1514,52 @@ export const units = [
             toxinSacs
         ],
     },
+    {
+        name: 'Scythed Heirodule',
+        type: 'monster',
+        role: 'heavySupport',
+        stats: [{
+            m: '12"',
+            ws: '3+',
+            bs: '3+',
+            s: '8',
+            t: '8',
+            w: '18',
+            a: '6',
+            ld: '8',
+            sv: '3+',
+        },{
+            m: '9"',
+            ws: '4+',
+            bs: '4+',
+            s: '8',
+            t: '8',
+            w: '<10',
+            a: '6',
+            ld: '8',
+            sv: '3+',
+        },{
+            m: '6"',
+            ws: '5+',
+            bs: '5+',
+            s: '8',
+            t: '8',
+            w: '<5',
+            a: '6',
+            ld: '8',
+            sv: '3+',
+        }],
+        keywords: [
+            monster,
+            hiveTentril,
+            tyranids,
+        ],
+        weapons: [
+            weapons.heiroduleAcidSpray,
+            weapons.heiroduleClaws,
+        ],
+        abilities:[
+            abilities.deathThroesFlat3
+        ],
+    },
 ];
