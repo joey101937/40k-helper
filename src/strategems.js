@@ -178,6 +178,14 @@ export const unparalleledFurocity = {
     desc: 'when a non-character BEHEMOTH INFANTRY unit from your army that has not fought this phase is selected as the target of a melee attack. Until the attacking model’s unit has finished making its attacks, each time a model in that unit is destroyed, instead of using any rules that are triggered when that model is destroyed, do not remove the destroyed model from play - it can, after the attacking model’s unit has finished making its attacks, attack as if its unit had been selected to fight. After resolving these attacks, the destroyed model is then removed. If that unit has the ENDLESS MULTITUDE keyword, this Stratagem costs 1CP; otherwise, it costs 2CP.'
 }
 
+export const pathogenicSlime = {
+    name: 'Pathogenic Slime',
+    timing: 'shootingPhase',
+    type: 'Wargear Stretagem',
+    cost: '1-2cp',
+    desc: 'Use this Stratagem in your Shooting phase, when a HIVE TENDRIL unit from your army is selected to shoot. Until the end of the phase, each time a model in that unit makes an attack, an unmodified hit roll of 6 automatically wounds the target. If that unit has the TOXIN SACS keyword, this Stratagem costs 1CP; otherwise, it costs 2CP.'
+}
+
 /*
 export const rapicRegeneration = {
     name: 'Rapid Regeneration',
