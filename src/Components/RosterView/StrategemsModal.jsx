@@ -106,7 +106,7 @@ const StrategemsModal = (props) => {
     const classes = useStyles(props);
     
     const [hideBeforeBattle, setHideBeforeBattle] = useState(true);
-    const [orderByTiming, setOrderByTiming] = useState(false);
+    const [orderByTiming, setOrderByTiming] = useState(true);
     
 
     const getFormattedValues = () => {
