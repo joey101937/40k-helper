@@ -89,8 +89,8 @@ const getColorForStrategem = (strategem) => {
 
 const getSortFuntion = (orderByTiming) => (x, y) => {
     if (orderByTiming) {
-        if (x.timing > y.timing) return 1;
-        else if (x.timing < y.timing) return -1;
+        if (x.timingOrder > y.timingOrder) return 1;
+        else if (x.timingOrder < y.timingOrder) return -1;
         return getSortFuntion(false)(x,y); // order by name secondarily
     }
     if (x.name > y.name) return 1;
