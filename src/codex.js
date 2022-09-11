@@ -85,7 +85,7 @@ export const units = [
             w: '12',
             a: '5',
             ld: '10',
-            sv: '2+',
+            sv: '3+',
         },{
             m: '12"',
             ws: '3+',
@@ -95,7 +95,7 @@ export const units = [
             w: '<7',
             a: '5',
             ld: '10',
-            sv: '2+',
+            sv: '3+',
         },{
             m: '8"',
             ws: '4+',
@@ -105,7 +105,7 @@ export const units = [
             w: '<4',
             a: '5',
             ld: '10',
-            sv: '2+',
+            sv: '3+',
         }],
         keywords: [
             monster,
