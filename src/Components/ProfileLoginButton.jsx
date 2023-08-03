@@ -1,11 +1,11 @@
 import React from 'react';
 import { makeStyles } from '@mui/styles';
-import { loginColor } from '../GLOBALS';
+import { loginColor, red1 } from '../GLOBALS';
 
 const useStyles = makeStyles((theme) => {
     return {
         loginButton: (props) => ({
-            background: loginColor,
+            background: red1,
             textAlign: 'center',
             height: '30px',
             width: '100px',
@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => {
             cursor: 'pointer',
         }),
         profilePanel: (props) => ({
-            background: loginColor,
+            background: red1,
             textAlign: 'center',
             height: '30px',
             width: '100px',
@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => {
             verticalAlign: 'middle',
         }),
         logoutButton: (props) => ({
-            background: 'rgba(255,50,50, .9)',
+            background:  red1, // 'rgba(255,50,50, .9)',
             textAlign: 'center',
             marginTop: '8px',
             width: '100px',

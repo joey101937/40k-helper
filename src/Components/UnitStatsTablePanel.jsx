@@ -18,7 +18,7 @@ import SynapticImperativesModal from './RosterView/SynapticImperativesModal';
 import WarlordTraitsModal from './RosterView/WarlordTraitsModal';
 import PsychicPowerModal from './RosterView/PsychicPowersModal';
 import AdaptivePhysoilogyModal from './RosterView/AdaptivePhysiologyModel';
-import { eliteColor, fastAttackColor, flyersColor, heavySupportColor, hqColor, troopColor } from '../GLOBALS';
+import { eliteColor, fastAttackColor, flyersColor, heavySupportColor, hqColor, red1, troopColor } from '../GLOBALS';
 import RelicsModel from './RosterView/RelicsModel';
 import { noFleet } from '../fleets';
 import HiveFleetPanel from './RosterView/HiveFleetPanel';
@@ -45,9 +45,10 @@ const useStyles = makeStyles((theme) => {
             paddingLeft: '3px',
         }),
         weaponLink: () => ({
-            color: 'blue',
+            color: 'black',
             cursor: 'pointer',
             display: 'inline-block',
+            fontWeight: 'bold',
             borderRadius: '5px',
             paddingRight: '10px',
             paddingLeft: '10px',

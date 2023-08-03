@@ -41,7 +41,8 @@ const useStyles = makeStyles((theme) => {
             cursor: 'pointer',
             role: 'button',
             textDecoration: 'underline',
-            color: 'blue'
+            color: 'Black',
+            fontWeight: 'bold',
         }),
         finishAndSaveButton: () => ({
             color: 'white',

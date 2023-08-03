@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => {
             marginTop: '20px',
         }),
         LoginButton: () => ({
-            backgroundColor: `${loginColor} !important`,
+            backgroundColor: `${red1} !important`,
             color: 'white !important',
             marginBottom: '2px',
             minWidth: '100px',
@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => {
             marginBottom: '10px',
         }),
         registerTag: () => ({
-            color: 'blue',
+            color: red1,
             cursor: 'pointer',
         }),
     }
